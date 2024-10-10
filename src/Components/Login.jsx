@@ -86,7 +86,7 @@ const UserLogin = () => {
           <br />
           <br />
 
-          <label htmlFor="password">Password:</label>
+          <label For="password">Password:</label>
           <input
             type="password"
             name="password"
