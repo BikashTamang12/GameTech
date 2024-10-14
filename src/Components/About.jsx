@@ -47,11 +47,11 @@ const About = () => {
 
    
 
-<div className='82'>
+<div className='div82'>
 <p id='secondline'>  NOT only this much we provide and built your Desktops according to your desire requirement.</p>  
 </div>
       
-      <div className='83'>
+      <div className='div83'>
       <p id='lastline'>  We are the authorized store with most quality production we provide life time service according to the problems.</p> 
       </div>
 

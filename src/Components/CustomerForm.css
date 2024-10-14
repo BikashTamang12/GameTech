@@ -33,6 +33,7 @@
     right: 0;
     bottom: 0; /* Cover the entire fieldset */
     z-index: 0; /* Behind the content */
+    filter: blur(1px);
 }
 
 
@@ -81,8 +82,28 @@
     margin-left: 44vh;
     margin-top: 5vh;
     cursor: pointer;
-    color: aqua;
+    color: rgb(8, 5, 5);
+    background-color: aquamarine;
+    border-radius: 6px;
+    border: none;
+    padding: 5px 15px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+
+    
 }
+#submit:hover{
+    transform: scale(1.05);
+    color: rgb(255, 255, 255);
+    background-color: rgb(205, 122, 224);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+}
+#submit:active{
+    transform: scale(0.98);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 
 #suggest{
     margin-left: 33vh;
@@ -114,4 +135,16 @@
  {
     margin-right: 3vh;
    font-weight: bold;
+ }
+
+ #loginm{
+    margin-left: 2vh;
+    color: rgb(47, 0, 255);
+    text-decoration: none;
+    
+ }
+
+ #loginm:hover{
+    transform: scale(1.05);
+    color: rgb(15, 155, 13);
  }

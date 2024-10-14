@@ -7,7 +7,44 @@
     width: 192vh;
 }
 #head{
-    margin-top: 8vh;
+    margin-top: 4vh;
     margin-left: 88vh;
+
+}
+#mainhead{
+    font-weight: 800;
+    font-size: 30px;
 }
 
+#summary{
+    font-weight: bold;
+}
+
+#serve{
+    font-weight: bold;
+}
+.div78{
+    margin-left: 30vh;
+}
+
+.div79{
+    margin-left: 44vh;
+}
+
+.div80{
+    margin-left: 44vh;
+}
+
+.div81{
+    margin-left: 50vh;
+}
+
+.div82{
+    margin-left: 43vh;
+    margin-top: 3vh;
+}
+
+.div83{
+    margin-left: 36vh;
+    margin-top: 3vh;
+}

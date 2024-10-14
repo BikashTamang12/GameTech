@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./UserLogin.css";
 
-const UserLogin = () => {
+
+const Login = () => {
   // keep track of email and password inputs
   const [loginData, setLoginData] = useState({
     email: "",
@@ -115,4 +115,4 @@ const UserLogin = () => {
   );
 };
 
-export default UserLogin;
+export default Login;

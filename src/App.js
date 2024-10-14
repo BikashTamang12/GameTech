@@ -8,6 +8,7 @@ import HorizontalNavBar from './Components/HorizontalNavBar';
 
 import Home from './Components/Home';
 import About from './Components/About';
+import Login from './Components/Login';
 
 
 
@@ -31,6 +32,7 @@ function App() {
   <Route path='/' element={<Home/>}/>
   
 <Route path='/about' element={<About/>}/>
+<Route path='/login' element={<Login/>}/>
 
 <Route path='/signin' element={<CustomerForm/>}/>
 </Routes>
