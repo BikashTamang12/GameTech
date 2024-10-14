@@ -1,0 +1,25 @@
+.product{
+    color: blue;
+    background-color: rgb(255, 255, 255);
+    height: 250px;
+    width: 220px;
+    margin-left: 210px;
+
+    margin-top: 115px;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    
+}
+#title{
+    text-align: center;
+}
+.image{
+    height: 125px;
+    background-color:  rgb(255, 98, 0);
+    object-fit: cover;
+}
+
+.cart{
+    justify-content: space-between;
+    display: flex;
+    padding: 20px;
+}

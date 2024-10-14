@@ -110,55 +110,94 @@ const CustomerForm = () => {
 
   }
   return (
-    <div>
-    <h>Customer Regestration</h>
+    <div className='customerregestration'>
+   <fieldset id='outline' >
+   <div className="overlay"></div>
+   <div className='modifyregestration'>
+    <h2 id='heading'>Customer Regestration</h2>
       <form onSubmit={ customerRegestrationvalidation}>
-        {/*Email Creation */}
-        <label htmlFor="username" >Name:</label>
-        <input type="text" id="username" name="username" value={regestration.username} onChange={handleChange}></input>
+        {/*Username Creation */}
+
+       
+
+
+          
+
+          <div id='musername'>
+        <label htmlFor="username"  id='lusername'>Name :</label>
+        <input type="text" id="username" name="username" value={regestration.username} onChange={handleChange} className='input1'></input>
         {errors.username&&<span style={{color:'red'}}>{errors.username}</span>}
-       <br></br>
-       <br></br>
+        </div>
+
+
+
+
+        <div id='maddress'>
        {/*Address Creation */}
-        <label htmlFor='address'>Address:</label>
-        <input type='text' name='address' id="address" value={regestration.address} onChange={handleChange}></input>
+        <label htmlFor='address' id='laddress'>Address :</label>
+        <input type='text' name='address' id="address" value={regestration.address} onChange={handleChange}  className='input1'></input>
         {errors.address&&<span style={{color:'red'}}>{errors.address}</span>}
-       <br></br>
-       <br></br>
+        </div>
+
+
+
+
+        <div id='mphone'>
        {/*Phone Creation */}
-        <label htmlFor='phone'>Phone Number:</label>
-        <input type='phone' name='phone' id="phone" value={regestration.phone} onChange={handleChange}></input>
+        <label htmlFor='phone' id='lphone'>Phone Number :</label>
+        <input type='phone' name='phone' id="phone" value={regestration.phone} onChange={handleChange}  className='input1'></input>
         {errors.phone&&<span style={{color:'red'}}>{errors.phone}</span>}
-        <br></br>
-        <br></br>
+        </div>
+
+
+
+
+        <div id='memail'>
        {/*Email Creation */}
-        <label htmlFor='email'>E-mail:</label>
-        <input type='text' name='email' id="email" value={regestration.email} onChange={handleChange}></input>
+        <label htmlFor='email' id='lemail'>E-mail :</label>
+        <input type='text' name='email' id="email" value={regestration.email} onChange={handleChange}  className='input1'></input>
         {errors.email&&<span style={{color:'red'}}>{errors.email}</span>}
-        <br></br>
-        <br></br>
+        </div>
+
+
+
+
+
+        <div id='mpassword'>
        {/*Password Creation */}
-        <label htmlFor='password'>Password:</label>
-        <input type='password' name='password' id="password" value={regestration.password} onChange={handleChange}></input>
+        <label htmlFor='password' id='lpassword'>Password :</label>
+        <input type='password' name='password' id="password" value={regestration.password} onChange={handleChange}  className='input1'></input>
         {errors.password&&<span style={{color:'red'}}>{errors.password}</span>}
-        <br></br>
-        <br></br>
+        </div>
+
+
+
+
+
+
+        <div id='mcpassword'>
         {/* Confirm Email Creation */}
-       <label htmlFor='confirmpassword'>Confirm Password:</label>
-        <input type='password' name='confirmpassword' id="confirmpassword" value={regestration.confirmpassword} onChange={handleChange}></input>
+       <label htmlFor='confirmpassword' id='lcpassword'>Confirm Password :</label>
+        <input type='password' name='confirmpassword' id="confirmpassword" value={regestration.confirmpassword} onChange={handleChange}  className='input1'></input>
         {errors.confirmpassword&&<span style={{color:'red'}}>{errors.confirmpassword}</span>}
-        <br></br>
-        <br></br>
+        </div>
+
+
+
+
+
         {/*Submit button*/}
         <input type='submit'  id='submit' value="Submit"></input>
        <div id='div1'>
-       <p>Already have an account?<Link to="/login">Login</Link> </p>
-       
+       <p id='suggest'>Already have an account?<Link to="/login">Login</Link> </p>
        </div>
+       
         
       
         
       </form>
+      </div>
+      </fieldset>
     </div>
   )
 }

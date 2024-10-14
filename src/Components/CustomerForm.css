@@ -1,7 +1,117 @@
-#div1{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 0.1cm;
+.customerregestration{
+    margin-left:145px ;
+    margin-right: 10vh;
+    margin-top: 65px;
+    background-color: rgb(255, 0, 0); 
+    padding-left: 50px; 
+    height: 80vh;
+    padding-top: 80px;
+    position: fixed;
+    width: 184vh;
+    
+    background-image: url('./Images/back.jpg');
+    background-size: cover;
+    
+   
 
 }
+
+#outline{
+    height: 65vh;
+    width: 100vh;
+    margin-left: 40vh;
+    margin-top: -4vh;
+    border: none;
+   position: relative;
+  
+}
+.overlay{
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% transparency */
+    position: absolute; /* Position it absolutely */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; /* Cover the entire fieldset */
+    z-index: 0; /* Behind the content */
+}
+
+
+#heading{
+    z-index: 1;
+    text-align: center;
+    color: rgb(0, 255, 81);
+}
+
+#musername{
+    margin-left: 20vh;
+    color: aqua;
+}
+
+#maddress{
+    margin-left: 20vh;
+    margin-top: 3vh;
+    color: aqua;
+}
+
+#mphone{
+    margin-left: 20vh;
+    margin-top: 3vh;
+    color: aqua;
+}
+
+#memail{
+    margin-left: 20vh;
+    margin-top: 3vh;
+    color: aqua;
+}
+
+#mpassword{
+    margin-left: 20vh;
+    margin-top: 3vh;
+    color: aqua;
+}
+#mcpassword{
+    margin-left: 20vh;
+    margin-top: 3vh;
+    color: aqua;
+}
+
+
+#submit{
+    margin-left: 44vh;
+    margin-top: 5vh;
+    cursor: pointer;
+    color: aqua;
+}
+
+#suggest{
+    margin-left: 33vh;
+    margin-top: 4vh;
+    color: aqua;
+    
+}
+ .modifyregestration{
+    z-index: 1;
+    position: relative;
+ }
+ 
+ .input1{
+    
+    background: none;
+    border-color: rgb(255, 174, 12);
+    border-radius: 4px;
+    color: #ffffff;
+    width: 32vh;
+ }
+
+ #lusername,
+ #laddress,
+ #lemail,
+ #lphone,
+ #lemail,
+ #lpassword,
+ #lcpassword
+ {
+    margin-right: 3vh;
+   font-weight: bold;
+ }
