@@ -2,49 +2,62 @@
     margin-top:8.9vh;
     margin-left: 19.9vh;
     background-color: aqua;
+    background-image: url('./Images/about_pic.jpg');
     height: 91vh;
     position: fixed;
     width: 192vh;
+    background-size: cover;
 }
 #head{
     margin-top: 4vh;
     margin-left: 88vh;
+    color: rgb(169, 8, 181);
 
 }
 #mainhead{
     font-weight: 800;
     font-size: 30px;
+    
 }
 
 #summary{
     font-weight: bold;
+    color: blue;
 }
 
 #serve{
     font-weight: bold;
+    color: aqua;
 }
 .div78{
     margin-left: 30vh;
+   
 }
 
 .div79{
     margin-left: 44vh;
+    color: aqua;
 }
 
 .div80{
     margin-left: 44vh;
+    color: aqua;
 }
 
 .div81{
     margin-left: 50vh;
+    color: aqua;
 }
 
 .div82{
     margin-left: 43vh;
     margin-top: 3vh;
+    color: aqua;
 }
 
 .div83{
     margin-left: 36vh;
     margin-top: 3vh;
+    color: aqua;
 }
+

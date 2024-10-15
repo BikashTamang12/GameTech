@@ -9,7 +9,7 @@
     position: fixed;
     width: 184vh;
     
-    background-image: url('./Images/back.jpg');
+    background-image: url('./Images/regestration_pic.jpg');
     background-size: cover;
     
    
@@ -17,16 +17,16 @@
 }
 
 #outline{
-    height: 65vh;
-    width: 100vh;
-    margin-left: 40vh;
+    height: 80vh;
+    width: 125vh;
+    margin-left: 22vh;
     margin-top: -4vh;
     border: none;
    position: relative;
   
 }
 .overlay{
-    background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% transparency */
+    background-color: rgba(0, 0, 0, 0.4); /* Black background with 50% transparency */
     position: absolute; /* Position it absolutely */
     top: 0;
     left: 0;
@@ -40,7 +40,9 @@
 #heading{
     z-index: 1;
     text-align: center;
-    color: rgb(0, 255, 81);
+    color: rgb(76, 15, 243);
+    margin-bottom: 6vh;
+    margin-left: -9vh;
 }
 
 #musername{
@@ -114,12 +116,14 @@
  .modifyregestration{
     z-index: 1;
     position: relative;
+    margin-left: 18vh;
+    margin-top: 7vh;
  }
  
  .input1{
     
     background: none;
-    border-color: rgb(255, 174, 12);
+    border-color: rgb(112, 97, 198);
     border-radius: 4px;
     color: #ffffff;
     width: 32vh;
@@ -148,3 +152,64 @@
     transform: scale(1.05);
     color: rgb(15, 155, 13);
  }
+ #regeyemodify{
+   height: 4.5vh;
+ }
+ #regeye{
+   
+    width: 5.5vh;
+    margin-left: 48.5vh;
+    height: 4.5vh;
+    margin-top: -4vh;
+    
+ }
+
+ #cregeye{
+    
+    width: 5vh;
+    margin-left: 57.6vh;
+    margin-top: -4.2vh;
+
+ }
+ #cregeyemodify{
+    height: 4.5vh;
+ }
+ #username{
+    height: 23px;
+    font-size: 18px;
+ }
+
+ #email{
+    height: 23px;
+    font-size: 18px;
+ }
+ #address{
+    height: 23px;
+    font-size: 18px;
+ }
+ #phone{
+    height: 23px;
+    font-size: 18px;
+ }
+ #confirmpassword{
+    height: 23px;
+    font-size: 18px;
+ }
+ #password{
+    height: 23px;
+    font-size: 18px;
+ }
+
+
+ #cregeyemodify:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+ }
+
+ #regeyemodify:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+ }
+
+
+ 

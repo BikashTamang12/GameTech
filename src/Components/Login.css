@@ -9,21 +9,21 @@
     position: fixed;
     width: 184vh;
     
-    background-image: url('./Images/back.jpg');
+    background-image: url('./Images/login_pic.jpg');
     background-size: cover;
 }
 
 #loutline{
     height: 65vh;
     width: 100vh;
-    margin-left: 40vh;
-    margin-top: -4vh;
+    margin-left: 38vh;
+    margin-top: 5vh;
     border: none;
    position: relative;
 }
 
 .loverlay{
-    background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% transparency */
+    background-color: rgba(0, 0, 0, 0.3); /* Black background with 50% transparency */
     position: absolute; /* Position it absolutely */
     top: 0;
     left: 0;
@@ -149,6 +149,12 @@
     margin-top: 0px;
     height: 5vh;
  }
+
+ #eyemodify:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+ }
+
 
  .eye{
   margin-top: -4.5vh;

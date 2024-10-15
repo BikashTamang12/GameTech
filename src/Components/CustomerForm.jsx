@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import './CustomerForm.css';
 import { Link } from 'react-router-dom';
+import open_eye from './Images/open_eye.png';
+import close_eye from './Images/close_eye.png';
+
 
 const CustomerForm = () => {
   const [regestration ,setRegestration]=useState({  // Initiliaze the value or simply state multiple inputs 
@@ -12,6 +15,9 @@ const CustomerForm = () => {
     confirmpassword:''
   });
   const [errors,setErrors]=useState({});
+  const[cvisible,setCvisible]=useState(false);
+  const[ccvisible,setCcvisible]=useState(false);
+
 
   const handleChange=(e)=>{// capture the input value
     const{name,value}=e.target;
@@ -21,6 +27,15 @@ const CustomerForm = () => {
     });
     setErrors({});// clears the error when the user input the value.
   };
+
+  const cTogglepassword=()=>{
+    setCvisible(!cvisible);
+  };
+
+  const ccTogglepassword=()=>{
+    setCcvisible(!ccvisible);
+  };
+
 
   
 
@@ -145,7 +160,14 @@ const CustomerForm = () => {
         <div id='mphone'>
        {/*Phone Creation */}
         <label htmlFor='phone' id='lphone'>Phone Number :</label>
-        <input type='phone' name='phone' id="phone" value={regestration.phone} onChange={handleChange}  className='input1'></input>
+        <input type="phone" 
+        name='phone' 
+        id="phone" 
+        value={regestration.phone}
+         onChange={handleChange} 
+          className='input1'>
+          
+          </input>
         {errors.phone&&<span style={{color:'red'}}>{errors.phone}</span>}
         </div>
 
@@ -166,8 +188,22 @@ const CustomerForm = () => {
         <div id='mpassword'>
        {/*Password Creation */}
         <label htmlFor='password' id='lpassword'>Password :</label>
-        <input type='password' name='password' id="password" value={regestration.password} onChange={handleChange}  className='input1'></input>
-        {errors.password&&<span style={{color:'red'}}>{errors.password}</span>}
+        <input type={cvisible?'text' : 'password'} 
+         name='password'
+          id="password"
+           value={regestration.password}
+            onChange={handleChange}  
+            className='input1'
+            
+            />
+          <div id='regeye'>
+             <img  id='regeyemodify' src={cvisible?open_eye:close_eye} alt="Toggle password"  onClick={cTogglepassword}></img>
+          </div>
+        {errors.password&&
+        <div id='reger'>
+        <span style={{color:'red'}}>{errors.password}</span>
+        </div>
+        }
         </div>
 
 
@@ -178,8 +214,24 @@ const CustomerForm = () => {
         <div id='mcpassword'>
         {/* Confirm Email Creation */}
        <label htmlFor='confirmpassword' id='lcpassword'>Confirm Password :</label>
-        <input type='password' name='confirmpassword' id="confirmpassword" value={regestration.confirmpassword} onChange={handleChange}  className='input1'></input>
-        {errors.confirmpassword&&<span style={{color:'red'}}>{errors.confirmpassword}</span>}
+        <input type={ccvisible?'text' : 'password'} 
+         name='confirmpassword' 
+         id="confirmpassword" 
+         value={regestration.confirmpassword}
+          onChange={handleChange}  
+          className='input1'
+          
+          
+          />
+       <div id='cregeye'>
+          <img  id='cregeyemodify' src={ccvisible?open_eye:close_eye} alt="Toggle password"  onClick={ccTogglepassword}></img>
+          </div>
+        {errors.confirmpassword&&
+        
+        <div id='cregerr'>
+        <span style={{color:'red'}}>{errors.confirmpassword}</span>
+        </div>
+        }
         </div>
 
 
