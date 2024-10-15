@@ -1,0 +1,193 @@
+.loginform{
+    margin-left:145px ;
+    margin-right: 10vh;
+    margin-top: 65px;
+    background-color: rgb(255, 0, 0); 
+    padding-left: 50px; 
+    height: 80vh;
+    padding-top: 80px;
+    position: fixed;
+    width: 184vh;
+    
+    background-image: url('./Images/back.jpg');
+    background-size: cover;
+}
+
+#loutline{
+    height: 65vh;
+    width: 100vh;
+    margin-left: 40vh;
+    margin-top: -4vh;
+    border: none;
+   position: relative;
+}
+
+.loverlay{
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% transparency */
+    position: absolute; /* Position it absolutely */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; /* Cover the entire fieldset */
+    z-index: 0; /* Behind the content */
+    filter: blur(1px);
+}
+
+
+
+#lheading{
+    z-index: 1;
+    text-align: center;
+    color: rgb(76, 15, 243);
+    margin-top: 5vh;
+    z-index: 1;
+}
+
+#lsubmit{
+    margin-left: 44vh;
+    margin-top: 5vh;
+    cursor: pointer;
+    color: rgb(8, 5, 5);
+    background-color: aquamarine;
+    border-radius: 6px;
+    border: none;
+    padding: 5px 15px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#lsubmit:hover{
+    transform: scale(1.05);
+    color: rgb(255, 255, 255);
+    background-color: rgb(205, 122, 224);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+}
+#lsubmit:active{
+    transform: scale(0.98);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.lmodifyregestration{
+    z-index: 1;
+    position: relative;
+ }
+
+ #llemail{
+    margin-left: 26vh;
+  font-weight: bold;
+   color: aqua;
+}
+
+#loemail{
+    margin-top: 8vh;
+}
+
+#llpassword{
+    margin-left: 26vh;
+   font-weight: bold;
+    color: aqua;
+}
+
+#lopassword{
+    margin-top: 6vh;
+    position: relative;
+   
+}
+
+#fpassword{
+    margin-left: 40vh;
+    margin-top: 5vh;
+}
+
+#laccounts{
+    color: aqua;
+    margin-top: 5vh;
+    margin-left: 33vh;
+}
+#saccount{
+    margin-left: 2vh;
+    color: rgb(13, 38, 226);
+    cursor: pointer;
+    text-decoration: none;
+    
+}
+
+
+
+ #saccount:hover{
+    transform: scale(1.05);
+    color: rgb(15, 155, 13);
+ }
+
+ #ffpassword{
+    color: aqua;
+    cursor: pointer;
+    text-decoration: none;
+
+ }
+
+ #ffpassword:hover{
+    transform: scale(1.05);
+    color: rgb(213, 45, 45);
+ }
+ #password{
+    height: 3vh;
+    font-size: 16px;
+    
+ }
+
+
+ #email{
+    margin-left: 2vh;
+ }
+
+ #eyemodify{
+    margin-left: 1vh;
+   
+    margin-top: 0px;
+    height: 5vh;
+ }
+
+ .eye{
+  margin-top: -4.5vh;
+ 
+  width: 7vh;
+  margin-left: 72.8vh;
+  height: 31px;
+ }
+
+
+
+ #inputfield{
+    margin-left:38.5vh;
+    margin-top: -3vh;
+   
+    width: 33vh;
+    height: 4vh;
+
+ }
+ #errorm{
+    width: 23vh;
+   margin-left: 82vh;
+   margin-top: -3.2vh;
+   
+ }
+
+ #emailerror{
+   
+    width: 25vh;
+    margin-left: 72vh;
+    margin-top: -3.2vh;
+ }
+
+
+ #lllemail{
+    margin-left: 3vh;
+    height: 3.5vh;
+    font-size: 16px;
+ }
+
+
+ 

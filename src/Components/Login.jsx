@@ -1,118 +1,113 @@
-import React, { useState } from "react";
-
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import './Login.css';
+import open_eye from './Images/open_eye.png';
+import close_eye from './Images/close_eye.png';
 
 const Login = () => {
-  // keep track of email and password inputs
-  const [loginData, setLoginData] = useState({
-    email: "",
-    password: "",
+
+  const[addlogin,setAddlogin]=useState({
+    email:'',
+    password:''
   });
 
-  // manage form validation error messages
-  const [errors, setErrors] = useState({});
+  const[errors,setErrors]=useState({});
 
-  // Handle form input changes and clear any previous errors
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setLoginData({
-      ...loginData,
-      [name]: value,
+  const handleChange=(e)=>{
+    const{name,value}=e.target;
+    setAddlogin({
+      ...addlogin,
+      [name]:
+      value
     });
-
-    // Clear any existing errors when the user starts typing
-    setErrors({
-      ...errors,
-      [name]: "",
-    });
+    setErrors({})
   };
 
-  // Validate email format
-  const validateEmail = (email) => {
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return emailPattern.test(email);
+  const[visible,setVisible]=useState(false);
+  const toggleVisibility=()=>{
+    setVisible(!visible);
   };
 
-  // Handle form submission and validation
-  const handleLogin = (e) => {
+  const loginValidation=(e)=>{
+   const newErrors={};
     e.preventDefault();
 
-    // Collect potential error messages
-    const newErrors = {};
-    const { email, password } = loginData;
+        
+    if(addlogin.email.length===0){
+      newErrors.email="*email is required";
+    } //later we need to add validation for correct matching from database.
 
-    // Check if email is provided and valid
-    if (!email) {
-      newErrors.email = "Please enter your email address.";
-    } else if (!validateEmail(email)) {
-      newErrors.email = " Incorrect Email.";
-    }
 
-    // Ensure password is entered
-    if (!password) {
-      newErrors.password = "Password is empty!";
-    }
+    if(addlogin.password.length===0){
+      newErrors.password="*password is required";
+    }//later we need to add validation for correct matching from database.
 
-    // If there are validation errors, stop here and show them
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
-    }
+    setErrors(newErrors);
 
-    // If everything is good, show a success message (you'd likely want to replace this with a real login flow)
-    alert("You’ve logged in!");
-  };
-
+  }
   return (
-    <div className="container">
-      {/* Left form section */}
-      <div className="form-section">
-        <div className="logo">
-          <img
-            src="https://www.freepnglogos.com/uploads/games-png/games-controller-game-icon-17.png"
-            alt="Logo"
-          />
-          <div className="logo-text">Game Tech</div>
+    <div className='loginform'>
+
+      <fieldset id='loutline'>
+      <div className="loverlay"></div>
+     
+
+      <div className='lmodifyregestration'>
+      <h2 id='lheading'>Login</h2>
+
+   
+      <form onSubmit={loginValidation}>
+      <div id='loemail'>
+       {/*Email Creation */}
+        <label htmlFor='email' id='llemail'>E-mail :</label>
+        <input type='text' name='email' id="lllemail" value={addlogin.email} onChange={handleChange}  className='input1'></input>
+        {errors.email&&
+        <div id='emailerror'>
+        <span style={{color:'red'}}>{errors.email}</span>
         </div>
-        <form onSubmit={handleLogin}>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="text"
-            name="email"
-            id="email"
-            value={loginData.email}
-            onChange={handleChange}
-          />
-          {errors.email && <span>{errors.email}</span>}
-          <br />
-          <br />
+        }
+        </div>
 
-          <label For="password">Password:</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            value={loginData.password}
-            onChange={handleChange}
-          />
-          {errors.password && <span>{errors.password}</span>}
-          <br />
-          <br />
+        <div id='lopassword'>
+       {/*Password Creation */}
+       <div id='lheader'>
+       <label htmlFor='password' id='llpassword'>Password :</label>
+       </div>
+       <div id='inputfield'>
+       <input type={visible?'text':'password'} name='password' id="password" value={addlogin.password} onChange={handleChange}  className='input1'></input>
+       </div>
+        
+       <div className='eye'>
+       
+        <img  id='eyemodify' src={visible?open_eye:close_eye} alt="Toggle password"  onClick={toggleVisibility}></img>
+       
+        </div>
+       
+        {errors.password&&
+         <div id='errorm'>
+        <span style={{color:'red'}}>{errors.password}</span>
+        </div>
+        }
+        
+        </div>
 
-          <input type="submit" value="Login" />
+        <input type='submit'  id='lsubmit' value="Submit"></input>
+
+        <div id='fpassword'>
+          <Link to='/forgetpassword' id='ffpassword'>Forget Password ?</Link>
+        </div>
+
+        <div id='laccount'>
+          <p id='laccounts'>Don't have an account?<Link to='/signin' id='saccount'>create account</Link></p>
+        </div>
+
+
         </form>
-
-        {/* Additional links for convenience */}
-        <div className="links">
-          <div className="left">
-            <a href="/Sign up">Sign Up</a>
-          </div>
-          <div className="right">
-            <a href="/forgot-password">Forgot password?</a>
-          </div>
         </div>
-      </div>
-    </div>
-  );
-};
 
-export default Login;
+        </fieldset>
+    </div>
+  )
+}
+
+export default Login
