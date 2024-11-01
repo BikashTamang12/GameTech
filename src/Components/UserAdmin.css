@@ -1,0 +1,40 @@
+.UserAdmin {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Add space between cards */
+}
+
+.product-card {
+  border: 1px solid whitesmoke;
+  border-radius: 5px;
+  padding: 10px;
+  width: 200px;
+  text-align: left;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  margin-bottom: 10px;
+}
+/* Message styling */
+.message {
+  color: red;
+  font-size: 16px; 
+  margin-bottom: 10px;
+}
+
