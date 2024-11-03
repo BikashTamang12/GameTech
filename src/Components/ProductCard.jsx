@@ -1,18 +1,25 @@
+<<<<<<< HEAD
 import React from 'react'
 import './ProductCard.css';
 import { Link } from 'react-router-dom';
+=======
+// ProductCard.jsx
+import React from "react";
+import { Link } from "react-router-dom";
+import "./ProductCard.css";
+>>>>>>> 7cd6cc54b56cc03c665902cb9473e488aaa2dbfe
 
-const ProductCard = ({title,image,price}) => {
-  return (
-    <div className='product'>
-      <div className='topic'>
-        <h2 id='title'>{title}</h2>
-        </div>
-        <div className='image'>
-            <image src={image}></image>
-             </div>
-            <div className='price'>Rs.{price}
+const ProductCard = ({ product }) => (
+  <div className="product-card">
+    <Link to={`/product/${product.id}`} className="product-link">
+      <img src={product.image} alt={product.title} className="product-image" />
+      <h3>{product.title}</h3>
+      <p>Price: Rs{product.price}</p>
+    </Link>
+  </div>
+);
 
+<<<<<<< HEAD
             </div>
            
             <div className='cart'>
@@ -28,3 +35,6 @@ const ProductCard = ({title,image,price}) => {
 }
 
 export default ProductCard
+=======
+export default ProductCard;
+>>>>>>> 7cd6cc54b56cc03c665902cb9473e488aaa2dbfe

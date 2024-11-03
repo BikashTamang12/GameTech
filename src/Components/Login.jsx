@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+<<<<<<< HEAD
 import { Link} from "react-router-dom";
 import "./Login.css";
 import open_eye from "./Images/open_eye.png";
@@ -10,14 +11,25 @@ import { useAuth } from "./AuthContext";
 const Login = () => {
   const {login}=useAuth();
  
+=======
+import { Link } from "react-router-dom";
+import "./Login.css";
+import open_eye from "./Images/open_eye.png";
+import close_eye from "./Images/close_eye.png";
+
+const Login = () => {
+>>>>>>> 7cd6cc54b56cc03c665902cb9473e488aaa2dbfe
   const [addlogin, setAddlogin] = useState({
     email: "",
     password: "",
   });
 
   const [errors, setErrors] = useState({});
+<<<<<<< HEAD
   
  
+=======
+>>>>>>> 7cd6cc54b56cc03c665902cb9473e488aaa2dbfe
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,13 +41,20 @@ const Login = () => {
   };
 
   const [visible, setVisible] = useState(false);
+<<<<<<< HEAD
   const [loginResult, setLoginResult] = useState("");
 
+=======
+>>>>>>> 7cd6cc54b56cc03c665902cb9473e488aaa2dbfe
   const toggleVisibility = () => {
     setVisible(!visible);
   };
 
+<<<<<<< HEAD
   const loginValidation =async (e) => {
+=======
+  const loginValidation = (e) => {
+>>>>>>> 7cd6cc54b56cc03c665902cb9473e488aaa2dbfe
     const newErrors = {};
     e.preventDefault();
 
@@ -45,6 +64,7 @@ const Login = () => {
 
     if (addlogin.password.length === 0) {
       newErrors.password = "*password is required";
+<<<<<<< HEAD
     } 
     setErrors(newErrors);
 
@@ -86,6 +106,12 @@ const Login = () => {
   
 
   
+=======
+    } //later we need to add validation for correct matching from database.
+
+    setErrors(newErrors);
+  };
+>>>>>>> 7cd6cc54b56cc03c665902cb9473e488aaa2dbfe
   return (
     <div className="loginform">
       <fieldset id="loutline">
@@ -93,6 +119,7 @@ const Login = () => {
 
         <div className="lmodifyregestration">
           <h2 id="lheading">Login</h2>
+<<<<<<< HEAD
  {/* Display login result message */}
  {loginResult && (
             <div  id="successmeassage" style={{ textAlign: "center", marginBottom: "10px" }}>
@@ -138,6 +165,48 @@ const Login = () => {
                 ></input>
               </div>
 
+=======
+
+          <form onSubmit={loginValidation}>
+            <div id="loemail">
+              {/*Email Creation */}
+              <label htmlFor="email" id="llemail">
+                E-mail :
+              </label>
+              <input
+                type="text"
+                name="email"
+                id="lllemail"
+                value={addlogin.email}
+                onChange={handleChange}
+                className="input1"
+              ></input>
+              {errors.email && (
+                <div id="emailerror">
+                  <span style={{ color: "red" }}>{errors.email}</span>
+                </div>
+              )}
+            </div>
+
+            <div id="lopassword">
+              {/*Password Creation */}
+              <div id="lheader">
+                <label htmlFor="password" id="llpassword">
+                  Password :
+                </label>
+              </div>
+              <div id="inputfield">
+                <input
+                  type={visible ? "text" : "password"}
+                  name="password"
+                  id="password"
+                  value={addlogin.password}
+                  onChange={handleChange}
+                  className="input1"
+                ></input>
+              </div>
+
+>>>>>>> 7cd6cc54b56cc03c665902cb9473e488aaa2dbfe
               <div className="eye">
                 <img
                   id="eyemodify"
@@ -171,7 +240,10 @@ const Login = () => {
               </p>
             </div>
           </form>
+<<<<<<< HEAD
          
+=======
+>>>>>>> 7cd6cc54b56cc03c665902cb9473e488aaa2dbfe
         </div>
       </fieldset>
     </div>

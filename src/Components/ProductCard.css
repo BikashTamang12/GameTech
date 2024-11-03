@@ -1,24 +1,29 @@
-.product{
+#product{
     color: blue;
     background-color: rgb(255, 255, 255);
     height: 250px;
     width: 220px;
     margin-left: 210px;
-
-    margin-top: 115px;
-     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     
 }
+.product-link {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit color from parent */
+    flex-direction: column; /* Stack items vertically */
+    height: 100%; /* Fill the card height */
+  }
+
 #title{
     text-align: center;
 }
-.image{
+#image{
     height: 125px;
     background-color:  rgb(255, 98, 0);
     object-fit: cover;
 }
 
-.cart{
+#cart{
     justify-content: space-between;
     display: flex;
     padding: 20px;
