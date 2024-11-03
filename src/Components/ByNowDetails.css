@@ -1,0 +1,92 @@
+.mainbody {
+  margin-left: 145px;
+  margin-right: 10vh;
+  margin-top: 65px;
+  background-color: rgb(255, 0, 0);
+  padding-left: 50px;
+  height: 80vh;
+  padding-top: 80px;
+  position: fixed;
+  width: 184vh;
+
+  background-image: url("./Images/regestration_pic.jpg");
+  background-size: cover;
+}
+
+#headingbuy{
+   
+    margin-top: -1vh;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+
+}
+
+.revieverfeildset{
+    height: 60vh;
+    width: 150vh;
+    margin-left: 14vh;
+    
+}
+.recievername{
+    font-weight: bold;
+    margin-left: 4vh;
+    margin-top: 8vh;
+    width: 70vh;
+    height: 5vh;
+   
+}
+#recievername1{
+    color: black;
+}
+#recievername2{
+    margin-left: 2vh;
+    width: 30vh;
+    height: 3vh;
+    margin-top: 0.5vh;
+}
+
+
+
+
+
+.recieverphone{
+    font-weight: bold;
+    margin-top: -5vh;
+    margin-left: 80vh;
+    width: 70vh;
+    height: 5vh;
+}
+
+#recieverphone1{
+    margin-top: 3vh;
+}
+
+#recieverphone2{
+    margin-top: 1vh;
+    margin-left: 2vh;
+    height: 3vh;
+    width: 30vh;
+}
+
+
+.recieveraddress{
+    font-weight: bold;
+     margin-top: 10vh;
+     margin-left: 46vh;
+     width: 70vh;
+     height: 5vh;
+ }
+ 
+ #recieveraddress1{
+     margin-top: 3vh;
+ }
+ 
+ #recieveraddress2{
+     margin-top: 1vh;
+     margin-left: 2vh;
+     height: 3vh;
+     width: 30vh;
+ }
+
+ 

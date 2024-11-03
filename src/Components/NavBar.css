@@ -30,7 +30,7 @@
   }
   
  
-  #cart, #aboutus, #signin {
+  #cart, #aboutus, #login {
     list-style: none;
     margin-right: 40px;
     cursor: pointer;
@@ -69,7 +69,7 @@
   }
   
  
-  #cart:hover, #aboutus:hover, #signin:hover {
+  #cart:hover, #aboutus:hover, #login:hover {
     transform: scale(1.1); /* Little pop effect */
     color: orange;
     text-decoration: none; /* Remove underline */
@@ -79,7 +79,7 @@
     color: darkorange;
   }
   
-  #signin{
+  #login{
     margin-left: 30px;
     padding-left: 10px;
   }
@@ -92,4 +92,19 @@
     gap: 0.1cm;
     margin-left: 50p;
 
+}
+
+#logout{
+  margin-left: 30px;
+  padding-left: 10px;
+  background-color: aqua;
+  margin-right: 5vh;
+  border: none;
+  border-radius: 5px;
+}
+#logout:hover {
+  transform: scale(1.1); /* Little pop effect */
+  color: orange;
+  text-decoration: none; /* Remove underline */
+  cursor: pointer;
 }

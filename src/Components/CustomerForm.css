@@ -212,4 +212,13 @@
  }
 
 
- 
+ .doneMeassge{
+   background-color: aqua;
+ }
+
+ #regsuccess{
+   color: rgb(255, 0, 217);
+   text-align: center;
+   margin-bottom: 20px;
+   margin-left: -8vh;
+ }

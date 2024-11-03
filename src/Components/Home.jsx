@@ -1,11 +1,15 @@
 import React from 'react'
 import ProductCard from './ProductCard';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
-  console.log("sucess!");
+  
   return (
     <div>
-      <ProductCard title="Laptop" price="5000"/>
+      <ProductCard title="BAg" price="5000"/>
+
+      <Link to='/home'></Link>
+      
       
     </div>
   )
