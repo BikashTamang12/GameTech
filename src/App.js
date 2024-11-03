@@ -10,6 +10,7 @@ import ForgetPassword from './Components/ForgetPassword';
 import ByNowDetails from './Components/ByNowDetails';
 import CustomerHomePage from './Components/CustomerHomePage';
 import UserAdmin from './Components/UserAdmin';
+import ProductDetails from './Components/ProductDetails';
 
 function App() {
   return (
@@ -38,7 +39,12 @@ function AppContent() {
 
       <Routes>
         <Route path="/" element={<CustomerHomePage products={products} setProducts={setProducts} />} />
-        <Route path='logoutDemo' element={<CustomerHomePage/>}/>
+        <Route path='/home' element={<CustomerHomePage products={products} setProducts={setProducts}/>}/>
+
+        <Route path="/product/:id" element={<ProductDetails products={products} />} /> {/* New route */}
+
+
+
         <Route path="/adminPage" element={<UserAdmin products={products} setProducts={setProducts} />} /> {/* Pass props here */}
         <Route path="/buynow" element={<ByNowDetails />} />
         <Route path="/about" element={<About />} />

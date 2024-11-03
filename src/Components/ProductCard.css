@@ -21,10 +21,14 @@
     height: 125px;
     background-color:  rgb(255, 98, 0);
     object-fit: cover;
+    margin-left: 3vh;
 }
 
 #cart{
     justify-content: space-between;
     display: flex;
     padding: 20px;
+}
+.product-card{
+    margin-left: 30vh
 }

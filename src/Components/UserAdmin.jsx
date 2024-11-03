@@ -133,7 +133,7 @@ function UserAdmin({ products, setProducts }) {
     
   };
   const logoutOperation=()=>{
-    navigate("/logoutDemo");
+    navigate("/home");
   }
 
   return (
