@@ -8,7 +8,7 @@ import Login from './Components/Login';
 import { Authprovider } from './Components/AuthContext';
 import ForgetPassword from './Components/ForgetPassword';
 import ByNowDetails from './Components/ByNowDetails';
-import HomeButton from './Components/HomeButton';
+import CustomerHomePage from './Components/CustomerHomePage';
 import UserAdmin from './Components/UserAdmin';
 
 function App() {
@@ -24,6 +24,7 @@ function App() {
 function AppContent() {
   const [products, setProducts] = useState([]); // To make products as an empty array
   const location = useLocation();
+
   const hideNavBars = location.pathname === '/adminPage'; // Conditionally hide NavBar on adminPage
 
   return (
@@ -36,7 +37,8 @@ function AppContent() {
       )}
 
       <Routes>
-        <Route path="/" element={<HomeButton />} />
+        <Route path="/" element={<CustomerHomePage products={products} setProducts={setProducts} />} />
+        <Route path='logoutDemo' element={<CustomerHomePage/>}/>
         <Route path="/adminPage" element={<UserAdmin products={products} setProducts={setProducts} />} /> {/* Pass props here */}
         <Route path="/buynow" element={<ByNowDetails />} />
         <Route path="/about" element={<About />} />

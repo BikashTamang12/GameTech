@@ -41,6 +41,7 @@
     color: rgb(76, 15, 243);
     margin-top: 5vh;
     z-index: 1;
+    
 }
 
 #lsubmit{
@@ -74,14 +75,24 @@
     position: relative;
  }
 
- #llemail{
-    margin-left: 26vh;
+ .llemail{
+    margin-left: 20vh;
   font-weight: bold;
    color: aqua;
+   display: inline-block;
+   margin-top: 5vh;
+   
+   
+   
 }
 
 #loemail{
     margin-top: 8vh;
+
+  height:10vh;
+ 
+  
+    
 }
 
 #llpassword{
@@ -92,9 +103,12 @@
 
 #lopassword{
     margin-top: 6vh;
-    position: relative;
+   
+   
    
 }
+
+
 
 #fpassword{
     margin-left: 40vh;
@@ -190,10 +204,15 @@
 
 
  #lllemail{
-    margin-left: 3vh;
-    height: 3.5vh;
+    margin-left: 5vh;
+    height: 2.5vh;
     font-size: 16px;
+    margin-top:-10vh;
+    border-color: blueviolet;
+    width: 35vh;
+    
  }
+
 
  #successmeassage{
     color: rgb(224, 31, 192);

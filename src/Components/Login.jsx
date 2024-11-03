@@ -4,6 +4,7 @@ import "./Login.css";
 import open_eye from "./Images/open_eye.png";
 import close_eye from "./Images/close_eye.png";
 import { useAuth } from "./AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { login } = useAuth();
@@ -14,6 +15,7 @@ const Login = () => {
   const [errors, setErrors] = useState({});
   const [visible, setVisible] = useState(false);
   const [loginResult, setLoginResult] = useState("");
+  const navigate =useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -55,8 +57,15 @@ const Login = () => {
         const textResponse = await response.text();
         console.log("Raw response:", textResponse);
         const data = JSON.parse(textResponse);
+        if(data[0].result==="Admin Login successful"){
+          setLoginResult("Admin login successful");
+         
+          navigate("/adminPage");
+        }
+          
+       
 
-        if (data[0].result === "Login successful") {
+       else if (data[0].result === "Login successful") {
           setLoginResult("Login successful");
           login();
         } else if (data[0].result === "wrong password") {
@@ -88,7 +97,10 @@ const Login = () => {
           
           <form onSubmit={loginValidation}>
             <div id="loemail">
-              <label htmlFor="email" id="llemail">E-mail :</label>
+
+             
+              <label htmlFor="email" className="llemail">E-mail : </label>
+              
               <input
                 type="text"
                 name="email"

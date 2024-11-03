@@ -194,10 +194,15 @@
  #confirmpassword{
     height: 23px;
     font-size: 18px;
+    border-color: blueviolet;
+    height: 3.5vh;
+    
  }
  #password{
     height: 23px;
     font-size: 18px;
+    border-color: blueviolet;
+    height: 3.5vh;
  }
 
 
@@ -222,3 +227,28 @@
    margin-bottom: 20px;
    margin-left: -8vh;
  }
+
+ #username{
+  
+   height: 2.5vh;
+   font-size: 16px;
+   margin-top:-3vh;
+   border-color: blueviolet;
+   width: 35vh;
+ }
+#address{
+   
+   height: 2.5vh;
+   font-size: 16px;
+   margin-top:-3vh;
+   border-color: blueviolet;
+   width: 35vh;
+}
+#email{
+ 
+   height: 2.5vh;
+   font-size: 16px;
+   margin-top:-3vh;
+   border-color: blueviolet;
+   width: 35vh;
+}

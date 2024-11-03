@@ -12,7 +12,7 @@ function Home({ products }) {
       <h2>Product List</h2>
       <div className="grid-container">
         {products.length === 0 ? (
-          <p>No products available.</p>
+          <p  id="productmessage">No products available.</p>
         ) : (
           products.map((product, index) => (
             <ProductCard key={index} product={product} />

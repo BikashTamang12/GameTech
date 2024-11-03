@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "./UserAdmin.css";
 import ProductForm from "./ProductForm";
+import { useNavigate } from "react-router-dom";
 
 function UserAdmin({ products, setProducts }) {
   const [showForm, setShowForm] = useState(false); // to toggle the visibility of the form when other button is clicked
   const [showModifyList, setShowModifyList] = useState(false);
   const [isEditing, setIsEditing] = useState(false); // check if we are editing a product
   const [currentProductIndex, setCurrentProductIndex] = useState(null); // show the index of the product being edited
+  const navigate =useNavigate();
   const [newProduct, setNewProduct] = useState({
     // product details
     title: "",
@@ -127,14 +129,19 @@ function UserAdmin({ products, setProducts }) {
     });
     setIsEditing(false);
     setCurrentProductIndex(null);
+  
+    
   };
+  const logoutOperation=()=>{
+    navigate("/logoutDemo");
+  }
 
   return (
     <div className="UserAdmin">
       <nav className="sidebar">
         <button onClick={toggleAddForm}>Add Product</button>
         <button onClick={handleShowModify}>Modify Product</button>
-        <button>Logout</button> {/* logout handler */}
+        <button onClick={logoutOperation}>Logout</button> {/* logout handler */}
       </nav>
       <main>
         {message && <p className="message">{message}</p>}{" "}
