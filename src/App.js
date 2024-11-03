@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import CustomerForm from './Components/CustomerForm';
 import NavBar from './Components/NavBar';
@@ -22,6 +22,7 @@ function App() {
 }
 
 function AppContent() {
+  const [products, setProducts] = useState([]); // To make products as an empty array
   const location = useLocation();
   const hideNavBars = location.pathname === '/adminPage'; // Conditionally hide NavBar on adminPage
 
@@ -36,7 +37,7 @@ function AppContent() {
 
       <Routes>
         <Route path="/" element={<HomeButton />} />
-        <Route path="/adminPage" element={<UserAdmin />} />
+        <Route path="/adminPage" element={<UserAdmin products={products} setProducts={setProducts} />} /> {/* Pass props here */}
         <Route path="/buynow" element={<ByNowDetails />} />
         <Route path="/about" element={<About />} />
         <Route path="/signin" element={<CustomerForm />} />
