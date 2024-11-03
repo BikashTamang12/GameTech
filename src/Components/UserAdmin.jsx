@@ -23,6 +23,18 @@ function UserAdmin({ products, setProducts }) {
     setNewProduct({ ...newProduct, [e.target.name]: e.target.value });
   };
 
+  // Handle changes in the main image file input
+  const handleMainImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setNewProduct((prevProduct) => ({
+        ...prevProduct,
+        image: imageUrl,
+      }));
+    }
+  };
+
   // Handle changes in the sub images file input
   const handleSubImagesChange = (e) => {
     const files = Array.from(e.target.files);
@@ -127,40 +139,39 @@ function UserAdmin({ products, setProducts }) {
       <main>
         {message && <p className="message">{message}</p>}{" "}
         {/* Display user actions messages */}
-        {showForm && (
+        {showForm && ( // Show the form if the user is adding or editing a product
           <ProductForm
             product={newProduct} // Pass the product details to the form
             onChange={handleInputChange} // Input change handler
+            onMainImageChange={handleMainImageChange} // Pass main image change handler
             onSubImageChange={handleSubImagesChange} // Sub image change handler
             onSubmit={isEditing ? handleUpdateProduct : handleAddProduct} // Submit based on editing condition
             isEditing={isEditing} // Pass editing state to the form
           />
         )}
-        {showModifyList && ( // Show product list only if "Modify Product" is clicked
-          <div className="product-list">
-            {products.length === 0 ? (
-              <p>No products available.</p> // shows when no products are available
-            ) : (
-              products.map((product, index) => (
-                <div key={index} className="product-card">
-                  <img src={product.image} alt={product.title} />
-                  <h3>{product.title}</h3>
-                  <p>Category: {product.category}</p>
-                  <p>Price: Rs{product.price}</p>
-                  <p>Description: {product.description}</p>
-                  <button onClick={() => handleEditProduct(index)}>
-                    Update
-                  </button>{" "}
-                  {/* Edit button */}
-                  <button onClick={() => handleDelete(index)}>
-                    Delete
-                  </button>{" "}
-                  {/* Delete button */}
-                </div>
-              ))
-            )}
-          </div>
-        )}
+        {/* Only show the product list if not in the process of adding/updating a product */}
+        {!showForm &&
+          showModifyList && ( // Show product list only if "Modify Product" is clicked and no form is shown
+            <div className="product-list">
+              {products.length === 0 ? (
+                <p>No products available.</p> // shows when no products are available
+              ) : (
+                products.map((product, index) => (
+                  <div key={index} className="product-card">
+                    <img src={product.image} alt={product.title} />
+                    <h3>{product.title}</h3>
+                    <p>Category: {product.category}</p>
+                    <p>Price: Rs{product.price}</p>
+                    <p>Description: {product.description}</p>
+                    <button onClick={() => handleEditProduct(index)}>
+                      Update
+                    </button>{" "}
+                    <button onClick={() => handleDelete(index)}>Delete</button>
+                  </div>
+                ))
+              )}
+            </div>
+          )}
       </main>
     </div>
   );

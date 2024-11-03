@@ -1,13 +1,13 @@
-// ProductForm.jsx
-//in here the work for the pass of add product and update product is done
 import React from "react";
 import "./ProductForm.css";
 
 const ProductForm = ({
-  product, // The product details filed
+  product, // The product details field
   onChange, // Handle input changes
+  onMainImageChange, // New handler for main image file input change
   onSubImageChange, // Handler for sub-image file input changes
   onSubmit, // Handle submission
+  onDelete, // Handle delete action
   isEditing, // to indicate if we're in editing mode
 }) => (
   <div className="form-container">
@@ -25,17 +25,18 @@ const ProductForm = ({
           required // Make this field mandatory
         />
       </label>
-      {/* Main Image URL input field */}
+
+      {/* Main Image file input field */}
       <label>
-        Main Image URL:
+        Main Image:
         <input
-          type="text"
-          name="image"
-          value={product.image} // Binding to the image URL of the product
-          onChange={onChange} // Call onChange when the input value changes
+          type="file"
+          name="mainImage"
+          onChange={onMainImageChange} // Call onMainImageChange when the file is selected
           required // Make this field filled
         />
       </label>
+
       {/* Sub Images file input field */}
       <label>
         Sub Images:
@@ -46,6 +47,7 @@ const ProductForm = ({
           onChange={onSubImageChange} // Call onSubImageChange when files are selected
         />
       </label>
+
       {/* Category selection dropdown */}
       <label>
         Category:
@@ -66,6 +68,7 @@ const ProductForm = ({
           <option value="psp">PSP</option>
         </select>
       </label>
+
       {/* Price input field */}
       <label>
         Price:
@@ -77,6 +80,7 @@ const ProductForm = ({
           required
         />
       </label>
+
       {/* Description textarea */}
       <label>
         Description:
@@ -87,11 +91,13 @@ const ProductForm = ({
           required
         ></textarea>
       </label>
-      {/* Submit button to either add or update a product */}
-      <button type="button" onClick={onSubmit}>
-        {isEditing ? "Update Product" : "Add Product"}{" "}
-        {/* Button text changes based on editing state */}
-      </button>
+
+      {/* Buttons container */}
+      <div className="button-container">
+        <button type="button" onClick={onSubmit}>
+          {isEditing ? "Update Product" : "Add Product"}
+        </button>
+      </div>
     </form>
   </div>
 );
