@@ -1,9 +1,28 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import "./UserAdmin.css";
 import ProductForm from "./ProductForm";
 import { useNavigate } from "react-router-dom";
 
 function UserAdmin({ products, setProducts }) {
+
+
+  const fetchProducts = async () => {
+    try {
+      const response = await fetch("http://localhost/backend/api/getproduct.php");
+      const data = await response.json();
+      setProducts(data); // Update the state with fetched products
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
+  };
+  
+  // Use fetchProducts on component load
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+
+
   const [showForm, setShowForm] = useState(false); // to toggle the visibility of the form when other button is clicked
   const [showModifyList, setShowModifyList] = useState(false);
   const [isEditing, setIsEditing] = useState(false); // check if we are editing a product
@@ -29,10 +48,10 @@ function UserAdmin({ products, setProducts }) {
   const handleMainImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      const imageUrl = URL.createObjectURL(file);
+      //const imageUrl = URL.createObjectURL(file);
       setNewProduct((prevProduct) => ({
         ...prevProduct,
-        image: imageUrl,
+        image: file,
       }));
     }
   };
@@ -40,26 +59,58 @@ function UserAdmin({ products, setProducts }) {
   // Handle changes in the sub images file input
   const handleSubImagesChange = (e) => {
     const files = Array.from(e.target.files);
-    const subImageUrls = files.map((file) => URL.createObjectURL(file));
+   // const subImageUrls = files.map((file) => URL.createObjectURL(file));
     setNewProduct((prevProduct) => ({
       ...prevProduct,
-      subImages: subImageUrls,
+      subImages: files,
     }));
   };
 
   // new product add
-  const handleAddProduct = () => {
+  const handleAddProduct = async() => {
     if (validateForm()) {
-      const newProductWithId = { ...newProduct, id: products.length + 1 }; // Assign a unique ID
-      setProducts([...products, newProductWithId]); // Add new product to the products list
-      setMessage("Product added successfully!"); // Success message
-      setTimeout(() => setMessage(""), 2000); // Clear the message after 2 seconds
-      resetForm(); // Reset form fields
-      setShowForm(false); // Hide the form
+      const formData = new FormData();
+      formData.append("title", newProduct.title);
+      formData.append("category", newProduct.category);
+      formData.append("price", newProduct.price);
+      formData.append("description", newProduct.description);
+      
+      // Append the main image file
+      if (newProduct.image) {
+        formData.append("main_image", newProduct.image);
+      } else {
+        setMessage("Please upload a main image.");
+        return;
+      }
+      
+      // Append all sub-images
+      if (newProduct.subImages.length > 0) {
+        newProduct.subImages.forEach((file) => {
+          formData.append("sub_images[]", file);
+        });
+      }
+  
+      // Send request to PHP backend
+      try {
+        const response = await fetch("http://localhost/backend/api/addProduct.php", {
+          method: "POST",
+          body: formData,
+        });
+        const result = await response.json();
+        if (result.message) {
+          setMessage(result.message);
+          setTimeout(() => setMessage(""), 2000);
+          resetForm();
+          setShowForm(false);
+          fetchProducts(); // Fetch updated products list
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      }
     }
   };
 
-  // To update an existing product
+
   const handleUpdateProduct = () => {
     if (validateForm()) {
       const updatedProducts = [...products];
@@ -71,6 +122,8 @@ function UserAdmin({ products, setProducts }) {
       setShowForm(false);
     }
   };
+
+
 
   // delete the product
   const handleDelete = (index) => {
@@ -133,7 +186,7 @@ function UserAdmin({ products, setProducts }) {
     
   };
   const logoutOperation=()=>{
-    navigate("/home");
+    navigate("/logoutDemo");
   }
 
   return (
@@ -165,7 +218,7 @@ function UserAdmin({ products, setProducts }) {
               ) : (
                 products.map((product, index) => (
                   <div key={index} className="product-card">
-                    <img src={product.image} alt={product.title} />
+                     <img src={`data:image/jpeg;base64,${product.main_image}`} alt={product.title} />
                     <h3>{product.title}</h3>
                     <p>Category: {product.category}</p>
                     <p>Price: Rs{product.price}</p>
