@@ -56,6 +56,8 @@ function UserAdmin({ products, setProducts }) {
     }
   };
 
+
+
   // Handle changes in the sub images file input
   const handleSubImagesChange = (e) => {
     const files = Array.from(e.target.files);
@@ -84,11 +86,11 @@ function UserAdmin({ products, setProducts }) {
       }
       
       // Append all sub-images
-      if (newProduct.subImages.length > 0) {
+      /*if (newProduct.subImages.length > 0) {
         newProduct.subImages.forEach((file) => {
-          formData.append("sub_images[]", file);
+          formData.append("subImages[]", file);
         });
-      }
+      }*/
   
       // Send request to PHP backend
       try {
@@ -96,6 +98,9 @@ function UserAdmin({ products, setProducts }) {
           method: "POST",
           body: formData,
         });
+        
+
+        
         const result = await response.json();
         if (result.message) {
           setMessage(result.message);
@@ -111,38 +116,69 @@ function UserAdmin({ products, setProducts }) {
   };
 
 
-  const handleUpdateProduct = () => {
-    if (validateForm()) {
-      const updatedProducts = [...products];
-      updatedProducts[currentProductIndex] = newProduct; // Update the specific product
-      setProducts(updatedProducts); // Update the products
-      setMessage("Successfully updated!");
-      setTimeout(() => setMessage(""), 2000); // Clear the message after 2 seconds
-      resetForm();
+  const handleUpdateProduct = async() => {
+    
+    const formData = new FormData();
+    formData.append("product_id", products[currentProductIndex].product_id);
+    formData.append("title", newProduct.title);
+    formData.append("category", newProduct.category);
+    formData.append("price", newProduct.price);
+    formData.append("description", newProduct.description);
+    
+
+    try {
+      const response = await fetch("http://localhost/backend/api/updateProduct.php", {
+        method: "POST",
+        body: formData,
+      });
+      const result = await response.json();
+      setMessage(result.message);
+      setTimeout(() => setMessage(""), 2000);
       setShowForm(false);
+      fetchProducts(); // Refresh product list
+    } catch (error) {
+      console.error("Error updating product:", error);
     }
   };
 
 
 
   // delete the product
-  const handleDelete = (index) => {
-    const confirmed = window.confirm("Delete this product?"); // Confirm deletion
-    if (confirmed) {
-      const updatedProducts = products.filter((_, i) => i !== index); // Remove the product from the list
-      setProducts(updatedProducts); // Update the deleted products
-      setMessage("Product deleted successfully."); // Success message
-      setTimeout(() => setMessage(""), 2000); // Clear the message after 2 seconds
+  const handleDelete = async(index) => {
+    const productId = products[index].product_id; // Use product_id here
+  
+    try {
+      const response = await fetch("http://localhost/backend/api/deleteProduct.php", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({ id: productId }),
+      });
+  
+      const result = await response.json();
+      if (result.message) {
+        setMessage(result.message);
+        setTimeout(() => setMessage(""), 2000);
+        const updatedProducts = products.filter((_, i) => i !== index);
+        setProducts(updatedProducts);
+      }
+    } catch (error) {
+      console.error("Error:", error);
     }
   };
 
   // edit a specific product
   const handleEditProduct = (index) => {
-    setNewProduct(products[index]); // Load the product details into the form
-    setIsEditing(true); // Set editing mode
-    setCurrentProductIndex(index); // Set the index of the product being edited
-    setShowForm(true); // Show the form for editing
+    setNewProduct({
+      ...products[index],
+      price: products[index].price || "", // Ensure price is set, even if 0
+    });
+    setIsEditing(true);
+    setCurrentProductIndex(index);
+    setShowForm(true);
   };
+  
 
   // Validate the form inputs
   const validateForm = () => {

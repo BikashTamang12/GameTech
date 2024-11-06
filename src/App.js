@@ -8,9 +8,9 @@ import Login from './Components/Login';
 import { Authprovider } from './Components/AuthContext';
 import ForgetPassword from './Components/ForgetPassword';
 import ByNowDetails from './Components/ByNowDetails';
-import CustomerHomePage from './Components/CustomerHomePage';
+//import CustomerHomePage from './Components/CustomerHomePage';
 import UserAdmin from './Components/UserAdmin';
-import ProductDetails from './Components/ProductDetails';
+//import ProductDetails from './Components/ProductDetails';
 
 function App() {
   return (
@@ -38,10 +38,9 @@ function AppContent() {
       )}
 
       <Routes>
-        <Route path="/" element={<CustomerHomePage products={products} setProducts={setProducts} />} />
-        <Route path='/home' element={<CustomerHomePage products={products} setProducts={setProducts}/>}/>
+      
 
-        <Route path="/product/:id" element={<ProductDetails products={products} />} /> {/* New route */}
+        
 
 
 
