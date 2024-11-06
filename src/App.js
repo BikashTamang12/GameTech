@@ -10,6 +10,7 @@ import ForgetPassword from './Components/ForgetPassword';
 import ByNowDetails from './Components/ByNowDetails';
 //import CustomerHomePage from './Components/CustomerHomePage';
 import UserAdmin from './Components/UserAdmin';
+import FilterProductList from './Components/FilterProductList';
 //import ProductDetails from './Components/ProductDetails';
 
 function App() {
@@ -50,6 +51,7 @@ function AppContent() {
         <Route path="/signin" element={<CustomerForm />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forgetpassword" element={<ForgetPassword />} />
+        <Route path="/products/:category" element={<FilterProductList/>}/>
       </Routes>
     </>
   );

@@ -5,28 +5,28 @@ import { Link } from "react-router-dom";
 const HorizontalNavBar = () => {
   return (
     <div className="horizontal">
-      <Link to="/laptop" id="laptop">
+      <Link to="/products/laptop" id="laptop">
         Laptop
       </Link>
-      <Link to="mouse" id="mouse">
+      <Link to="/products/mouse" id="mouse">
         Mouse
       </Link>
-      <Link to="/keyboards" id="keyboard">
+      <Link to="/products/keyboards" id="keyboard">
         Keyboard
       </Link>
-      <Link to="/headphones" id="headphone">
+      <Link to="/products/headphones" id="headphone">
         Headphones
       </Link>
-      <Link to="/joysticks" id="joystick">
+      <Link to="/products/joysticks" id="joystick">
         Joystick
       </Link>
-      <Link to="/xboxs" id="xbox">
+      <Link to="/products/xboxs" id="xbox">
         X-Box
       </Link>
-      <Link to="/psps" id="psp">
+      <Link to="/products/psps" id="psp">
         Psp
       </Link>
-      <Link to="/cds" id="cd">
+      <Link to="/products/cds" id="cd">
         CD
       </Link>
     </div>
