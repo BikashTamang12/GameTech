@@ -228,9 +228,9 @@ function UserAdmin({ products, setProducts }) {
   return (
     <div className="UserAdmin">
       <nav className="sidebar">
-        <button onClick={toggleAddForm}>Add Product</button>
-        <button onClick={handleShowModify}>Modify Product</button>
-        <button onClick={logoutOperation}>Logout</button> {/* logout handler */}
+        <button  id="addBut"   onClick={toggleAddForm}>Add Product</button>
+        <button   id="modBut"   onClick={handleShowModify}>Modify Product</button>
+        <button  id="logBut"  onClick={logoutOperation}>Logout</button> {/* logout handler */}
       </nav>
       <main>
         {message && <p className="message">{message}</p>}{" "}

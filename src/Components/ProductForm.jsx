@@ -12,47 +12,71 @@ const ProductForm = ({
 }) => (
   <div className="form-container">
     {/* Header indicating if we're adding or updating a product */}
-    <h2>{isEditing ? "Update Product" : "Add Product"}</h2>
-    <form>
+    
+    <form  className="adminproductform">
+    <div className="productoverlay"></div>
+
+    <div className="outsideoverlay">
+      <div id="head1123">
+    <p id="head786">{isEditing ? "Update Product" : "Add Product"}</p>
+    </div>
       {/* Title input field */}
-      <label>
+    
+       <div className="locationshift">
+
+
+      <label id="addtitle">
         Title:
+        </label>
         <input
+
           type="text"
           name="title"
+          id="addtitle2"
           value={product.title} // Binding to the title value of the product
           onChange={onChange} // Call onChange when the input value changes
           required // Make this field mandatory
         />
-      </label>
+    
 
       {/* Main Image file input field */}
-      <label>
+      <div className="mainimagecss">
+      <label id="imagetitle">
         Main Image:
+        </label>
         <input
           type="file"
           name="mainImage"
+          id="imagetitle2"
           onChange={onMainImageChange} // Call onMainImageChange when the file is selected
           required // Make this field filled
         />
-      </label>
+        </div>
+      
 
       {/* Sub Images file input field */}
-      <label>
+      <div className="subimagecss">
+      <label id="imagetitle5">
         Sub Images:
+        </label>
         <input
           type="file"
           name="subImages"
+          id="imagetitle56"
           multiple // Allow multiple file uploads
           onChange={onSubImageChange} // Call onSubImageChange when files are selected
         />
-      </label>
+      </div>
 
       {/* Category selection dropdown */}
-      <label>
+
+      <div className="cat12">
+      <label id="cat23">
         Category:
+        </label>
         <select
           name="category"
+          id="cat78"
           value={product.category} // Binding to the category value of the product
           onChange={onChange} // Call onChange when the selected category changes
           required
@@ -67,36 +91,47 @@ const ProductForm = ({
           <option value="cd">CD</option>
           <option value="psp">PSP</option>
         </select>
-      </label>
+        </div>
 
       {/* Price input field */}
-      <label>
+
+      <div className="price43">
+      <label id="price888">
         Price:
+        </label>
         <input
           type="number"
           name="price"
+          id="price777"
           value={product.price} // Binding to the price value of the product
           onChange={onChange} // Call onChange when the input value changes
           required
         />
-      </label>
+      </div>
 
       {/* Description textarea */}
-      <label>
+
+      <div className="div1234">
+      <label id="dec78">
         Description:
+        </label>
         <textarea
           name="description"
+          id="desc56"
           value={product.description} // Binding to the description value of the product
           onChange={onChange} // Call onChange when the input value changes
           required
         ></textarea>
-      </label>
+        </div>
+   
 
       {/* Buttons container */}
       <div className="button-container">
-        <button type="button" onClick={onSubmit}>
+        <button id="addbutton123" type="button" onClick={onSubmit}>
           {isEditing ? "Update Product" : "Add Product"}
         </button>
+      </div>
+      </div>
       </div>
     </form>
   </div>

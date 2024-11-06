@@ -1,0 +1,12 @@
+.filterProductlist {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates 4 equal-width columns */
+    gap: 0px; /* 1-inch gap between grid items */
+    
+    
+}
+
+.filterProductlist > * {
+    box-sizing: border-box;
+    
+}

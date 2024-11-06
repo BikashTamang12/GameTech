@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import FilterProductCard from './FilterProductCard';
 import { useParams } from 'react-router-dom';
-import "./FilterPoductList.css";
+import "./FilterProductList.css";
 
 const FilterProductList = () => {
     const [products, setProducts] = useState([]);
@@ -22,7 +22,7 @@ const FilterProductList = () => {
   
   
   return (
-    <div className='filterProductlist'>
+    <div className="filterProductlist">
         {products.length > 0 ? (
         products.map(product => (
           <FilterProductCard key={product.id} product={product} />

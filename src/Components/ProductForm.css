@@ -2,19 +2,146 @@
 
 /* Main form container styling */
 .form-container {
-  max-width: 30%;
-  background-color: white;
+  
   padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-  margin-bottom: 200px;
-  max-height: 80%;
+  
+  
+  
+  width: 205vh;
+  background-image: url('./Images/coveradmin.jpg');
+ background-color: red;
+ height: 94.5vh;
+ background-size: cover;
+ display: flex;
+ 
+}
+
+.adminproductform{
+  
+  height: 75vh;
+  width: 85vh;
+  margin-left: 70vh;
+  
+  
+  backdrop-filter: blur(4.5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+
+  margin-top: 15vh;
 }
 
 /* Form title styling */
-.form-container h2 {
-  margin: 0 0 10px;
+#head786{
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+  
 }
+
+
+#addtitle{
+  font-weight: bold;
+}
+#addtitle2{
+   
+  border: none;
+  background-color:none;
+  border-radius: 4px;
+  width: 30vh;
+  margin-left: 2vh;
+  border: 2px solid white;
+}
+
+
+.mainimagecss{
+  margin-top: 5vh;
+}
+
+#imagetitle{
+  font-weight: bold;
+  margin-bottom: 10vh;
+}
+
+
+#imagetitle2{
+  width: 30vh;
+  margin-top: -3.5vh;
+  margin-left: 15vh;
+  border: none;
+  border-radius: 4px;
+  border: 2px solid white;
+}
+
+.subimagecss{
+  margin-top: 4vh;
+  
+}
+#imagetitle5{
+  font-weight: bold;
+}
+
+#imagetitle56{
+  margin-top: -3.5vh;
+  margin-left: 14vh;
+  width: 30vh;
+  border: none;
+  border-radius: 4px;
+  border: 2px solid white;
+}
+
+.cat12{
+  margin-top: 4vh;
+
+}
+
+#cat23{
+  font-weight: bold;
+
+}
+
+#cat78{
+  margin-top: -5vh;
+  width: 20vh;
+  margin-left: 2vh;
+  border: none;
+  border-radius: 4px;
+  border: 2px solid white;
+}
+ 
+
+.price43{
+  margin-top: 3vh;
+}
+
+#price888{
+  font-weight: bold;
+}
+
+#price777{
+  width: 20vh;
+  margin-left: 2vh;
+  border: none;
+  border-radius: 4px;
+  border: 2px solid white;
+}
+
+.div1234{
+  margin-top: 4vh;
+  
+  height: 10vh;
+}
+
+#dec78{
+  
+  font-weight: bold;
+}
+
+#desc56{
+ height: 3vh;
+margin-top: 2vh;
+ margin-left: 4vh;
+ 
+}
+
 
 /* Category select styling */
 select[name="category"] {
@@ -22,7 +149,7 @@ select[name="category"] {
   padding: 5px;
   border: 2px solid black;
   border-radius: 5px;
-  background-color: white;
+  background-color: transparent;
   color: black;
   font-size: 14px;
   margin-top: 10px;
@@ -39,10 +166,14 @@ select[name="category"] {
 input[type="text"],
 input[type="number"],
 textarea {
-  width: 100%;
+  width: 45%;
   padding: 5px;
-  border: 2px solid black;
+  color: aquamarine;
   border-radius: 5px;
+  font-size: 15px;
+  background-color: transparent;
+  border: 2px solid white;
+  
 }
 
 textarea {
@@ -56,47 +187,35 @@ input[type="file"] {
   padding: 5px;
   border: 2px solid black;
   border-radius: 5px;
-  background-color: white;
+  background-color: transparent;
   cursor: pointer; /* to have hand like pointer*/
   margin-top: 5px;
+  color: rgb(220, 233, 229);
+  
 }
 
 /* Button styles */
 button[type="button"] {
-  background-color: green;
-  color: white;
+  background-color: rgb(133, 19, 153);
+  color: rgb(255, 255, 255);
   border: none;
   padding: 10px 15px;
   margin-top: 10px;
+  margin-left: 20vh;
+  cursor: pointer;
+  border-radius: 9px;
 }
 
 button[type="button"]:hover {
-  background-color: red;
+  background-color: rgb(44, 193, 156);
+  transform: scale(1.05);
+}
+button:active{
+  transform: scale(0.98);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Sidebar styles */
-.sidebar {
-  width: 200px;
-  background-color: aqua;
-  color: white;
-  padding: 10px;
-  height: 300vh;
-}
 
-/* Sidebar button styles */
-.sidebar button {
-  width: 90%;
-  padding: 9px;
-  margin: 10px 0;
-  background-color: blue;
-  color: white;
-  font-size: 16px;
-  border-radius: 5px;
-}
-
-.sidebar button:hover {
-  background-color: orange;
-}
 
 /* Product list styling */
 .product-list {
@@ -153,4 +272,27 @@ button[type="button"]:hover {
   height: 100px;
   object-fit: cover;
   margin-bottom: 10px;
+}
+
+
+.locationshift{
+  margin-left: 18vh;
+  margin-top: 8vh;
+  
+}
+
+
+.productoverlay{
+  background-color: rgba(0, 0, 0, 0.3); /* Black background with 50% transparency */
+  position: absolute; /* Position it absolutely */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; /* Cover the entire fieldset */
+  z-index: 0; /* Behind the content */
+  filter: blur(1px);
+}
+.outsideoverlay{
+  z-index: 1;
+  position: relative;
 }

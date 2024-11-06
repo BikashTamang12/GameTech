@@ -1,9 +1,55 @@
 .UserAdmin {
   display: flex;
+ 
 }
 
+/* Sidebar styles */
 .sidebar {
-  width: 200px;
+  
+  background-color: aqua;
+  width: 250vh;
+  height: 10vh;
+ position: fixed;
+ 
+ 
+ 
+}
+
+/* Sidebar button styles */
+
+
+#addBut{
+  
+  padding: 9px;
+  margin: 10px 0;
+  background-color: blue;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+}
+#modBut{
+  
+  padding: 9px;
+  margin: 10px 0;
+  background-color: blue;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+}
+#logBut{
+  
+ 
+  background-color: blue;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+
+
+
+#addBut:hover,#modBut:hover,#logBut:hover {
+  background-color: orange;
 }
 
 .main {
