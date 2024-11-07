@@ -16,27 +16,28 @@ const NavBar = () => {
   return (
     <div id='div1'>
       <navbar id="nav1">
+      
         <Link to="/" id='logo'>
           <img src={Logo} className='Logo' alt='Company Logo' />
         </Link>
-        <input
-          id='search'
-          type='text'
-          value={input}
-          onChange={handleChange}
-          placeholder='Search anything...'
-        />
-        <span id='search_icon'>
-          <img src={Icon} alt='Search icon' />
-        </span>
+        
+       <div className='typingAni'>
+        We are authorized | Genuine Products are  available.
+       </div>
+       <div className='cartmodify'>
         <Link to="/cart" id='cart'>Cart</Link>
+        </div>
+        <div className='aboutmodify'>
         <Link to="/about" id='aboutus'>About Us</Link>
+        </div>
 
+  <div className='loginmodify'>
         {isAuthenticated ? (
           <button onClick={logout} id='logout'>Logout</button>
         ) : (
           <Link to="/login" id='login'>Login</Link>
         )}
+        </div>
       </navbar>
     </div>
   );
