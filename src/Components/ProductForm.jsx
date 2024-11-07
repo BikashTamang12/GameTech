@@ -9,6 +9,7 @@ const ProductForm = ({
   onSubmit, // Handle submission
   onDelete, // Handle delete action
   isEditing, // to indicate if we're in editing mode
+  message,
 }) => (
   <div className="form-container">
     {/* Header indicating if we're adding or updating a product */}
@@ -19,6 +20,9 @@ const ProductForm = ({
     <div className="outsideoverlay">
       <div id="head1123">
     <p id="head786">{isEditing ? "Update Product" : "Add Product"}</p>
+  
+    {message && <p className="errorMessage">{message}</p>}
+  
     </div>
       {/* Title input field */}
     

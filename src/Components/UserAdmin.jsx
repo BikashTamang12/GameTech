@@ -227,13 +227,21 @@ function UserAdmin({ products, setProducts }) {
 
   return (
     <div className="UserAdmin">
+     
       <nav className="sidebar">
+        <div className="addBut1" >
         <button  id="addBut"   onClick={toggleAddForm}>Add Product</button>
+        </div>
+       <div className="modBut1">
         <button   id="modBut"   onClick={handleShowModify}>Modify Product</button>
+        </div>
+      <div className="logBut1">
+       
         <button  id="logBut"  onClick={logoutOperation}>Logout</button> {/* logout handler */}
+        </div>
       </nav>
       <main>
-        {message && <p className="message">{message}</p>}{" "}
+    
         {/* Display user actions messages */}
         {showForm && ( // Show the form if the user is adding or editing a product
           <ProductForm
@@ -243,7 +251,8 @@ function UserAdmin({ products, setProducts }) {
             onSubImageChange={handleSubImagesChange} // Sub image change handler
             onSubmit={isEditing ? handleUpdateProduct : handleAddProduct} // Submit based on editing condition
             isEditing={isEditing} // Pass editing state to the form
-          />
+             message={message}
+            />
         )}
         {/* Only show the product list if not in the process of adding/updating a product */}
         {!showForm &&

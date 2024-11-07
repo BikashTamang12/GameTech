@@ -20,7 +20,7 @@
   
   height: 75vh;
   width: 85vh;
-  margin-left: 70vh;
+  margin-left: 65vh;
   
   
   backdrop-filter: blur(4.5px);
@@ -34,12 +34,15 @@
   font-weight: bold;
   font-size: 25px;
   text-align: center;
+  color: rgb(44, 247, 30);
+  font-style: italic;
   
 }
 
 
 #addtitle{
   font-weight: bold;
+  color: rgb(21, 208, 208);
 }
 #addtitle2{
    
@@ -49,11 +52,13 @@
   width: 30vh;
   margin-left: 2vh;
   border: 2px solid white;
+  
 }
 
 
 .mainimagecss{
   margin-top: 5vh;
+  color: rgb(21, 208, 208);
 }
 
 #imagetitle{
@@ -73,6 +78,7 @@
 
 .subimagecss{
   margin-top: 4vh;
+  color: rgb(21, 208, 208);
   
 }
 #imagetitle5{
@@ -90,6 +96,7 @@
 
 .cat12{
   margin-top: 4vh;
+  color: rgb(21, 208, 208);
 
 }
 
@@ -110,6 +117,8 @@
 
 .price43{
   margin-top: 3vh;
+  color: rgb(21, 208, 208);
+
 }
 
 #price888{
@@ -126,7 +135,7 @@
 
 .div1234{
   margin-top: 4vh;
-  
+  color: rgb(21, 208, 208);
   height: 10vh;
 }
 
@@ -295,4 +304,11 @@ button:active{
 .outsideoverlay{
   z-index: 1;
   position: relative;
+}
+
+.errorMessage{
+  color: red;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: -35px;
 }

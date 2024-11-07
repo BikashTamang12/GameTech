@@ -1,55 +1,100 @@
 .UserAdmin {
   display: flex;
+  
+ 
  
 }
 
 /* Sidebar styles */
 .sidebar {
   
-  background-color: aqua;
+  background-color: rgba(255, 255, 255, 0.0);
   width: 250vh;
   height: 10vh;
  position: fixed;
+ backdrop-filter: blur(7px);
+/* border: 1px solid rgba(255, 255, 255, 0.3);*/
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+ 
  
  
  
 }
 
-/* Sidebar button styles */
+#hello1{
+  color: red;
+  margin-top: 50vh;
+}
+
+.addBut1{
+margin-left: 75vh;
+margin-top: 1vh;
+
+width: 20vh;
+
+}
 
 
 #addBut{
   
   padding: 9px;
   margin: 10px 0;
-  background-color: blue;
-  color: white;
+  border: none;
+  color: rgba(11, 4, 22, 0.895);
   font-size: 16px;
-  border-radius: 5px;
+  background-color: transparent;
+  font-weight: bold;
+  font-style: oblique;
+  font-size: 19px;
+  text-decoration: underline;
+}
+
+
+.modBut1{
+  margin-top: -8.3vh;
+  margin-left: 103vh;
 }
 #modBut{
   
   padding: 9px;
   margin: 10px 0;
-  background-color: blue;
-  color: white;
+  border: none;
+  color: rgba(11, 4, 22, 0.895);
   font-size: 16px;
-  border-radius: 5px;
+  background-color: transparent;
+  font-weight: bold;
+  font-style: oblique;
+  font-size: 19px;
+  text-decoration: underline;
+}
+
+
+.logBut1{
+  margin-top: -8.25vh;
+  margin-left: 136vh;
 }
 #logBut{
-  
- 
-  background-color: blue;
-  color: white;
+  padding: 9px;
+  margin: 10px 0;
+  border: none;
+  color: rgba(11, 4, 22, 0.895);
   font-size: 16px;
-  border-radius: 5px;
+  background-color: transparent;
+  font-weight: bold;
+  font-style: oblique;
+  font-size: 19px;
+  text-decoration: underline;
 }
 
 
 
 
 #addBut:hover,#modBut:hover,#logBut:hover {
-  background-color: orange;
+color: rgb(204, 204, 204);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+ 
 }
 
 .main {
@@ -61,6 +106,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px; /* Add space between cards */
+  
 }
 
 .product-card {
@@ -69,6 +115,8 @@
   padding: 10px;
   width: 200px;
   text-align: left;
+  margin-top: 15vh;
+ 
 }
 
 .product-card img {
@@ -81,6 +129,8 @@
 .message {
   color: red;
   font-size: 16px; 
-  margin-bottom: 10px;
+  margin-top: vh;
+  margin-left: 50vh;
+  
 }
 
