@@ -1,15 +1,14 @@
-.filterProductlist {
+.mainpage1 {
     display: grid;
     grid-template-columns: repeat(5, minmax(200px, 1fr)); 
     gap: 20px; 
    
     padding-top: 20px;
     box-sizing: border-box;
-    max-width: calc(100% - 200px);
-    
+    max-width: calc(100% - 200px); 
 }
 
-.filterProductlist > * {
+.mainpage1 > * {
     box-sizing: border-box;
     
 }

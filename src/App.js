@@ -11,7 +11,9 @@ import ByNowDetails from './Components/ByNowDetails';
 //import CustomerHomePage from './Components/CustomerHomePage';
 import UserAdmin from './Components/UserAdmin';
 import FilterProductList from './Components/FilterProductList';
-//import ProductDetails from './Components/ProductDetails';
+import MainCustomerHomePage from './Components/MainCustomerHomePage';
+import MainCustomerCardDestails from './Components/MainCustomerCardDestails';
+
 
 function App() {
   return (
@@ -43,7 +45,7 @@ function AppContent() {
 
         
 
-
+      <Route path="/" element={<MainCustomerHomePage products={products} setProducts={setProducts}/>}/>
 
         <Route path="/adminPage" element={<UserAdmin products={products} setProducts={setProducts} />} /> {/* Pass props here */}
         <Route path="/buynow" element={<ByNowDetails />} />
@@ -52,6 +54,7 @@ function AppContent() {
         <Route path="/login" element={<Login />} />
         <Route path="/forgetpassword" element={<ForgetPassword />} />
         <Route path="/products/:category" element={<FilterProductList/>}/>
+     <Route path="/product-details/:product_id" element={<MainCustomerCardDestails/>}/>
       </Routes>
     </>
   );

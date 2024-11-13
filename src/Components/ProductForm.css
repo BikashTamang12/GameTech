@@ -29,7 +29,7 @@
   margin-top: 15vh;
 }
 
-/* Form title styling */
+
 #head786{
   font-weight: bold;
   font-size: 25px;
@@ -152,7 +152,7 @@ margin-top: 2vh;
 }
 
 
-/* Category select styling */
+
 select[name="category"] {
   width: 105%;
   padding: 5px;
@@ -165,13 +165,13 @@ select[name="category"] {
   box-sizing: border-box;
 }
 
-/* Label styling */
+
 .label {
   display: block;
   margin: 10px 0 5px;
 }
 
-/* Input styles */
+
 input[type="text"],
 input[type="number"],
 textarea {
@@ -189,7 +189,7 @@ textarea {
   resize: vertical;
 }
 
-/* Styling for the Sub Images file input */
+
 input[type="file"] {
   display: block;
   width: 100%;
@@ -197,13 +197,13 @@ input[type="file"] {
   border: 2px solid black;
   border-radius: 5px;
   background-color: transparent;
-  cursor: pointer; /* to have hand like pointer*/
+  cursor: pointer; 
   margin-top: 5px;
   color: rgb(220, 233, 229);
   
 }
 
-/* Button styles */
+
 button[type="button"] {
   background-color: rgb(133, 19, 153);
   color: rgb(255, 255, 255);
@@ -226,7 +226,7 @@ button:active{
 
 
 
-/* Product list styling */
+
 .product-list {
   margin-top: 0px;
 }
@@ -237,7 +237,7 @@ button:active{
   gap: 20px;
 }
 
-/* Product card styling */
+
 .product-card {
   width: 200px;
   background-color: white;
@@ -262,7 +262,7 @@ button:active{
   box-sizing: border-box;
 }
 
-/* Product card button styling */
+
 .product-card button {
   margin-top: 10px;
   padding: 5px 10px;
@@ -292,13 +292,13 @@ button:active{
 
 
 .productoverlay{
-  background-color: rgba(0, 0, 0, 0.3); /* Black background with 50% transparency */
-  position: absolute; /* Position it absolutely */
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute; 
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0; /* Cover the entire fieldset */
-  z-index: 0; /* Behind the content */
+  bottom: 0; 
+  z-index: 0; 
   filter: blur(1px);
 }
 .outsideoverlay{

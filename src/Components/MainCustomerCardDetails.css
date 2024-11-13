@@ -1,0 +1,193 @@
+
+.backgroundimage12{
+    position: fixed;
+    background-color: red;
+    width: 191vh;
+    margin-left: 19.9vh;
+    margin-top: 8.9vh;
+    height: 91vh;
+   background-image: url('./Images/carddetails.jpg');
+    object-fit: cover;
+    background-position: center;
+}
+
+
+
+.custcardoverlay1{
+    background-color: rgba(78, 76, 76, 0.3);  
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+    z-index: 0; 
+    filter: blur(1px);
+  }
+
+
+
+
+.outsidecustcard{
+    z-index: 1;
+    position: relative;
+}
+
+
+
+
+.productDetails12{
+    
+   position: relative;
+    margin-top: 5vh;
+    
+    width: 120vh;
+    margin-left: 40vh;
+    height: 80vh;
+    backdrop-filter: blur(4.5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 20);
+  border:none;
+
+
+    
+}
+
+.productImages12 {
+    margin-left: 8vh;
+   
+    width: 40vh;
+    height: 30vh;
+    margin-top: -4vh;
+    border: 3px solid aqua;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+
+   
+    
+   
+
+    
+    
+    
+}
+
+.mainImage12{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-color: aqua;
+    border-radius: 8px;
+   
+
+}
+
+
+.subImage12{
+    margin-left: 8vh;
+    
+    width: 35vh;
+    height: 25vh;
+    margin-top: 8vh;
+    border: 3px solid aqua;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+
+}
+
+.subimage88{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+
+.productPrice {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 20px 0;
+    
+}
+
+.productDescription {
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#producthead{
+    font-size: 20px;
+    font-weight: bold;
+   
+   
+}
+.prodhead{
+   
+    width: 40vh;
+    margin-left: 70vh;
+    margin-top: 8vh;
+    text-align: center;
+    color: rgb(100, 225, 241);
+}
+
+.proddesc12{
+    
+
+    margin-top:-45vh ;
+    margin-left: 60vh;
+    height: 35vh;
+    color: aliceblue;
+    
+    
+}
+
+.prodprice{
+    
+    width: 23vh;
+    margin-left: 80vh;
+    margin-top: -22vh;
+    color: orange;
+}
+
+
+.buybutton{
+    margin-top: 15vh;
+    margin-left: 65vh;
+}
+
+.cartbutton{
+    margin-left: 85vh;
+    margin-top: -5vh;
+}
+
+#buynow1 {
+    padding: 10px 20px; 
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease; 
+}
+
+#buynow1:hover {
+    transform: scale(1.05); 
+    background-color: #a04572; 
+}
+
+#cartnow1 {
+    padding: 10px 20px; 
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease; 
+}
+
+#cartnow1:hover {
+    transform: scale(1.05); 
+    background-color: #a04572; 
+}
+
+

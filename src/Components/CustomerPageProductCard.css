@@ -1,5 +1,4 @@
-.filterproductcard{
-   
+.cusmain1 {
     margin-top: 15vh;
     height: 40vh;
     width: 30vh;
@@ -8,15 +7,14 @@
     border-radius: 5px;
     border: 2px solid aqua; 
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
-
 }
 
-.producttitle22{
+.producttitle23{
     text-align: center;
     font-size: 25px;
 }
 
-.imageofproduct{
+.imageofproduct1{
     
     height: 20vh;
    width: 100%;
@@ -26,15 +24,27 @@
     
    
 }
-.product_image{
+.product_image45{
     width: 100%; 
     height: 100%; 
     object-fit: cover;
 }
 
-.product_price{
+.product_price67{
    
     font-size: 19px;
     margin-left: 10vh;
 }
+
+.view-details-link{
+    margin-left: 9vh;
+    color: rgb(52, 78, 246);
+    text-decoration: none;
+}
+
+.view-details-link:hover{
+    cursor: pointer;
+    color: rgb(200, 27, 216);
+}
+
 
