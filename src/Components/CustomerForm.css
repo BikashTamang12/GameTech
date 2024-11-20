@@ -177,15 +177,18 @@
  #username{
     height: 23px;
     font-size: 18px;
+    color: #ffffff;
  }
 
  #email{
     height: 23px;
     font-size: 18px;
+    color: #ffffff;
  }
  #address{
     height: 23px;
     font-size: 18px;
+    color: #ffffff;
  }
  #phone{
     height: 23px;
@@ -196,13 +199,15 @@
     font-size: 18px;
     border-color: blueviolet;
     height: 3.5vh;
+    color: #ffffff;
     
  }
- #password{
+ #rpassword{
     height: 23px;
     font-size: 18px;
     border-color: blueviolet;
     height: 3.5vh;
+    color: #ffffff;
  }
 
 

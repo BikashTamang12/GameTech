@@ -1,6 +1,6 @@
 .cusmain1 {
     margin-top: 15vh;
-    height: 40vh;
+    height: 42vh;
     width: 30vh;
     margin-left: 30vh;
     box-sizing: border-box;
@@ -28,6 +28,7 @@
     width: 100%; 
     height: 100%; 
     object-fit: cover;
+    padding: auto;
 }
 
 .product_price67{
@@ -37,7 +38,7 @@
 }
 
 .view-details-link{
-    margin-left: 9vh;
+    /*margin-left: 9vh;*/
     color: rgb(52, 78, 246);
     text-decoration: none;
 }

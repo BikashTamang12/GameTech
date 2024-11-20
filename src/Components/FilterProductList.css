@@ -13,3 +13,13 @@
     box-sizing: border-box;
     
 }
+
+#noproduct{
+    color: red;
+    margin-top: 40vh;
+    margin-left: 95vh;
+    width: 80vh;
+    font-weight: bold;
+    font-size: 20px;
+
+}

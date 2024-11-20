@@ -11,22 +11,22 @@ const HorizontalNavBar = () => {
       <Link to="/products/mouse" id="mouse">
         Mouse
       </Link>
-      <Link to="/products/keyboards" id="keyboard">
+      <Link to="/products/keyboard" id="keyboard">
         Keyboard
       </Link>
-      <Link to="/products/headphones" id="headphone">
+      <Link to="/products/headphone" id="headphone">
         Headphones
       </Link>
-      <Link to="/products/joysticks" id="joystick">
+      <Link to="/products/joystick" id="joystick">
         Joystick
       </Link>
-      <Link to="/products/xboxs" id="xbox">
+      <Link to="/products/xbox" id="xbox">
         X-Box
       </Link>
-      <Link to="/products/psps" id="psp">
+      <Link to="/products/psp" id="psp">
         Psp
       </Link>
-      <Link to="/products/cds" id="cd">
+      <Link to="/products/cd" id="cd">
         CD
       </Link>
     </div>

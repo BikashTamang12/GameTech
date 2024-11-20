@@ -111,6 +111,30 @@
   cursor: pointer;
 }
 
+.order2{
+  margin-top: -3vh;
+  
+}
+
+#ordercustomer{
+  margin-left: 130vh;
+  padding-left: 10px;
+  background-color: transparent;
+  margin-right: 5vh;
+  border: none;
+  border-radius: 5px;
+  color: rgb(18, 160, 139);
+  font-size: 16px;
+  text-decoration: none;
+ 
+}
+#ordercustomer:hover {
+  transform: scale(1.1); /* Little pop effect */
+  color: orange;
+  text-decoration: none; /* Remove underline */
+  cursor: pointer;
+}
+
 .typingAni {
   font-size: 16px;
   color: rgb(198, 42, 112);

@@ -1,0 +1,144 @@
+
+.cart-container {
+    width: 100%;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden; 
+    margin-top: 8vh;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+.cart-items {
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+    max-height: 70vh; 
+    overflow-y: auto; 
+    padding-bottom: 10px;
+    padding-left: 10px; 
+    width: 100%;
+}
+
+
+.cart-item {
+    display: flex;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+
+
+.cart-item-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+
+.cart-item-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.cart-item-details h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin: 0;
+}
+
+
+.cart-item-details p {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 0;
+}
+
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-controls button {
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quantity-controls button:hover {
+    background-color: #ddd;
+}
+
+.quantity-controls span {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+
+.delete-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    width: 30vh;
+    padding: 5px 10px;  
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 0.9rem;  
+}
+
+.delete-button:hover {
+    background-color: #e60000;
+    transform: scale(0.95);  
+}
+
+
+.confirm-button {
+    background-color: #23b628;  
+    color: rgb(1, 1, 1);  
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.confirm-button:hover {
+    background-color: #1d9a1d;  
+    transform: scale(1.05);  
+}
+
+
+.cart-items p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #777;
+}

@@ -147,9 +147,11 @@
     transform: scale(1.05);
     color: rgb(213, 45, 45);
  }
- #password{
+ #loginpassword{
     height: 3vh;
     font-size: 16px;
+    padding-right: 20px;
+    color: aliceblue;
     
  }
 
@@ -175,8 +177,9 @@
   margin-top: -4.5vh;
  
   width: 7vh;
-  margin-left: 72.8vh;
+  margin-left: 75vh;
   height: 31px;
+  position: absolute;
  }
 
 
@@ -211,6 +214,7 @@
     margin-top:-10vh;
     border-color: blueviolet;
     width: 35vh;
+    color: #ffffff;
     
  }
 

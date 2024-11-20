@@ -39,7 +39,8 @@ const CustomerForm = () => {
     const a = /\d/;
     const b = /^(?:\+?1\s?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/;
     const c = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const d = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    const d =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
     if (regestration.username.length === 0) {
       newErrors.username = "*User name can't be empty";
@@ -70,7 +71,8 @@ const CustomerForm = () => {
     } else if (regestration.password.length < 8) {
       newErrors.password = "*Password must be at least 8 characters long!";
     } else if (!d.test(regestration.password)) {
-      newErrors.password = "*Password must contain 1 uppercase, 1 special character, and lowercase letters";
+      newErrors.password =
+        "*Password must contain 1 uppercase, 1 special character, and lowercase letters";
     }
 
     if (regestration.confirmpassword.length === 0) {
@@ -91,10 +93,13 @@ const CustomerForm = () => {
       };
 
       try {
-        const res = await axios.post("http://localhost/backend/api/user.php", formdata);
+        const res = await axios.post(
+          "http://localhost/backend/api/user.php",
+          formdata
+        );
         if (res.data.success) {
           setDone("Registration successful! Redirecting...");
-          setTimeout(() => navigate('/home'), 2000);
+          setTimeout(() => navigate("/home"), 2000);
         } else {
           setDone(res.data.message);
         }
@@ -113,7 +118,9 @@ const CustomerForm = () => {
           <h2 id="heading">Customer Regestration</h2>
           <form onSubmit={customerRegestrationvalidation}>
             <div id="musername">
-              <label htmlFor="username" id="lusername">Name :</label>
+              <label htmlFor="username" id="lusername">
+                Name :
+              </label>
               <input
                 type="text"
                 id="username"
@@ -122,11 +129,15 @@ const CustomerForm = () => {
                 onChange={handleChange}
                 className="input1"
               />
-              {errors.username && <span style={{ color: "red" }}>{errors.username}</span>}
+              {errors.username && (
+                <span style={{ color: "red" }}>{errors.username}</span>
+              )}
             </div>
 
             <div id="maddress">
-              <label htmlFor="address" id="laddress">Address :</label>
+              <label htmlFor="address" id="laddress">
+                Address :
+              </label>
               <input
                 type="text"
                 name="address"
@@ -135,11 +146,15 @@ const CustomerForm = () => {
                 onChange={handleChange}
                 className="input1"
               />
-              {errors.address && <span style={{ color: "red" }}>{errors.address}</span>}
+              {errors.address && (
+                <span style={{ color: "red" }}>{errors.address}</span>
+              )}
             </div>
 
             <div id="mphone">
-              <label htmlFor="phone" id="lphone">Phone Number :</label>
+              <label htmlFor="phone" id="lphone">
+                Phone Number :
+              </label>
               <input
                 type="phone"
                 name="phone"
@@ -148,11 +163,15 @@ const CustomerForm = () => {
                 onChange={handleChange}
                 className="input1"
               />
-              {errors.phone && <span style={{ color: "red" }}>{errors.phone}</span>}
+              {errors.phone && (
+                <span style={{ color: "red" }}>{errors.phone}</span>
+              )}
             </div>
 
             <div id="memail">
-              <label htmlFor="email" id="lemail">E-mail :</label>
+              <label htmlFor="email" id="lemail">
+                E-mail :
+              </label>
               <input
                 type="text"
                 name="email"
@@ -161,15 +180,19 @@ const CustomerForm = () => {
                 onChange={handleChange}
                 className="input1"
               />
-              {errors.email && <span style={{ color: "red" }}>{errors.email}</span>}
+              {errors.email && (
+                <span style={{ color: "red" }}>{errors.email}</span>
+              )}
             </div>
 
             <div id="mpassword">
-              <label htmlFor="password" id="lpassword">Password :</label>
+              <label htmlFor="password" id="lpassword">
+                Password :
+              </label>
               <input
                 type={cvisible ? "text" : "password"}
                 name="password"
-                id="password"
+                id="rpassword"
                 value={regestration.password}
                 onChange={handleChange}
                 className="input1"
@@ -182,11 +205,17 @@ const CustomerForm = () => {
                   onClick={cTogglepassword}
                 />
               </div>
-              {errors.password && <div id="reger"><span style={{ color: "red" }}>{errors.password}</span></div>}
+              {errors.password && (
+                <div id="reger">
+                  <span style={{ color: "red" }}>{errors.password}</span>
+                </div>
+              )}
             </div>
 
             <div id="mcpassword">
-              <label htmlFor="confirmpassword" id="lcpassword">Confirm Password :</label>
+              <label htmlFor="confirmpassword" id="lcpassword">
+                Confirm Password :
+              </label>
               <input
                 type={ccvisible ? "text" : "password"}
                 name="confirmpassword"
@@ -203,14 +232,21 @@ const CustomerForm = () => {
                   onClick={ccTogglepassword}
                 />
               </div>
-              {errors.confirmpassword && <div id="cregerr"><span style={{ color: "red" }}>{errors.confirmpassword}</span></div>}
+              {errors.confirmpassword && (
+                <div id="cregerr">
+                  <span style={{ color: "red" }}>{errors.confirmpassword}</span>
+                </div>
+              )}
             </div>
 
             <input type="submit" id="submit" value="Submit" />
             <div id="div1">
               <p id="suggest">
                 Already have an account?
-                <Link to="/login" id="loginm"> Login </Link>
+                <Link to="/login" id="loginm">
+                  {" "}
+                  Login{" "}
+                </Link>
               </p>
             </div>
           </form>

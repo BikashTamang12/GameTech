@@ -1,32 +1,26 @@
-/* ProductForm.css */
 
-/* Main form container styling */
 .form-container {
-  
   padding: 20px;
-  
-  
-  
   width: 205vh;
-  background-image: url('./Images/coveradmin.jpg');
- background-color: red;
+ background-color: rgb(255, 255, 255);
  height: 94.5vh;
- background-size: cover;
  display: flex;
+ 
  
 }
 
-.adminproductform{
-  
+.adminproductform {
   height: 75vh;
   width: 85vh;
   margin-left: 65vh;
-  
-  
   backdrop-filter: blur(4.5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-
+  box-shadow: 0 4px 8px rgba(34, 153, 200, 0.6);
   margin-top: 15vh;
+  background-color: #ffffff;
+  border-color: aqua;
+  border-radius:solid 4px;
+ 
+  
 }
 
 
@@ -40,45 +34,45 @@
 }
 
 
-#addtitle{
+#addtitle{/*
   font-weight: bold;
-  color: rgb(21, 208, 208);
+  color: rgb(0, 0, 0);*/
 }
 #addtitle2{
    
   border: none;
   background-color:none;
   border-radius: 4px;
-  width: 30vh;
-  margin-left: 2vh;
-  border: 2px solid white;
+  width: 30vw;
+ /* margin-left: 2vh;*/
+  border: 2px solid rgb(16, 15, 15);
   
 }
 
 
 .mainimagecss{
   margin-top: 5vh;
-  color: rgb(21, 208, 208);
+  color: rgb(19, 19, 19);
 }
 
-#imagetitle{
-  font-weight: bold;
-  margin-bottom: 10vh;
+#imagetitle{/*
+  font-weight: bold;*/
+  margin-bottom: 4vh;  
 }
 
 
 #imagetitle2{
-  width: 30vh;
+  width: 30vw;
   margin-top: -3.5vh;
-  margin-left: 15vh;
+  /* margin-left: 15vh; */
   border: none;
   border-radius: 4px;
-  border: 2px solid white;
+  border: 2px solid rgb(16, 15, 15);
 }
 
 .subimagecss{
   margin-top: 4vh;
-  color: rgb(21, 208, 208);
+  color: rgb(0, 0, 0);
   
 }
 #imagetitle5{
@@ -91,12 +85,12 @@
   width: 30vh;
   border: none;
   border-radius: 4px;
-  border: 2px solid white;
+  border: 2px solid rgb(9, 5, 5);
 }
 
 .cat12{
   margin-top: 4vh;
-  color: rgb(21, 208, 208);
+  color: rgb(14, 15, 15);
 
 }
 
@@ -106,48 +100,49 @@
 }
 
 #cat78{
-  margin-top: -5vh;
-  width: 20vh;
-  margin-left: 2vh;
+  margin-top: 1vh;
+  width: 31vw;
+  /* margin-left: 2vh; */
   border: none;
   border-radius: 4px;
-  border: 2px solid white;
+  border: 2px solid rgb(18, 18, 18);
 }
  
 
 .price43{
   margin-top: 3vh;
-  color: rgb(21, 208, 208);
+  color: rgb(13, 13, 13);
 
 }
 
-#price888{
-  font-weight: bold;
+#price888{/*
+  font-weight: bold;*/
 }
 
 #price777{
-  width: 20vh;
-  margin-left: 2vh;
+  width: 30vw;
+  /* margin-left: 2vh; */
   border: none;
   border-radius: 4px;
-  border: 2px solid white;
+  border: 2px solid rgb(8, 8, 8);
 }
 
 .div1234{
   margin-top: 4vh;
-  color: rgb(21, 208, 208);
+  color: rgb(0, 0, 0);
   height: 10vh;
 }
 
 #dec78{
-  
-  font-weight: bold;
+  /*
+  font-weight: bold;*/
 }
 
 #desc56{
+  width:30vw;
  height: 3vh;
 margin-top: 2vh;
- margin-left: 4vh;
+ /* margin-left: 4vh; */
  
 }
 
@@ -177,11 +172,11 @@ input[type="number"],
 textarea {
   width: 45%;
   padding: 5px;
-  color: aquamarine;
+  color: rgb(15, 16, 16);
   border-radius: 5px;
   font-size: 15px;
   background-color: transparent;
-  border: 2px solid white;
+  border: 2px solid rgb(7, 6, 6);
   
 }
 
@@ -199,7 +194,7 @@ input[type="file"] {
   background-color: transparent;
   cursor: pointer; 
   margin-top: 5px;
-  color: rgb(220, 233, 229);
+  color: rgb(8, 9, 9);
   
 }
 
@@ -285,14 +280,16 @@ button:active{
 
 
 .locationshift{
-  margin-left: 18vh;
+  margin-left: 12vh;
   margin-top: 8vh;
+  display: flex;
+ flex-direction: column;
   
 }
 
 
 .productoverlay{
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.963);
   position: absolute; 
   top: 0;
   left: 0;
@@ -300,6 +297,8 @@ button:active{
   bottom: 0; 
   z-index: 0; 
   filter: blur(1px);
+  
+  
 }
 .outsideoverlay{
   z-index: 1;

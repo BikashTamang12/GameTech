@@ -7,7 +7,7 @@ const ForgetPassword = () => {
   const [fphone, setFphone] = useState({
     phone: "",
     email: "",
-    newpassword:""
+    newpassword: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -26,9 +26,9 @@ const ForgetPassword = () => {
       ...fphone,
       [name]: value,
     });
-    setErrors((prevErrors)=>({
+    setErrors((prevErrors) => ({
       ...prevErrors,
-      [name]:"",
+      [name]: "",
     }));
     setNextStep("");
   };
@@ -43,35 +43,37 @@ const ForgetPassword = () => {
       newErrors.phone = "*Phone is required";
     }
 
-    if(fphone.newpassword.length===0){
-      newErrors.newpassword="*password required";
+    if (fphone.newpassword.length === 0) {
+      newErrors.newpassword = "*password required";
     }
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
       try {
-        const response = await fetch("http://localhost/backend/api/forgetPassword.php", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: fphone.email,
-            phone: fphone.phone,
-            newPassword: fphone.newpassword,
-          }),
-        });
+        const response = await fetch(
+          "http://localhost/backend/api/forgetPassword.php",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              email: fphone.email,
+              phone: fphone.phone,
+              newPassword: fphone.newpassword,
+            }),
+          }
+        );
 
         const data = await response.json();
 
         // Handle response from the backend
         if (data.result === "Password updated successfully!") {
           setFShow("Password updated successfully!");
-          setNextStep(""); 
-          setTimeout(()=>{
-            navigate('/login');
-          },1500);
-         
+          setNextStep("");
+          setTimeout(() => {
+            navigate("/login");
+          }, 1500);
         } else {
           setNextStep(data.result); // Show error message from backend
         }
@@ -80,8 +82,6 @@ const ForgetPassword = () => {
         setNextStep("An error occurred while updating the password.");
       }
     }
-
-   
   };
 
   return (
@@ -145,10 +145,9 @@ const ForgetPassword = () => {
               )}
             </div>
 
-       <div id="newpassword1">
-       <label htmlFor="newpassword2" id="newpassword2">
-              
-                New Password 
+            <div id="newpassword1">
+              <label htmlFor="newpassword2" id="newpassword2">
+                New Password
               </label>
               <input
                 type={nopeneye ? "text" : "password"}
@@ -168,9 +167,7 @@ const ForgetPassword = () => {
               {errors.newpassword && (
                 <span style={{ color: "red" }}>{errors.newpassword}</span>
               )}
-       </div>
-
-
+            </div>
 
             <input type="submit" id="forgetsubmit" value="Submit"></input>
           </div>

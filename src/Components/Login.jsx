@@ -15,7 +15,7 @@ const Login = () => {
   const [errors, setErrors] = useState({});
   const [visible, setVisible] = useState(false);
   const [loginResult, setLoginResult] = useState("");
-  const navigate =useNavigate();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -46,27 +46,27 @@ const Login = () => {
 
     if (Object.keys(newErrors).length === 0) {
       try {
-        const response = await fetch("http://localhost/backend/api/login_backend.php", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(addlogin),
-        });
+        const response = await fetch(
+          "http://localhost/backend/api/login_backend.php",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(addlogin),
+          }
+        );
 
         const textResponse = await response.text();
         console.log("Raw response:", textResponse);
         const data = JSON.parse(textResponse);
-        if(data[0].result==="Admin Login successful"){
+        if (data[0].result === "Admin Login successful") {
           setLoginResult("Admin login successful");
-         
+          console.log("Admin ID:", data[0].id);
           navigate("/adminPage");
-        }
-          
-       
-
-       else if (data[0].result === "Login successful") {
+        } else if (data[0].result === "Login successful") {
           setLoginResult("Login successful");
+          console.log("Customer ID:", data[0].id);
           login();
         } else if (data[0].result === "wrong password") {
           setLoginResult("Wrong password!");
@@ -90,17 +90,20 @@ const Login = () => {
           <h2 id="lheading">Login</h2>
 
           {loginResult && (
-            <div id="successmeassage" style={{ textAlign: "center", marginBottom: "10px" }}>
+            <div
+              id="successmeassage"
+              style={{ textAlign: "center", marginBottom: "10px" }}
+            >
               {loginResult}
             </div>
           )}
-          
+
           <form onSubmit={loginValidation}>
             <div id="loemail">
+              <label htmlFor="email" className="llemail">
+                E-mail :{" "}
+              </label>
 
-             
-              <label htmlFor="email" className="llemail">E-mail : </label>
-              
               <input
                 type="text"
                 name="email"
@@ -118,13 +121,15 @@ const Login = () => {
 
             <div id="lopassword">
               <div id="lheader">
-                <label htmlFor="password" id="llpassword">Password :</label>
+                <label htmlFor="password" id="llpassword">
+                  Password :
+                </label>
               </div>
               <div id="inputfield">
                 <input
                   type={visible ? "text" : "password"}
                   name="password"
-                  id="password"
+                  id="loginpassword"
                   value={addlogin.password}
                   onChange={handleChange}
                   className="input1"
@@ -148,13 +153,17 @@ const Login = () => {
             <input type="submit" id="lsubmit" value="Submit" />
 
             <div id="fpassword">
-              <Link to="/forgetpassword" id="ffpassword">Forget Password ?</Link>
+              <Link to="/forgetpassword" id="ffpassword">
+                Forget Password ?
+              </Link>
             </div>
 
             <div id="laccount">
               <p id="laccounts">
                 Don't have an account?
-                <Link to="/signin" id="saccount">create account</Link>
+                <Link to="/signin" id="saccount">
+                  create account
+                </Link>
               </p>
             </div>
           </form>
