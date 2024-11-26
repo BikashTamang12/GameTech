@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import "./Login.css";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import "../Components_CSS/Login.css";
 import open_eye from "./Images/open_eye.png";
 import close_eye from "./Images/close_eye.png";
 import { useAuth } from "./AuthContext";
-import { useNavigate } from "react-router-dom";
+import EmailIcon from "@mui/icons-material/Email";
+import PasswordIcon from "@mui/icons-material/Password";
+import RegisterSliding from "./RegisterSliding";
+import RegisterTextSliding from "./RegisterTextSliding";
 
 const Login = () => {
   const { login } = useAuth();
@@ -16,6 +19,7 @@ const Login = () => {
   const [visible, setVisible] = useState(false);
   const [loginResult, setLoginResult] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -31,17 +35,15 @@ const Login = () => {
   };
 
   const loginValidation = async (e) => {
-    const newErrors = {};
     e.preventDefault();
 
-    if (addlogin.email.length === 0) {
+    const newErrors = {};
+    if (addlogin.email.trim() === "") {
       newErrors.email = "*email is required";
     }
-
-    if (addlogin.password.length === 0) {
+    if (addlogin.password.trim() === "") {
       newErrors.password = "*password is required";
     }
-
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
@@ -58,16 +60,20 @@ const Login = () => {
         );
 
         const textResponse = await response.text();
-        console.log("Raw response:", textResponse);
         const data = JSON.parse(textResponse);
+        console.log("Raw response:", textResponse);
+
         if (data[0].result === "Admin Login successful") {
           setLoginResult("Admin login successful");
-          console.log("Admin ID:", data[0].id);
           navigate("/adminPage");
         } else if (data[0].result === "Login successful") {
           setLoginResult("Login successful");
-          console.log("Customer ID:", data[0].id);
-          login();
+          localStorage.setItem("customerId", data[0].id); // Save customer ID
+          login(); // Set user as authenticated in the context
+
+          // Redirect to the intended page or default to home
+          const redirectPath = location.state?.from || "/";
+          navigate(redirectPath);
         } else if (data[0].result === "wrong password") {
           setLoginResult("Wrong password!");
         } else if (data[0].result === "wrong email") {
@@ -77,15 +83,17 @@ const Login = () => {
         }
       } catch (error) {
         console.error("Error during login:", error);
+        setLoginResult("An error occurred. Please try again.");
       }
     }
   };
 
   return (
     <div className="loginform">
+      <RegisterSliding />
+      <RegisterTextSliding />
       <fieldset id="loutline">
         <div className="loverlay"></div>
-
         <div className="lmodifyregestration">
           <h2 id="lheading">Login</h2>
 
@@ -99,73 +107,57 @@ const Login = () => {
           )}
 
           <form onSubmit={loginValidation}>
-            <div id="loemail">
-              <label htmlFor="email" className="llemail">
-                E-mail :{" "}
-              </label>
-
+            <div className="box">
+              <EmailIcon id="email-icon" />
               <input
                 type="text"
                 name="email"
-                id="lllemail"
+                id="email-input"
                 value={addlogin.email}
                 onChange={handleChange}
-                className="input1"
+                placeholder="enter email"
               />
-              {errors.email && (
-                <div id="emailerror">
-                  <span style={{ color: "red" }}>{errors.email}</span>
-                </div>
-              )}
             </div>
+            {errors.email && (
+              <div id="email-error">
+                <span style={{ color: "red" }}>{errors.email}</span>
+              </div>
+            )}
 
-            <div id="lopassword">
-              <div id="lheader">
-                <label htmlFor="password" id="llpassword">
-                  Password :
-                </label>
-              </div>
-              <div id="inputfield">
-                <input
-                  type={visible ? "text" : "password"}
-                  name="password"
-                  id="loginpassword"
-                  value={addlogin.password}
-                  onChange={handleChange}
-                  className="input1"
-                />
-              </div>
-              <div className="eye">
-                <img
-                  id="eyemodify"
-                  src={visible ? open_eye : close_eye}
-                  alt="Toggle password"
-                  onClick={toggleVisibility}
-                />
-              </div>
-              {errors.password && (
-                <div id="errorm">
-                  <span style={{ color: "red" }}>{errors.password}</span>
-                </div>
-              )}
+            <div className="box-password">
+              <PasswordIcon id="password-icon" />
+              <input
+                type={visible ? "text" : "password"}
+                name="password"
+                id="password-box"
+                value={addlogin.password}
+                onChange={handleChange}
+                placeholder="enter password"
+              />
+              <img
+                id="eye-password"
+                src={visible ? open_eye : close_eye}
+                alt="Toggle password"
+                onClick={toggleVisibility}
+              />
             </div>
+            {errors.password && (
+              <div id="error-password">
+                <span style={{ color: "red" }}>{errors.password}</span>
+              </div>
+            )}
 
-            <input type="submit" id="lsubmit" value="Submit" />
-
-            <div id="fpassword">
-              <Link to="/forgetpassword" id="ffpassword">
-                Forget Password ?
+            <input type="submit" id="login-submit" value="Submit" />
+            <div id="forget-password">
+              <Link to="/forgetpassword" id="forget-login-password">
+                Forget Password?
               </Link>
             </div>
 
-            <div id="laccount">
-              <p id="laccounts">
-                Don't have an account?
-                <Link to="/signin" id="saccount">
-                  create account
-                </Link>
-              </p>
-            </div>
+            <p id="dont-account">Don't have an account?</p>
+            <Link to="/signin" className="create-account">
+              <button id="button-create-account">Create Account</button>
+            </Link>
           </form>
         </div>
       </fieldset>

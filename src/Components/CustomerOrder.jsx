@@ -1,12 +1,67 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./CustomerOrder.css";
+import "../Components_CSS/CustomerOrder.css";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "./AuthContext";
+
 
 const CustomerOrder = () => {
-  const [orders, setOrders] = useState([]); // Store multiple orders
+  const [orders, setOrders] = useState([]); 
+  const { isAuthenticated, login, logout } = useAuth();
+  const navigate = useNavigate();
+
+
+
+
+
+
+
 
   useEffect(() => {
-    // Fetch all orders from backend
+    if (!isAuthenticated) {
+      navigate("/login",{state:{from:"/customerorder"}});
+      return;
+    }
+  
+    const customerId = localStorage.getItem("customerId");
+  
+    const fetchCartDetails = async () => {
+      try {
+        // Prepare the request body
+        const formData = new FormData();
+        formData.append("id", customerId);
+  
+        // Fetch cart details from the backend
+        const response = await fetch("http://localhost/backend/api/fetchorderCustomer.php", {
+          method: "POST",
+          body: formData,
+        });
+  
+        const data = await response.json();
+  
+        if (data.success) {
+          setOrders(data.orders || []); // Assume the API returns an "items" array
+        } else {
+          alert(data.message || "Failed to fetch cart items.");
+        }
+      } catch (error) {
+        console.error("Error fetching cart details:", error);
+      }
+    };
+  
+    fetchCartDetails();
+  }, [isAuthenticated, navigate]);
+
+
+
+
+
+/*
+  useEffect(() => {
+   if(!isAuthenticated){
+    navigate("/login");
+   }else{
+    
     axios
       .get("http://localhost/backend/api/fetchorderCustomer.php")
       .then((response) => {
@@ -22,7 +77,15 @@ const CustomerOrder = () => {
         console.error("Error fetching orders:", error);
         setOrders([]); // Handle error gracefully by setting empty array
       });
-  }, []);
+    }
+  }, [isAuthenticated,navigate]);
+*/
+
+
+
+
+
+
 
   const cancelOrder = (order_id) => {
     // Send the cancellation request to the backend
@@ -62,10 +125,12 @@ const CustomerOrder = () => {
 
         return (
           <div key={order.order_id} className="order-details">
-            <img
+           <div id="image-order">
+            <img id='im'
               src={`data:image/jpeg;base64,${order.main_image}`}
               alt={order.title}
             />
+            </div>
             <div className="order-info">
               <h2>{order.title}</h2>
               <p>

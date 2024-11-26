@@ -1,0 +1,25 @@
+.mainpage1 {
+ 
+
+   display: grid;
+    grid-template-columns: repeat(6, minmax(200px, 1fr));
+  
+
+gap: 50px;
+  row-gap: 0px;
+  box-sizing: border-box;
+  max-width: calc(100% - 200px);
+  margin-left: -26vh;
+}
+
+.mainpage1 > * {
+  box-sizing: border-box;
+  
+}
+
+/*gap: 50px;
+  row-gap: -1.5px;
+   display: grid;
+      transform:scaleY(1);
+    transform: skewY(2);
+    grid-template-columns: repeat(6, minmax(200px, 1fr));*/

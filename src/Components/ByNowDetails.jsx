@@ -1,11 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import "./ByNowDetails.css";
+import '../Components_CSS/ByNowDetails.css';
+import PersonIcon from '@mui/icons-material/Person';
+import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
+import HomeIcon from '@mui/icons-material/Home';
+import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
+import PaymentIcon from '@mui/icons-material/Payment';
 
 const ByNowDetails = () => {
   const location = useLocation();
+
   const { product_id, title, price, main_image } = location.state.product || {};
+  
   const navigate = useNavigate();
+ 
+  
+  
+  
 
   const [reciever, setReciever] = useState({
     recievername: "",
@@ -52,6 +63,7 @@ const ByNowDetails = () => {
       setErrors({ message: "Address is required." });
       return;
     }
+    const customerId = localStorage.getItem("customerId");
 
     // Prepare order data
     const orderData = {
@@ -64,6 +76,7 @@ const ByNowDetails = () => {
       recieverphone: reciever.recieverphone,
       recieveraddress: reciever.recieveraddress,
       paymentMode: reciever.paymentMode,
+      custId: customerId
     };
 
     try {
@@ -95,76 +108,77 @@ const ByNowDetails = () => {
     }
   };
 
-  const mainImage = `data:image/jpeg;base64,${main_image}`;
+ const mainImage = `data:image/jpeg;base64,${main_image}`;
 
   return (
-    <div className="mainbody">
-      <fieldset className="revieverfeildset">
-        <div id="headingbuy">
-          <p id="headingbuy1">Provide The Receiver Details</p>
+    <div className="buy-details-page">
+       
+      <fieldset className="buy-customer-details">
+      <div className="reciever-location">
+    
+        <div id="buy-heading">
+          <p id="heading-buy1">Provide The Receiver Details</p>
         </div>
 
         {/* Product Details */}
-        <div className="productDetails">
-          <div className="productimage786">
-            <img src={mainImage} alt={title} className="productImage" />
+        
+          <div className="reciever-productimage">
+            <img src={mainImage} alt={title} id="product-buy-image" />
           </div>
-          <h2>{title}</h2>
-          <p>Price per unit: Rs. {price}</p>
-          <p>Total Price: Rs. {reciever.totalPrice}</p>
-        </div>
-
-        {/* Receiver Details */}
-        <div className="recievername">
-          {error.message && (
-            <span className="error-message">{error.message}</span>
+          <div className="a">
+          <p className="reciever-product-title">{title}</p>
+          <p id="reciver-product-price">Price per unit: Rs. {price}</p>
+          <p id="reciver-product-total-price">Total Price: Rs. {reciever.totalPrice}</p>
+       
+</div>
+{error.message && (
+            <span className="reciever-error-message">{error.message}</span>
           )}
-          <label htmlFor="recievername1" id="recievername1">
-            Receiver Name
-          </label>
+        {/* Receiver Details */}
+        <div className="reciever-name">
+          <PersonIcon></PersonIcon>
+        
+        
           <input
             type="text"
-            id="recievername2"
+            id="reciever-name-input"
             name="recievername"
             value={reciever.recievername}
             onChange={handleChange}
+            placeholder="Enter reciever name"
           />
         </div>
 
-        <div className="recieverphone">
-          <label htmlFor="recieverphone1" id="recieverphone1">
-            Phone
-          </label>
+        <div className="reciever-phone">
+         <ContactPhoneIcon></ContactPhoneIcon>
           <input
             type="phone"
-            id="recieverphone2"
+            id="reciever-phone-input"
             name="recieverphone"
             value={reciever.recieverphone}
             onChange={handleChange}
+            placeholder="Enter the reciever phone"
           />
         </div>
 
-        <div className="recieveraddress">
-          <label htmlFor="recieveraddress" id="recieveraddress1">
-            Address
-          </label>
+        <div className="reciever-address">
+         <HomeIcon></HomeIcon>
           <input
             type="text"
-            id="recieveraddress2"
+            id="reciever-address-input"
             name="recieveraddress"
             value={reciever.recieveraddress}
             onChange={handleChange}
+            placeholder="Enter the reciever address"
           />
         </div>
 
         {/* Quantity */}
-        <div className="quantity">
-          <label htmlFor="quantity" id="quantitylabel">
-            Quantity
-          </label>
+        <div className="reciever-quantity">
+         <ProductionQuantityLimitsIcon></ProductionQuantityLimitsIcon>
           <input
             type="number"
-            id="quantityinput"
+            id="reciever-quantity-input"
             name="quantity"
             value={reciever.quantity}
             min="1"
@@ -174,12 +188,10 @@ const ByNowDetails = () => {
         </div>
 
         {/* Payment Mode */}
-        <div className="paymentMode">
-          <label htmlFor="paymentMode" id="paymentModelabel">
-            Payment Mode
-          </label>
+        <div className="reciever-paymentMode">
+         <PaymentIcon></PaymentIcon>
           <select
-            id="paymentModeSelect"
+            id="reciever-payment-ModeSelect"
             name="paymentMode"
             value={reciever.paymentMode}
             onChange={handleChange}
@@ -189,12 +201,14 @@ const ByNowDetails = () => {
         </div>
 
         {/* Submit Button */}
-        <div className="submitOrder">
-          <button id="submitOrderBtn" onClick={handleSubmit}>
+        <div className="submit-Order">
+          <button id="submit-Order-Button" onClick={handleSubmit}>
             Place Order
           </button>
         </div>
+        </div>
       </fieldset>
+    
     </div>
   );
 };

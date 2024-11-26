@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useAuth } from "./AuthContext"; // Import the useAuth hook for checking authentication status
-import "./MainCustomerCardDetails.css";
+import "../Components_CSS/MainCustomerCardDetails.css";
 
 const MainCustomerCardDetails = () => {
   const { product_id } = useParams();
@@ -27,12 +27,14 @@ const MainCustomerCardDetails = () => {
       navigate("/login"); // Adjust the path as per your routes
       return;
     }
-
+    const customerId = localStorage.getItem("customerId");
+    
     const cartData = new FormData();
     cartData.append("product_id", product.product_id);
     cartData.append("title", product.title);
     cartData.append("price", product.price);
     cartData.append("main_image", product.main_image);
+    cartData.append("id",customerId);//added now
 
     fetch("http://localhost/backend/api/addToCartBack.php", {
       method: "POST",

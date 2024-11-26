@@ -1,0 +1,261 @@
+
+.admin-form-container {
+  background-image: url('../Components/Images/admin-form.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+  width: 100%;
+ background-color: rgb(255, 255, 255);
+ height: 90.5vh;
+ display: flex;
+ 
+ 
+}
+
+.admin-error-Message{
+  text-align: center;
+  font-size: 14px;
+}
+
+.admin-product-form {
+  height: 75vh;
+  width: 85vh;
+  margin-left: 65vh;
+  
+  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+  margin-top: 5vh;
+  background-color: #ffffffcb;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 10px;
+ 
+  
+}
+#admin-titles{
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #122179;
+  font-family: serif;
+}
+
+.admin-product-fieldset{
+  
+  margin-top: 70px;
+  margin-left: 50px;
+}
+
+
+
+
+
+/*Tittle CSS*/
+.admin-form-title{
+  display: flex;
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  margin: 5px;
+  width: 25vw;
+  margin-left: 55px;
+  margin-top: 24px;
+  transition: all 0.3s ease;
+}
+.admin-form-title:hover{
+ border-color: #823ab6;
+   transform: scale(1.1);
+}
+#form-title {
+  border: none;
+  background-color: transparent;
+  border: 3px solid rgb(0, 0, 0);
+  margin-left: 10.5px;
+  width: 335px;
+  border-left: 2px solid rgb(0, 0, 0);
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  border-radius: 4px ;
+  outline: none;
+
+}
+#form-title:hover{
+ border-color: #823ab6;
+}
+
+
+
+/*Image Part Css*/
+
+.admin-from-image{
+  display: flex;
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  margin: 5px;
+  width: 25vw;
+  margin-left: 55px;
+  margin-top: 24px;
+  transition: all 0.3s ease;
+}
+.admin-from-image:hover{
+ border-color: #823ab6;
+   transform: scale(1.1);
+}
+#from-image {
+  border: none;
+  background-color: transparent;
+  border: 3px solid rgb(0, 0, 0);
+  margin-left: 10.5px;
+  width: 335px;
+  border-left: 2px solid rgb(0, 0, 0);
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  border-radius: 4px ;
+  outline: none;
+
+}
+#from-image:hover{
+ border-color: #823ab6;
+}
+
+
+
+/*Category Part Css*/
+
+.admin-form-category{
+  display: flex;
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  margin: 5px;
+  width: 25vw;
+  margin-left: 55px;
+  margin-top: 24px;
+  transition: all 0.3s ease;
+}
+.admin-form-category:hover{
+ border-color: #823ab6;
+   transform: scale(1.1);
+}
+#from-category {
+  border: none;
+  background-color: transparent;
+  border: 3px solid rgb(0, 0, 0);
+  margin-left: 10.5px;
+  width: 335px;
+  border-left: 2px solid rgb(0, 0, 0);
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  border-radius: 4px ;
+  outline: none;
+
+}
+#from-category:hover{
+ border-color: #823ab6;
+}
+
+
+/*Price CSS*/
+
+.admin-form-price{
+  display: flex;
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  margin: 5px;
+  width: 25vw;
+  margin-left: 55px;
+  margin-top: 24px;
+  transition: all 0.3s ease;
+}
+.admin-form-price:hover{
+ border-color: #823ab6;
+   transform: scale(1.1);
+}
+#from-price {
+  border: none;
+  background-color: transparent;
+  border: 3px solid rgb(0, 0, 0);
+  margin-left: 10.5px;
+  width: 335px;
+  border-left: 2px solid rgb(0, 0, 0);
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  border-radius: 4px ;
+  outline: none;
+
+}
+#from-price:hover{
+ border-color: #823ab6;
+}
+
+
+/*Description CSS*/
+
+.admin-form-description{
+  display: flex;
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  margin: 5px;
+  width: 25vw;
+  margin-left: 55px;
+  margin-top: 24px;
+  transition: all 0.3s ease;
+}
+.admin-form-description:hover{
+ border-color: #823ab6;
+   transform: scale(1.1);
+}
+#form-description {
+  border: none;
+  background-color: transparent;
+  border: 3px solid rgb(0, 0, 0);
+  margin-left: 10.5px;
+  width: 335px;
+  border-left: 2px solid rgb(0, 0, 0);
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  border-radius: 4px ;
+  outline: none;
+
+}
+#form-description:hover{
+ border-color: #823ab6;
+}
+
+
+
+/*Admin add product form futton    */
+
+#add-product-form-button {
+  margin-left: 55px;
+  margin-top: 3vh;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  border-radius: 6px;
+  border: none;
+  padding: 5px 15px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  width: 25.5vw;
+  height: 30px;
+}
+
+#add-product-form-button:hover {
+  transform: scale(1.05);
+  color: rgb(255, 255, 255);
+  background: linear-gradient(90deg, #7873f5, #ff6ec4);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+}
+
+
+
+
+
+
+
+
+

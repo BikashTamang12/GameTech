@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
-import "./OrderManagementPage.css";
+import "../Components_CSS/OrderManagementPage.css";
+import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
+import { useNavigate } from 'react-router-dom';
 
 const OrderManagementPage = () => {
   const [orders, setOrders] = useState([]);
-
+  const [isHovered, setIsHovered] = useState(false);
   // Get today's date in the required format for the input (yyyy-mm-dd)
   const today = new Date().toISOString().split("T")[0];
-
+  const navigate=useNavigate();
   // Fetch orders data from backend
   const fetchOrders = async () => {
     try {
@@ -26,6 +28,11 @@ const OrderManagementPage = () => {
     fetchOrders();
   }, []);
 
+  
+  const backhome= () =>{
+    navigate('/adminPage');
+     }
+   
   // Handle cancel order
   const handleCancelOrder = async (orderId) => {
     try {
@@ -40,6 +47,7 @@ const OrderManagementPage = () => {
 
       if (response.ok) {
         setOrders(orders.filter((order) => order.order_id !== orderId));
+        alert("Order cancelled sucessfully");
       } else {
         console.error("Error canceling the order");
       }
@@ -70,6 +78,7 @@ const OrderManagementPage = () => {
       if (result.status === "success") {
         // Fetch updated orders after successful update
         fetchOrders();
+        alert("Sucessfully delivery date provided");
       } else {
         alert(result.message); // Show error message if update fails
       }
@@ -81,7 +90,21 @@ const OrderManagementPage = () => {
 
   return (
     <div className="order-manage">
-      <h2>Order Management</h2>
+
+<div id='arrow2'>
+  
+  <ArrowCircleLeftIcon
+          id="arrowm"
+          onClick={backhome}
+          onMouseEnter={() => setIsHovered(true)} // Show text on hover
+          onMouseLeave={() => setIsHovered(false)} // Hide text when not hovering
+          style={{ cursor: "pointer", color: isHovered ? "blue" : "black" }} // Optional styling
+        />
+        <p id='jj2' style={{ visibility: isHovered ? "visible" : "hidden" }}>
+          Back to dashboard
+        </p>
+      <h2  style={{paddingRight:"590px"}}>Order Management</h2>
+      </div>
 
       {/* Table to display orders */}
       <table>

@@ -1,0 +1,240 @@
+.loginform {
+  margin-left: 0px;
+
+  margin-top: 100px;
+
+  background-color: rgb(255, 0, 0);
+  padding-left: 50px;
+  height: 87.5vh;
+
+  position: fixed;
+  width: 203.8vh;
+background-image: url('../Components/Images/Login.jpg');
+ /* background-image: url('../Components/Images/Login.jpg');*/
+  background-size: cover;
+}
+
+#loutline {
+  height: 75vh;
+  width: 70vh;
+  margin-left: 115vh;
+  margin-top: -62vh;
+  border: none;
+  position: relative;
+}
+
+.loverlay {
+  background-color: rgba(255, 255, 255, 0.679);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+#lheading {
+  z-index: 1;
+  text-align: center;
+  color: rgb(76, 15, 243);
+  margin-top: 8vh;
+  z-index: 1;
+}
+
+#login-submit {
+  margin-left: 55px;
+  margin-top: 7vh;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  background: linear-gradient(135deg, #ff9ab8, #e460eb);
+  border-radius: 6px;
+  border: none;
+  padding: 5px 15px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  width: 25.5vw;
+  height: 30px;
+}
+
+#login-submit:hover {
+  transform: scale(1.05);
+  color: rgb(255, 255, 255);
+  background: linear-gradient(120deg, #f06d91, #f6a5c0); 
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+}
+
+
+.lmodifyregestration {
+  z-index: 1;
+  position: relative;
+}
+
+#forget-password {
+  margin-left: 46vh;
+  margin-top: -10vh;
+  
+}
+
+#forget-password:hover{
+   
+   transform: scale(1.03);
+}
+#forget-login-password {
+   color: rgb(0, 0, 0);
+   cursor: pointer;
+   text-decoration: none;
+   font-size: 13px;
+ }
+ #forget-login-password:hover{
+   color: rgb(255, 255, 255);
+   
+}
+
+
+
+
+
+#email-icon {
+  color: rgb(0, 0, 0);
+  margin-left: 8px;
+  margin-top: 2px;
+ 
+}
+
+#password-icon {
+   color: rgb(0, 0, 0);
+   margin-left: 8px;
+   margin-top: 1px;
+  
+ }
+ 
+
+#successmeassage {
+  color: rgb(224, 31, 192);
+}
+
+.box {
+  display: flex;
+  border: 3px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  margin: 5px;
+  width: 25vw;
+  margin-left: 55px;
+  margin-top: 65px;
+  transition: all 0.3s ease;
+}
+.box:hover{
+   border-color: #000000;
+   transform: scale(1.1);
+}
+#email-input {
+  border: none;
+  background-color: transparent;
+  border: 3px solid rgb(0, 0, 0);
+  margin-left: 10.5px;
+  width: 335px;
+  border-left: 2px solid white;
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  border-radius: 4px ;
+  outline: none;
+
+}
+#email-input:hover{
+  border-color: #000000;
+}
+
+
+
+
+.box-password {
+   display: flex;
+   border: 3px solid white;
+   border-radius: 5px;
+   margin: 5px;
+   width: 25vw;
+   height: 28px;
+   margin-left: 55px;
+   margin-top: 40px;
+   transition: all 0.3s ease;
+ }
+ .box-password:hover{
+   border-color: #000000;
+   transform: scale(1.1);
+}
+
+
+ #eye-password{
+   margin-top: 1px;
+   margin-left: 10px;
+   height: 25px;
+ }
+
+ #password-box{
+   margin-left: 12px;
+   width: 290px;
+   background: transparent;
+   border-left: 2px solid white;
+   border-right: none;
+   border-top: none;
+   border-bottom: none;
+   border-radius: 4px ;
+   outline: none;
+   
+ }
+ #password-box:hover{
+   border-color: #000000;
+ }
+ 
+
+
+ #dont-account {
+   color: rgb(0, 0, 0);
+   margin-top: 85px;
+   margin-left: 23.5vh;
+ }
+ #button-create-account {
+    
+       
+       margin-left: 55px;
+       cursor: pointer;
+       color: rgb(0, 0, 0);
+       background: linear-gradient(135deg, #4facfe, #00f2fe);
+       border-radius: 6px;
+       border: none;
+       padding: 5px 15px;
+       font-weight: bold;
+       transition: all 0.3s ease;
+       width: 25.5vw;
+       height: 30px;  
+ }
+ 
+ #button-create-account:hover {
+    transform: scale(1.05);
+    color: rgb(255, 255, 255);
+    background: linear-gradient(135deg, #00f2fe, #4facfe); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+  }
+
+
+  #email-error,#error-password{
+    font-size: 14px;
+    margin-left: 100px;
+  }
+
+  
+ 
+ 
+ 
+ 
+ 
+ 
+
+  
+  

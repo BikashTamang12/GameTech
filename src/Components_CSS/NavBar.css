@@ -1,0 +1,182 @@
+#nav1 {
+  position: fixed;
+
+  background: linear-gradient(90deg, #ff0000, #ff6600);
+  color: #ffffff;
+  width: 100%;
+  height: 69px;
+  margin-top: 60px;
+  z-index: 10;
+}
+
+.Logo {
+  width: 125px;
+  height: 76px;
+  margin-left: 20px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  margin-top: -1.5vh;
+
+  filter: brightness(0) invert(1);
+
+  border-radius: 8px;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.Logo:hover {
+  transform: scale(1.1);
+}
+
+#cart,
+#aboutus,
+#login {
+  cursor: pointer;
+  text-decoration: none;
+  color: #000000;
+}
+
+#cart {
+}
+
+.loginmodify {
+  margin-left: 195vh;
+
+  width: 20vh;
+  margin-top: -3vh;
+}
+.loginmodify:hover {
+  transform: scale(1.1);
+}
+
+.aboutmodify {
+  margin-top: -3.7vh;
+  margin-left: 175vh;
+  width: 10vh;
+}
+.aboutmodify:hover {
+  transform: scale(1.1);
+}
+
+.cartmodify {
+  margin-left: 155vh;
+  margin-top: -6vh;
+
+  width: 4vh;
+}
+.cartmodify:hover {
+  transform: scale(1.1);
+}
+
+#cart:hover,
+#aboutus:hover,
+#login:hover {
+  color: rgb(255, 253, 249);
+  text-decoration: none;
+}
+
+#cart:active,
+#aboutus:active,
+#signin:active {
+  color: darkorange;
+}
+
+#div1 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.1cm;
+  margin-left: 50p;
+}
+
+#logout {
+  margin-left: -5px;
+  padding-left: 10px;
+  background-color: transparent;
+  margin-right: 5vh;
+  border: none;
+  border-radius: 5px;
+  color: rgb(28, 8, 129);
+  font-size: 16px;
+  margin-top: -0.8vh;
+}
+#logout:hover {
+  transform: scale(1);
+  color: rgb(234, 234, 232);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.order2 {
+  margin-top: -2.9vh;
+
+  width: 16vh;
+  margin-left: 130vh;
+}
+
+#ordercustomer {
+  justify-content: center;
+  background-color: transparent;
+  margin-right: 5vh;
+  border: none;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  text-decoration: none;
+}
+#ordercustomer:hover {
+  color: rgb(255, 251, 243);
+  text-decoration: none;
+  cursor: pointer;
+}
+.order2:hover {
+  transform: scale(1.1);
+}
+
+.typingAni {
+  font-size: 16px;
+  color: rgb(15, 15, 15);
+  font-weight: bold;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid white;
+  width: 0;
+  position: absolute;
+  margin-left: 45vh;
+  margin-top: -6vh;
+  animation: typing 6s steps(45) 1s infinite, blink 0.7s infinite step-end;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 57vh;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.logo-name {
+  background: linear-gradient(to right, #39ff14, #f7ff00);
+  margin-top: -10.5vh;
+  width: 15vh;
+  margin-left: 20vh;
+  color: transparent;
+  font-size: 20px;
+  -webkit-background-clip: text;
+  text-shadow: 0 0 1px #00f2ff, 0 0 10px #00f2ff, 0 0 20px #00f2ff;
+  transition: all 0.3s ease;
+}
+
+.logo-name:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}

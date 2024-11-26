@@ -31,13 +31,55 @@ td {
     text-align: left;
 }
 
+#arrow{
+    height:45px;
+    width: 45px;
+}
+
+
+#arrow1{
+    display: flex;
+    justify-content: space-between;
+}
+#j{
+    padding-right: 590px;
+}
+
+
+
+#jj{
+   /* padding-right: 490px;*/
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+    visibility: hidden;
+    position: relative; 
+    display: inline-block;
+    font-size: 14px;
+    transition-delay: 0.2s;
+    margin-top: 18px;
+    margin-left: 5px;
+  
+}
+
+.backnav{
+   
+    width: 30vh;
+    margin-left: -49vh;
+    height: 6vh;
+    margin-top: -2px;
+}
+
+
+
+
+
+/*
 img {
     display: block;
     border-radius: 5px;
     width: 30px;
     height: 30px;
 }
-
+*/
 td.customer-status {
     color: red;
     font-weight: bold; /* Customer status field in red */

@@ -1,0 +1,353 @@
+.customerregestration {
+  background-color: rgb(255, 0, 0);
+margin-top: 13.5vh;
+margin-left: 0vh;
+  height: 86.5vh;
+
+  width: 210.5vh;
+
+  position: fixed;
+
+  background-image: url("../Components/Images/Register-pic.png");
+  background-size: cover;
+}
+
+#outline {
+  height: 80vh;
+  width: 70vh;
+  margin-left: 125vh;
+  margin-top: -67.5vh;
+  border: none;
+  position: relative;
+}
+.overlay {
+  background-color: rgba(255, 255, 255, 0.933);
+  position: absolute;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  
+}
+.reg-form-field{
+   z-index: 1;
+   position: relative;
+}
+
+#heading{
+  text-align: center;
+  margin-top: 10px;
+  color: #050006;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 10);
+}
+
+
+.all-error-message{
+  color: red;
+  text-align: center;
+  font-size: 13px;
+}
+
+#reg-success{
+  color: rgb(26, 111, 15);
+  text-align: center;
+  font-size: 13px;
+
+}
+
+
+/*User-Name Part Css*/
+.reg-username{
+   display: flex;
+   border: 3px solid rgb(0, 0, 0);
+   border-radius: 5px;
+   margin: 5px;
+   width: 25vw;
+   margin-left: 55px;
+   margin-top: 45px;
+   transition: all 0.3s ease;
+ }
+ .reg-username:hover{
+    border-color: #823ab6;
+    transform: scale(1.1);
+ }
+ #reg-user-name {
+   border: none;
+   background-color: transparent;
+   border: 3px solid rgb(0, 0, 0);
+   margin-left: 10.5px;
+   width: 335px;
+   border-left: 2px solid rgb(0, 0, 0);
+   border-right: none;
+   border-top: none;
+   border-bottom: none;
+   border-radius: 4px ;
+   outline: none;
+ 
+ }
+ #reg-user-name:hover{
+  border-color: #823ab6;
+ }
+
+
+
+
+
+/*Address Part Css*/
+ .reg-address{
+   display: flex;
+   border: 3px solid rgb(0, 0, 0);
+   border-radius: 5px;
+   margin: 5px;
+   width: 25vw;
+   margin-left: 55px;
+   margin-top: 24px;
+   transition: all 0.3s ease;
+ }
+ .reg-address:hover{
+  border-color: #823ab6;
+    transform: scale(1.1);
+ }
+ #reg-user-address {
+   border: none;
+   background-color: transparent;
+   border: 3px solid rgb(0, 0, 0);
+   margin-left: 10.5px;
+   width: 335px;
+   border-left: 2px solid rgb(0, 0, 0);
+   border-right: none;
+   border-top: none;
+   border-bottom: none;
+   border-radius: 4px ;
+   outline: none;
+ 
+ }
+ #reg-user-address:hover{
+  border-color: #823ab6;
+ }
+
+
+/*Phone NUmber CSS*/
+.reg-customer-phone{
+  display: flex;
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  margin: 5px;
+  width: 25vw;
+  margin-left: 55px;
+  margin-top: 24px;
+  transition: all 0.3s ease;
+}
+.reg-customer-phone:hover{
+  border-color: #823ab6;
+   transform: scale(1.1);
+}
+#reg-user-phone {
+  border: none;
+  background-color: transparent;
+  border: 3px solid rgb(0, 0, 0);
+  margin-left: 10.5px;
+  width: 335px;
+  border-left: 2px solid rgb(0, 0, 0);
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  border-radius: 4px ;
+  outline: none;
+
+}
+#reg-user-phone:hover{
+  border-color: #823ab6;
+}
+
+/*Email CSS*/
+ .reg-email{
+   display: flex;
+   border: 3px solid rgb(0, 0, 0);
+   border-radius: 5px;
+   margin: 5px;
+   width: 25vw;
+   margin-left: 55px;
+   margin-top: 24px;
+   transition: all 0.3s ease;
+ }
+ .reg-email:hover{
+  border-color: #823ab6;
+    transform: scale(1.1);
+ }
+ #reg-user-email {
+   border: none;
+   background-color: transparent;
+   border: 3px solid rgb(0, 0, 0);
+   margin-left: 10.5px;
+   width: 335px;
+   border-left: 2px solid rgb(0, 0, 0);
+   border-right: none;
+   border-top: none;
+   border-bottom: none;
+   border-radius: 4px ;
+   outline: none;
+ 
+ }
+ #reg-user-email:hover{
+  border-color: #823ab6;
+ }
+
+
+
+
+
+
+
+
+/*Password Css*/
+
+ .reg-password{
+  display: flex;
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  margin: 5px;
+  width: 25vw;
+  margin-left: 55px;
+  margin-top: 24px;
+  transition: all 0.3s ease;
+}
+.reg-password:hover{
+  border-color: #823ab6;
+   transform: scale(1.1);
+}
+#reg-user-password {
+  border: none;
+  background-color: transparent;
+  border: 3px solid rgb(0, 0, 0);
+  margin-left: 10.5px;
+  width: 335px;
+  border-left: 2px solid rgb(0, 0, 0);
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  border-radius: 4px ;
+  outline: none;
+
+}
+#reg-user-password:hover{
+  border-color: #823ab6;
+}
+#reg-eye-icon{
+  height: 25px;
+}
+
+
+
+
+
+/*Confirm Password Css*/
+.reg-confirm-password{
+  display: flex;
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  margin: 5px;
+  width: 25vw;
+  margin-left: 55px;
+  margin-top: 24px;
+  transition: all 0.3s ease;
+}
+.reg-confirm-password:hover{
+  border-color: #823ab6;
+   transform: scale(1.1);
+}
+#reg-user-confirm-password {
+  border: none;
+  background-color: transparent;
+  border: 3px solid rgb(0, 0, 0);
+  margin-left: 10.5px;
+  width: 335px;
+  border-left: 2px solid rgb(0, 0, 0);
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  border-radius: 4px ;
+  outline: none;
+
+}
+#reg-user-confirm-password:hover{
+  border-color: #823ab6;
+}
+#reg-confirm-eyeIcon{
+  height: 25px;
+}
+
+
+
+#reg-submit {
+  margin-left: 55px;
+  margin-top: 3vh;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  background: linear-gradient(135deg, #ff9ab8, #e460eb);
+  border-radius: 6px;
+  border: none;
+  padding: 5px 15px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  width: 25.5vw;
+  height: 30px;
+}
+
+#reg-submit:hover {
+  transform: scale(1.05);
+  color: rgb(255, 255, 255);
+  background: linear-gradient(120deg, #f06d91, #f6a5c0); 
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+}
+
+#already-account{
+ text-align: center;
+ font-size: 13px;
+}
+
+
+#already-login-account {
+    
+       
+  margin-left: 55px;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  border-radius: 6px;
+  border: none;
+  padding: 5px 15px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  width: 25.5vw;
+  height: 30px;  
+}
+
+#already-login-account:hover {
+transform: scale(1.05);
+color: rgb(255, 255, 255);
+background: linear-gradient(135deg, #00f2fe, #4facfe); 
+box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+border-radius: 12px;
+}
+
+
+#reg-all-icon{
+  margin-left: 6px;
+}
+
+#reg-confirm-eyeIcon{
+  margin-right: 6px;
+}
+
+#reg-eye-icon{
+  margin-right: 6px;
+}
+
+
+
+

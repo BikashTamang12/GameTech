@@ -1,5 +1,10 @@
 import React from "react";
-import "./ProductForm.css";
+import "../Components_CSS/ProductForm.css";
+import TitleIcon from '@mui/icons-material/Title';
+import DescriptionIcon from '@mui/icons-material/Description';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import CategoryIcon from '@mui/icons-material/Category';
+import ImageIcon from '@mui/icons-material/Image';
 
 const ProductForm = ({
   product,
@@ -9,44 +14,58 @@ const ProductForm = ({
   isEditing,
   message,
 }) => (
-  <div className="form-container">
-    <form className="adminproductform">
-      <div className="productoverlay"></div>
+  <div className="admin-form-container">
+    <form className="admin-product-form">
+     
+      <div className="admin-second-div">
+        <div id="admin-title-head">
+          <p id="admin-titles">{isEditing ? "Update Product" : "Add Product"}</p>
 
-      <div className="outsideoverlay">
-        <div id="head1123">
-          <p id="head786">{isEditing ? "Update Product" : "Add Product"}</p>
-
-          {message && <p className="errorMessage">{message}</p>}
+          {message && <p className="admin-error-Message">{message}</p>}
         </div>
 
-        <div className="locationshift">
-          <label id="addtitle">Title:</label>
+        <div className="admin-product-fieldset">
+
+
+          {/*Title Creation*/}
+          <div className="admin-form-title">
+          <TitleIcon></TitleIcon>
           <input
             type="text"
             name="title"
-            id="addtitle2"
+            id="form-title"
             value={product.title}
             onChange={onChange}
             required
+            placeholder="Enter the title"
           />
+          </div>
 
-          <label id="imagetitle">Main Image:</label>
+
+          {/*Image Creation*/}
+          <div className="admin-from-image">
+         <ImageIcon></ImageIcon>
           <input
             type="file"
             name="mainImage"
-            id="imagetitle2"
+            id="from-image"
             onChange={onMainImageChange}
             required
           />
 
-          <label id="cat23">Category:</label>
+</div>
+
+
+{/*Category Creation*/}
+          <div className="admin-form-category">
+          <CategoryIcon></CategoryIcon>
           <select
             name="category"
-            id="cat78"
+            id="from-category"
             value={product.category}
             onChange={onChange}
             required
+            placeholder="choose the category"
           >
             <option value="">Select a category</option>
             <option value="laptop">Laptop</option>
@@ -60,27 +79,39 @@ const ProductForm = ({
             <option value="headphone">HeadPhone</option>
           </select>
 
-          <label id="price888">Price:</label>
+          </div>
+{/*Form Price Creation*/}
+          <div className="admin-form-price">
+          <AttachMoneyIcon></AttachMoneyIcon>
+        
           <input
             type="number"
             name="price"
-            id="price777"
+            id="from-price"
             value={product.price}
             onChange={onChange}
             required
+            placeholder="Enter the price in RS."
           />
 
-          <label id="dec78">Description:</label>
+</div>
+{/*Form Description*/}
+
+<div className="admin-form-description">
+         <DescriptionIcon></DescriptionIcon>
           <textarea
             name="description"
-            id="desc56"
+            id="form-description"
             value={product.description}
             onChange={onChange}
             required
+            placeholder="Enter the product details"
           ></textarea>
+          </div>
 
-          <div className="button-container">
-            <button id="addbutton123" type="button" onClick={onSubmit}>
+{/*Add product Button*/}
+          <div className="add-product-button">
+            <button id="add-product-form-button" type="button" onClick={onSubmit}>
               {isEditing ? "Update Product" : "Add Product"}
             </button>
           </div>

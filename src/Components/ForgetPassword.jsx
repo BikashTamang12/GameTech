@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import "./ForgetPassword.css";
+import "../Components_CSS/ForgetPassword.css";
 import { useNavigate } from "react-router-dom";
 import open_eye from "./Images/open_eye.png";
 import close_eye from "./Images/close_eye.png";
+import EmailIcon from '@mui/icons-material/Email';
+import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
+import PasswordIcon from '@mui/icons-material/Password';
 const ForgetPassword = () => {
   const [fphone, setFphone] = useState({
     phone: "",
@@ -85,18 +88,18 @@ const ForgetPassword = () => {
   };
 
   return (
-    <div className="forgetPassword">
-      <fieldset id="forgetpasswordfieldset">
-        <div className="foverlay"></div>
+    <div className="forget-Password-main">
+      <fieldset id="forget-password-fieldset">
+        <div className="forget-overlay"></div>
         <form onSubmit={forgetpaswordValidation}>
-          <div id="fmodify">
-            <div className="pphead">
-              <h id="phonehead">Enter Your Phone Number</h>
+          <div id="forget-modify">
+            <div className="forget-heading">
+              <p id="phone-head">Forget Password</p>
             </div>
             {fshow && (
               <div
                 id="fpasswordsuccessmsg"
-                style={{ textAlign: "center", marginBottom: "10px" }}
+                style={{ textAlign: "center", marginBottom: "10px",color:"green" }}
               >
                 {fshow}
               </div>
@@ -105,71 +108,87 @@ const ForgetPassword = () => {
             {nextstep && (
               <div
                 id="fpasswordsuccessmsg1"
-                style={{ textAlign: "center", marginBottom: "10px" }}
+                style={{ textAlign: "center", marginBottom: "10px" ,color:"red",fontSize:"12px"}}
               >
                 {nextstep}
               </div>
             )}
-            <div id="emailforget">
-              <label htmlFor="emailforgetpassword" id="emailforgetpassword">
-                Email
-              </label>
+
+
+
+
+            {/*Email Creation*/}
+            <div className="email-forget">
+            <EmailIcon id="forget-icon"></EmailIcon>
               <input
                 type="text"
-                id="emailffp"
+                id="forget-email"
                 name="email"
                 value={fphone.email}
                 onChange={handleChange}
+                placeholder="enter email"
               ></input>
-              {errors.email && (
-                <span id="errorEmail" style={{ color: "red" }}>
-                  {errors.email}
-                </span>
-              )}
+           
             </div>
-            <div id="inputphone">
-              <label htmlFor="forgetpassword" id="forgetpassword">
-                Phone
-              </label>
+            {errors.email && (
+                <p id="forget-email-error" >
+                  {errors.email}
+                </p>
+              )}
+
+
+            {/*Phone Creation*/}
+            <div className="forget-phone">
+            <ContactPhoneIcon id="forget-icon"></ContactPhoneIcon>
               <input
                 type="phone"
-                id="phone"
+                id="forget-phone-input"
                 name="phone"
                 value={fphone.phone}
                 onChange={handleChange}
+                placeholder="enter phone number"
               />
-              {errors.phone && (
-                <span id="errorPhone" style={{ color: "red" }}>
-                  {errors.phone}
-                </span>
-              )}
+             
             </div>
+            {errors.phone && (
+                <p id="forget-phone-error">
+                  {errors.phone}
+                </p>
+              )}
 
-            <div id="newpassword1">
-              <label htmlFor="newpassword2" id="newpassword2">
-                New Password
-              </label>
+
+
+{/*Password Part*/}
+            <div className="forget-password-all">
+              <PasswordIcon id="forget-icon"></PasswordIcon>
               <input
                 type={nopeneye ? "text" : "password"}
-                id="newpassowrd3"
+                id="forget-password-input"
                 name="newpassword"
                 value={fphone.newpassword}
                 onChange={handleChange}
+                placeholder="new password"
               />
-              <div id="open12">
+              
                 <img
-                  id="open13"
+                  id="forget-eye"
                   src={nopeneye ? open_eye : close_eye}
                   alt="New password Open Eye"
                   onClick={newopenEye}
                 ></img>
-              </div>
-              {errors.newpassword && (
-                <span style={{ color: "red" }}>{errors.newpassword}</span>
-              )}
+              
+            
             </div>
+            {errors.newpassword && (
+                <p  id="forget-password-error" >{errors.newpassword}</p>
+              )}
 
-            <input type="submit" id="forgetsubmit" value="Submit"></input>
+
+
+
+
+
+            <input type="submit" id="forget-submit" value="Submit"></input>
           </div>
         </form>
       </fieldset>

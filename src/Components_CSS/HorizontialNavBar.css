@@ -1,0 +1,32 @@
+.horizontal {
+  background: linear-gradient(90deg, #9b1c1c, #b86d34);
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  position: fixed;
+  top: 60px;
+  width: 100%;
+  z-index: 5;
+  transition: transform 0.3s ease-in-out;
+
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.horizontal a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+
+  transition: color 0.3s ease;
+}
+
+.horizontal a:hover {
+  color: #000000;
+}
+
+.horizontal a:active {
+  color: #ff6600;
+}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import FilterProductCard from "./FilterProductCard";
 import { useParams } from "react-router-dom";
-import "./FilterProductList.css";
+import "../Components_CSS/FilterProductList.css";
 
 const FilterProductList = () => {
   const [products, setProducts] = useState([]);

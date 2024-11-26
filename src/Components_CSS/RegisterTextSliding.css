@@ -1,0 +1,34 @@
+
+.register-sliding-text {
+    margin-top: 4vh;
+    margin-left: 12.5vh;
+    height: 50px;
+    width: 600px;
+    overflow: hidden; 
+    position: relative;
+    
+    
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Wrapper for all slogans */
+  .register-sliding-text-wrapper {
+    display: flex;
+    height: 100%;
+    justify-content: center; /* Ensure content is centered */
+    align-items: center;
+  }
+  
+  /* Each slogan */
+  .register-sliding-texts {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+    position: absolute; /* Position all slogans on top of each other */
+  }
+  

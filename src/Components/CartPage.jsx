@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
-import "./CartPage.css";
+import "../Components_CSS/CartPage.css";
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -12,14 +12,40 @@ const CartPage = () => {
 
   useEffect(() => {
     if (!isAuthenticated) {
-      navigate("/login");
-    } else {
-      fetch("http://localhost/backend/api/getCartItem.php")
-        .then((response) => response.json())
-        .then((data) => setCartItems(data))
-        .catch((error) => console.error("Error fetching cart items:", error));
+      navigate("/login",{state:{from:"/cart"}});
+      return;
     }
+  
+    const customerId = localStorage.getItem("customerId");
+  
+    const fetchCartDetails = async () => {
+      try {
+        // Prepare the request body
+        const formData = new FormData();
+        formData.append("id", customerId);
+  
+        // Fetch cart details from the backend
+        const response = await fetch("http://localhost/backend/api/getCartItem.php", {
+          method: "POST",
+          body: formData,
+        });
+  
+        const data = await response.json();
+  
+        if (data.success) {
+          setCartItems(data.items || []);
+           
+        } else {
+          alert(data.message || "Failed to fetch cart items.");
+        }
+      } catch (error) {
+        console.error("Error fetching cart details:", error);
+      }
+    };
+  
+    fetchCartDetails();
   }, [isAuthenticated, navigate]);
+  
 
   const handleQuantityChange = (cart_id, action, event) => {
     event.stopPropagation();

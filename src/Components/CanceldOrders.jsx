@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import './CanceldOrders.css';
+import '../Components_CSS/CanceldOrders.css';
+import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
+import { useNavigate } from 'react-router-dom';
 
 const CanceledOrders = () => {
+  const [isHovered, setIsHovered] = useState(false);
   const [orders, setOrders] = useState([]);
+const navigate=useNavigate();
 
   // Fetch orders data from backend
   const fetchOrders = async () => {
@@ -21,9 +25,32 @@ const CanceledOrders = () => {
     fetchOrders();
   }, []);
 
+  const backhome= () =>{
+ navigate('/adminPage');
+  }
+
+
   return (
     <div className="order-manage">
-      <h2>Orders Canceled List</h2>
+
+<div id='arrow1'>
+  
+<ArrowCircleLeftIcon
+        id="arrow"
+        onClick={backhome}
+        onMouseEnter={() => setIsHovered(true)} // Show text on hover
+        onMouseLeave={() => setIsHovered(false)} // Hide text when not hovering
+        style={{ cursor: "pointer", color: isHovered ? "blue" : "black" }} // Optional styling
+      />
+      <div className='backnav'>
+      <p id="jj" style={{ visibility: isHovered ? "visible" : "hidden" }}>
+        Back to dashboard
+      </p>
+      </div>
+
+      <h2 id='j'>Orders Canceled List</h2>
+
+      </div>
       
       {/* Table to display orders */}
       <table>

@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./About.css";
+import "../Components_CSS/About.css";
 
 const About = () => {
   return (
@@ -9,11 +9,11 @@ const About = () => {
         {" "}
         <p id="mainhead">Welcome To Game Tech</p>
       </div>
-
+      <div className="about-center-items">
       <div className="div78">
         <p id="summary">Greeting Sir,</p>
       </div>
-
+      
       <div className="div79">
         <p id="looking">
           If you are looking for the best gaming devices you are on the right
@@ -68,6 +68,7 @@ const About = () => {
           We are the authorized store with most quality production we provide
           life time service according to the problems.
         </p>
+      </div>
       </div>
     </div>
   );

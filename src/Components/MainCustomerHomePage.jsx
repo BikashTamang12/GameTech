@@ -1,7 +1,8 @@
 import React from "react";
 import CustomerPageProductCard from "./CustomerPageProductCard";
-import "./MainCustomerPageProductCard.css";
+import "../Components_CSS/MainCustomerPageProductCard.css";
 import { useState, useEffect } from "react";
+import ImageSlidingEffect from "./ImageSlidingEffect";
 
 const MainCustomerHomePage = () => {
   const [products, setProducts] = useState([]);
@@ -14,7 +15,10 @@ const MainCustomerHomePage = () => {
   }, []);
 
   return (
+    <div>
+       <ImageSlidingEffect/>
     <div className="mainpage1">
+     
       {products.length > 0 ? (
         products.map((product) => (
           <CustomerPageProductCard key={product.id} product={product} />
@@ -22,6 +26,7 @@ const MainCustomerHomePage = () => {
       ) : (
         <p>No products found in this category</p>
       )}
+    </div>
     </div>
   );
 };

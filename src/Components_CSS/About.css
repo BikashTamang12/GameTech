@@ -1,16 +1,21 @@
 .aboutdetails{
     margin-top:8.9vh;
-    margin-left: 19.9vh;
-    
-    background-image: url('./Images/about_pic.jpg');
+    margin-left: -5vh;
+    background-image: url('../Components/Images/about_pic.jpg');
+   /* background-image: url('../Components/Images/about_pic.jpg');*/
     height: 91vh;
     position: fixed;
-    width: 192vh;
+    width: 215.5vh;
     background-size: cover;
+    align-items: center;
+    display: grid; /* Enables Grid */
+  place-items: center; /* Centers horizontally */
+  
 }
 #head{
+
     margin-top: 4vh;
-    margin-left: 88vh;
+    text-align: center;
     color: rgb(169, 8, 181);
 
 }
@@ -20,9 +25,10 @@
     
 }
 
+
 #summary{
     font-weight: bold;
-    color: blue;
+    color: rgb(0, 255, 47);
 }
 
 #serve{

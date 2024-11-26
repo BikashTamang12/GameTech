@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "./UserAdmin.css";
+import "../Components_CSS/UserAdmin.css";
 import ProductForm from "./ProductForm";
 import { useNavigate } from "react-router-dom";
+import adminLogo from "./Images/gt_logo.png";
+import { Link } from "react-router-dom";
 
 function UserAdmin({ products, setProducts }) {
   const [showForm, setShowForm] = useState(true); // Default to true (show add product form initially)
@@ -59,22 +61,25 @@ function UserAdmin({ products, setProducts }) {
       formData.append("category", newProduct.category);
       formData.append("price", newProduct.price);
       formData.append("description", newProduct.description);
-
+  
       if (newProduct.image) {
         formData.append("main_image", newProduct.image);
-      } else {
-        setMessage("Please upload a main image.");
-        return;
       }
-
+  
+      // Add product ID if editing
+      if (isEditing && currentProductIndex !== null) {
+        formData.append("product_id", products[currentProductIndex].product_id);
+      }
+  
       try {
-        const response = await fetch(
-          "http://localhost/backend/api/addProduct.php",
-          {
-            method: "POST",
-            body: formData,
-          }
-        );
+        const endpoint = isEditing
+          ? "http://localhost/backend/api/updateProduct.php"
+          : "http://localhost/backend/api/addProduct.php";
+  
+        const response = await fetch(endpoint, {
+          method: "POST",
+          body: formData,
+        });
         const result = await response.json();
         if (result.message) {
           setMessage(result.message);
@@ -87,7 +92,6 @@ function UserAdmin({ products, setProducts }) {
       }
     }
   };
-
   const handleDelete = async (index) => {
     const productId = products[index].product_id;
     try {
@@ -107,6 +111,7 @@ function UserAdmin({ products, setProducts }) {
         setTimeout(() => setMessage(""), 2000);
         const updatedProducts = products.filter((_, i) => i !== index);
         setProducts(updatedProducts);
+        alert("Item deleted sucessfull");
       }
     } catch (error) {
       console.error("Error:", error);
@@ -116,6 +121,7 @@ function UserAdmin({ products, setProducts }) {
   const handleEditProduct = (index) => {
     setNewProduct({
       ...products[index],
+      image: "", // Reset the image field for new uploads (optional)
       price: products[index].price || "",
     });
     setIsEditing(true);
@@ -123,11 +129,9 @@ function UserAdmin({ products, setProducts }) {
     setShowForm(true); // Show the form in edit mode
     setShowModifyList(false); // Hide the modify list
   };
-
   const validateForm = () => {
     if (
       !newProduct.title ||
-      !newProduct.image ||
       !newProduct.category ||
       !newProduct.price ||
       !newProduct.description
@@ -136,6 +140,22 @@ function UserAdmin({ products, setProducts }) {
       setTimeout(() => setMessage(""), 2000);
       return false;
     }
+  
+    // Check price validation
+    const price = parseFloat(newProduct.price);
+    if (isNaN(price) || price < 0) {
+      setMessage("Please don't put a negative price.");
+      setTimeout(() => setMessage(""), 2000);
+      return false;
+    }
+  
+    // Main image is required only for adding a new product
+    if (!newProduct.image && !isEditing) {
+      setMessage("Please upload a main image.");
+      setTimeout(() => setMessage(""), 2000);
+      return false;
+    }
+  
     return true;
   };
 
@@ -148,6 +168,7 @@ function UserAdmin({ products, setProducts }) {
   const handleShowModify = () => {
     setShowModifyList(true); // Show the modify product list
     setShowForm(false); // Hide the add product form
+    resetForm();
   };
 
   const resetForm = () => {
@@ -155,7 +176,7 @@ function UserAdmin({ products, setProducts }) {
       title: "",
       image: "",
       category: "",
-      price: "",
+      price: "", 
       description: "",
       subImages: [],
     });
@@ -177,30 +198,34 @@ function UserAdmin({ products, setProducts }) {
   };
 
   return (
-    <div className="UserAdmin">
-      <nav className="sidebar">
-        <div className="addBut1">
-          <button id="addBut" onClick={toggleAddForm}>
+    <div className="user-admin-main-page">
+      <nav className="admin-navbar">
+      <Link to="/adminPage" id="admin-logo">
+          <img src={adminLogo} className="Admin-Logo" alt="Company Logo" />
+        </Link>
+        <div className="admin-add-product">
+          
+          <button id="admin-add-product-button" onClick={toggleAddForm}>
             Add Product
           </button>
         </div>
-        <div className="modBut1">
-          <button id="modBut" onClick={handleShowModify}>
+        <div className="admin-modify">
+          <button id="admin-modify-button" onClick={handleShowModify}>
             Modify Product
           </button>
         </div>
-        <div className="orderManage">
-          <button id="orderBut" onClick={toggleOrderPage}>
+        <div className="admin-order">
+          <button id="admin-order-button" onClick={toggleOrderPage}>
             Manage Orders
           </button>
         </div>
-        <div className="canceledodredrs">
-          <button id="cancelorder" onClick={toggleCanceledOrders}>
+        <div className="admin-cancel-order">
+          <button id="admin-cancel-order-button" onClick={toggleCanceledOrders}>
             Cancelled Orders
           </button>
         </div>
-        <div className="logBut1">
-          <button id="logBut" onClick={logoutOperation}>
+        <div className="admin-logout">
+          <button id="admin-logout-button" onClick={logoutOperation}>
             Logout
           </button>
         </div>
@@ -217,24 +242,24 @@ function UserAdmin({ products, setProducts }) {
           />
         )}
         {showModifyList && (
-          <div className="product-list">
+          <div className="admin-product-list">
             {products.length === 0 ? (
               <p>No products available.</p>
             ) : (
               products.map((product, index) => (
-                <div key={index} className="product-card">
-                  <img
+                <div key={index} className="admin-product-card">
+                  <img  id="admin-product-card-image"
                     src={`data:image/jpeg;base64,${product.main_image}`}
                     alt={product.title}
                   />
-                  <h3>{product.title}</h3>
-                  <p>Category: {product.category}</p>
-                  <p>Price: Rs{product.price}</p>
-                  <p>Description: {product.description}</p>
-                  <button onClick={() => handleEditProduct(index)}>
+                  <h3 id="card-title">{product.title}</h3>
+                  <p id="card-category">Category: {product.category}</p>
+                  <p id="card-price">Price: Rs{product.price}</p>
+                  <p id="card-description">Description: {product.description}</p>
+                  <button  id="admin-card-button" onClick={() => handleEditProduct(index)}>
                     Update
                   </button>
-                  <button onClick={() => handleDelete(index)}>Delete</button>
+                  <button id="admin-card-delete" onClick={() => handleDelete(index)}>Delete</button>
                 </div>
               ))
             )}

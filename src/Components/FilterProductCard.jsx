@@ -1,5 +1,5 @@
 import React from "react";
-import "./ProductFilterCard.css";
+import "../Components_CSS/ProductFilterCard.css";
 
 const FilterProductCard = ({ product }) => {
   const image = `data:image/jpeg;base64,${product.main_image}`;

@@ -1,10 +1,17 @@
 import React, { useState } from "react";
-import "./CustomerForm.css";
+import "../Components_CSS/CustomerForm.css";
 import { Link } from "react-router-dom";
 import open_eye from "./Images/open_eye.png";
 import close_eye from "./Images/close_eye.png";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import PersonIcon from "@mui/icons-material/Person";
+import HomeIcon from "@mui/icons-material/Home";
+import ContactPhoneIcon from "@mui/icons-material/ContactPhone";
+import EmailIcon from "@mui/icons-material/Email";
+import PasswordIcon from "@mui/icons-material/Password";
+import RegisterSliding from "./RegisterSliding";
+import RegisterTextSliding from "./RegisterTextSliding";
 
 const CustomerForm = () => {
   const navigate = useNavigate();
@@ -16,7 +23,7 @@ const CustomerForm = () => {
     password: "",
     confirmpassword: "",
   });
-  const [errors, setErrors] = useState({});
+  const [allerror, setAllError] = useState("");
   const [cvisible, setCvisible] = useState(false);
   const [ccvisible, setCcvisible] = useState(false);
   const [done, setDone] = useState("");
@@ -27,7 +34,7 @@ const CustomerForm = () => {
       ...regestration,
       [name]: value,
     });
-    setErrors({});
+    setAllError(""); // Clear the error on input change
   };
 
   const cTogglepassword = () => setCvisible(!cvisible);
@@ -35,220 +42,206 @@ const CustomerForm = () => {
 
   const customerRegestrationvalidation = async (e) => {
     e.preventDefault();
-    const newErrors = {};
+
+    // Validation Rules
     const a = /\d/;
     const b = /^(?:\+?1\s?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/;
-    const c = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const c = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]{2,}\.[a-zA-Z]{2,}$/;
     const d =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
-    if (regestration.username.length === 0) {
-      newErrors.username = "*User name can't be empty";
+    // Sequential Validation
+    if (!regestration.username) {
+      setAllError("*Username is required!");
+      return;
     } else if (regestration.username.length < 3) {
-      newErrors.username = "*User name must be at least 3 characters long";
+      setAllError("*Username must be at least 3 characters long!");
+      return;
     } else if (a.test(regestration.username)) {
-      newErrors.username = "*Numbers are not allowed in the username!";
+      setAllError("*Numbers are not allowed in the username!");
+      return;
     }
 
-    if (regestration.address.length === 0) {
-      newErrors.address = "*Address field is required!";
+    if (!regestration.address) {
+      setAllError("*Address is required!");
+      return;
     }
 
-    if (regestration.phone.length === 0) {
-      newErrors.phone = "*Phone number is required!";
+    if (!regestration.phone) {
+      setAllError("*Phone number is required!");
+      return;
     } else if (!b.test(regestration.phone)) {
-      newErrors.phone = "*Wrong phone number !!";
+      setAllError("*Invalid phone number!");
+      return;
     }
 
-    if (regestration.email.length === 0) {
-      newErrors.email = "*Email is required!!";
+    if (!regestration.email) {
+      setAllError("*Email is required!");
+      return;
     } else if (!c.test(regestration.email)) {
-      newErrors.email = "*Wrong email!!";
+      setAllError("*Invalid email format!");
+      return;
     }
 
-    if (regestration.password.length === 0) {
-      newErrors.password = "*Password is required!";
+    if (!regestration.password) {
+      setAllError("*Password is required!");
+      return;
     } else if (regestration.password.length < 8) {
-      newErrors.password = "*Password must be at least 8 characters long!";
+      setAllError("*Password must be at least 8 characters long!");
+      return;
     } else if (!d.test(regestration.password)) {
-      newErrors.password =
-        "*Password must contain 1 uppercase, 1 special character, and lowercase letters";
+      setAllError(
+        "*Password must include uppercase, lowercase, special character, and number!"
+      );
+      return;
     }
 
-    if (regestration.confirmpassword.length === 0) {
-      newErrors.confirmpassword = "*This field can't be empty!";
+    if (!regestration.confirmpassword) {
+      setAllError("*Confirm Password is required!");
+      return;
     } else if (regestration.confirmpassword !== regestration.password) {
-      newErrors.confirmpassword = "*Passwords didn't match!";
+      setAllError("*Passwords do not match!");
+      return;
     }
 
-    setErrors(newErrors);
+    // If no errors, submit form
+    const formdata = {
+      username: regestration.username,
+      address: regestration.address,
+      phone: regestration.phone,
+      email: regestration.email,
+      password: regestration.password,
+    };
 
-    if (Object.keys(newErrors).length === 0) {
-      const formdata = {
-        username: regestration.username,
-        address: regestration.address,
-        phone: regestration.phone,
-        email: regestration.email,
-        password: regestration.password,
-      };
-
-      try {
-        const res = await axios.post(
-          "http://localhost/backend/api/user.php",
-          formdata
-        );
-        if (res.data.success) {
-          setDone("Registration successful! Redirecting...");
-          setTimeout(() => navigate("/home"), 2000);
-        } else {
-          setDone(res.data.message);
-        }
-      } catch (error) {
-        console.error("Error during registration:", error);
+    try {
+      const res = await axios.post(
+        "http://localhost/backend/api/user.php",
+        formdata
+      );
+      if (res.data.success) {
+        setDone("Registration successful! Redirecting...");
+        setTimeout(() => navigate("/home"), 2000);
+      } else {
+        setDone(res.data.message);
       }
+    } catch (error) {
+      console.error("Error during registration:", error);
     }
   };
 
   return (
     <div className="customerregestration">
+      
+       
+      <RegisterSliding></RegisterSliding>
+     <RegisterTextSliding></RegisterTextSliding>*
       <fieldset id="outline">
+    
         <div className="overlay"></div>
-        <div className="modifyregestration">
-          {done && <p id="regsuccess">{done}</p>}
-          <h2 id="heading">Customer Regestration</h2>
+        <div className="reg-form-field">
+        
+          <h2 id="heading">Customer Registration</h2>
+          {done && <p id="reg-success">{done}</p>}
+          {allerror && (
+            <p className="all-error-message">{allerror}</p>
+          )}
+
           <form onSubmit={customerRegestrationvalidation}>
-            <div id="musername">
-              <label htmlFor="username" id="lusername">
-                Name :
-              </label>
+            {/* Username Field */}
+            <div className="reg-username">
+              <PersonIcon  id="reg-all-icon"/>
               <input
                 type="text"
-                id="username"
+                id="reg-user-name"
                 name="username"
                 value={regestration.username}
                 onChange={handleChange}
-                className="input1"
+                placeholder="enter name"
               />
-              {errors.username && (
-                <span style={{ color: "red" }}>{errors.username}</span>
-              )}
             </div>
 
-            <div id="maddress">
-              <label htmlFor="address" id="laddress">
-                Address :
-              </label>
+            {/* Address Field */}
+            <div className="reg-address">
+              <HomeIcon id="reg-all-icon" />
               <input
                 type="text"
                 name="address"
-                id="address"
+                id="reg-user-address"
                 value={regestration.address}
                 onChange={handleChange}
-                className="input1"
+                placeholder="address"
               />
-              {errors.address && (
-                <span style={{ color: "red" }}>{errors.address}</span>
-              )}
             </div>
 
-            <div id="mphone">
-              <label htmlFor="phone" id="lphone">
-                Phone Number :
-              </label>
+            {/* Phone Field */}
+            <div className="reg-customer-phone">
+              <ContactPhoneIcon  id="reg-all-icon"/>
               <input
                 type="phone"
                 name="phone"
-                id="phone"
+                id="reg-user-phone"
                 value={regestration.phone}
                 onChange={handleChange}
-                className="input1"
+                placeholder="phone number"
               />
-              {errors.phone && (
-                <span style={{ color: "red" }}>{errors.phone}</span>
-              )}
             </div>
 
-            <div id="memail">
-              <label htmlFor="email" id="lemail">
-                E-mail :
-              </label>
+            {/* Email Field */}
+            <div className="reg-email">
+              <EmailIcon id="reg-all-icon" />
               <input
                 type="text"
                 name="email"
-                id="email"
+                id="reg-user-email"
                 value={regestration.email}
                 onChange={handleChange}
-                className="input1"
+                placeholder="email"
               />
-              {errors.email && (
-                <span style={{ color: "red" }}>{errors.email}</span>
-              )}
             </div>
 
-            <div id="mpassword">
-              <label htmlFor="password" id="lpassword">
-                Password :
-              </label>
+            {/* Password Field */}
+            <div className="reg-password">
+              <PasswordIcon  id="reg-all-icon"/>
               <input
                 type={cvisible ? "text" : "password"}
                 name="password"
-                id="rpassword"
+                id="reg-user-password"
                 value={regestration.password}
                 onChange={handleChange}
-                className="input1"
+                placeholder="password"
               />
-              <div id="regeye">
-                <img
-                  id="regeyemodify"
-                  src={cvisible ? open_eye : close_eye}
-                  alt="Toggle password"
-                  onClick={cTogglepassword}
-                />
-              </div>
-              {errors.password && (
-                <div id="reger">
-                  <span style={{ color: "red" }}>{errors.password}</span>
-                </div>
-              )}
+              <img
+                id="reg-eye-icon"
+                src={cvisible ? open_eye : close_eye}
+                alt="Toggle password"
+                onClick={cTogglepassword}
+              />
             </div>
 
-            <div id="mcpassword">
-              <label htmlFor="confirmpassword" id="lcpassword">
-                Confirm Password :
-              </label>
+            {/* Confirm Password Field */}
+            <div className="reg-confirm-password">
+              <PasswordIcon  id="reg-all-icon"/>
               <input
                 type={ccvisible ? "text" : "password"}
                 name="confirmpassword"
-                id="confirmpassword"
+                id="reg-user-confirm-password"
                 value={regestration.confirmpassword}
                 onChange={handleChange}
-                className="input1"
+                placeholder="confirm password"
               />
-              <div id="cregeye">
-                <img
-                  id="cregeyemodify"
-                  src={ccvisible ? open_eye : close_eye}
-                  alt="Toggle password"
-                  onClick={ccTogglepassword}
-                />
-              </div>
-              {errors.confirmpassword && (
-                <div id="cregerr">
-                  <span style={{ color: "red" }}>{errors.confirmpassword}</span>
-                </div>
-              )}
+              <img
+                id="reg-confirm-eyeIcon"
+                src={ccvisible ? open_eye : close_eye}
+                alt="Toggle password"
+                onClick={ccTogglepassword}
+              />
             </div>
 
-            <input type="submit" id="submit" value="Submit" />
-            <div id="div1">
-              <p id="suggest">
-                Already have an account?
-                <Link to="/login" id="loginm">
-                  {" "}
-                  Login{" "}
-                </Link>
-              </p>
-            </div>
+            <input type="submit" id="reg-submit" value="Submit" />
+            <p id="already-account">Already have an account?</p>
+            <Link to="/login" id="login-account">
+              <button id="already-login-account">Login</button>
+            </Link>
           </form>
         </div>
       </fieldset>
