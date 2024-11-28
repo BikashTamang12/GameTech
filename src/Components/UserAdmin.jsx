@@ -6,10 +6,10 @@ import adminLogo from "./Images/gt_logo.png";
 import { Link } from "react-router-dom";
 
 function UserAdmin({ products, setProducts }) {
-  const [showForm, setShowForm] = useState(true); // Default to true (show add product form initially)
-  const [showModifyList, setShowModifyList] = useState(false); // Show modify list only when needed
-  const [isEditing, setIsEditing] = useState(false); // Track if we're editing a product
-  const [currentProductIndex, setCurrentProductIndex] = useState(null); // Track which product we're editing
+  const [showForm, setShowForm] = useState(true);
+  const [showModifyList, setShowModifyList] = useState(false); 
+  const [isEditing, setIsEditing] = useState(false); 
+  const [currentProductIndex, setCurrentProductIndex] = useState(null); 
   const navigate = useNavigate();
 
   const [newProduct, setNewProduct] = useState({
@@ -121,13 +121,13 @@ function UserAdmin({ products, setProducts }) {
   const handleEditProduct = (index) => {
     setNewProduct({
       ...products[index],
-      image: "", // Reset the image field for new uploads (optional)
+      image: "",
       price: products[index].price || "",
     });
     setIsEditing(true);
     setCurrentProductIndex(index);
-    setShowForm(true); // Show the form in edit mode
-    setShowModifyList(false); // Hide the modify list
+    setShowForm(true);
+    setShowModifyList(false); 
   };
   const validateForm = () => {
     if (
@@ -141,7 +141,7 @@ function UserAdmin({ products, setProducts }) {
       return false;
     }
   
-    // Check price validation
+    
     const price = parseFloat(newProduct.price);
     if (isNaN(price) || price < 0) {
       setMessage("Please don't put a negative price.");
@@ -149,7 +149,7 @@ function UserAdmin({ products, setProducts }) {
       return false;
     }
   
-    // Main image is required only for adding a new product
+    
     if (!newProduct.image && !isEditing) {
       setMessage("Please upload a main image.");
       setTimeout(() => setMessage(""), 2000);
@@ -160,14 +160,14 @@ function UserAdmin({ products, setProducts }) {
   };
 
   const toggleAddForm = () => {
-    setShowForm(true); // Show the add product form
-    setShowModifyList(false); // Hide the modify list
-    resetForm(); // Reset the form state
+    setShowForm(true);
+    setShowModifyList(false); 
+    resetForm(); 
   };
 
   const handleShowModify = () => {
-    setShowModifyList(true); // Show the modify product list
-    setShowForm(false); // Hide the add product form
+    setShowModifyList(true);
+    setShowForm(false); 
     resetForm();
   };
 
