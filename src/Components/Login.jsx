@@ -19,8 +19,9 @@ const Login = () => {
   const [visible, setVisible] = useState(false);
   const [loginResult, setLoginResult] = useState("");
   const navigate = useNavigate();
+  //this is used to navigate hte path this is used in line 77.
   const location = useLocation();
-
+//updates the state of the form fields when the user types.
   const handleChange = (e) => {
     const { name, value } = e.target;
     setAddlogin({
@@ -48,6 +49,7 @@ const Login = () => {
 
     if (Object.keys(newErrors).length === 0) {
       try {
+        //sends the post request to backend in json format.
         const response = await fetch(
           "http://localhost/backend/api/login_backend.php",
           {
@@ -58,10 +60,10 @@ const Login = () => {
             body: JSON.stringify(addlogin),
           }
         );
-
+        //extract the raw respone from the body HTTP and convert the json formatted string into js object for easier hendling.
         const textResponse = await response.text();
         const data = JSON.parse(textResponse);
-        console.log("Raw response:", textResponse);
+       // console.log("Raw response:", textResponse);
 
         if (data[0].result === "Admin Login successful") {
           setLoginResult("Admin login successful");

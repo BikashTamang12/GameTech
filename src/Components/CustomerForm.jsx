@@ -114,6 +114,7 @@ const CustomerForm = () => {
     };
 
     try {
+      //the form data is post in backend.
       const res = await axios.post(
         "http://localhost/backend/api/user.php",
         formdata
