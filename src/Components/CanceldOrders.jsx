@@ -13,7 +13,7 @@ const navigate=useNavigate();
     try {
       const response = await fetch("http://localhost/backend/api/fetchCanceledOders.php"); // Replace with your backend endpoint
       const data = await response.json();
-      console.log(data);
+     // console.log(data);
       setOrders(data.filter(order => order.customer_status === 'Canceled')); // Only fetch canceled orders
     } catch (error) {
       console.error("Error fetching orders: ", error);
