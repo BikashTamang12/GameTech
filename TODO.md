@@ -1,1 +1,1 @@
-# Upload to New GitHub Repo "Project-4th" (Private)\n\n1. [x] Install GitHub CLI (gh) - Awaiting [Y] in winget\n2. [ ] gh auth login\n3. [x] Files committed/pushed to old repo (ignore)\n4. [ ] git remote set-url origin NEW_REPO_URL\n5. [ ] git push -u origin main\n6. [ ] Verify https://github.com/USERNAME/Project-4th
+
