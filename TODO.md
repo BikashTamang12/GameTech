@@ -1,1 +1,1 @@
-1. [x] Install GitHub CLI (gh) - Awaiting [Y] Yes in running terminal
+# Upload Repo to GitHub "Game Tech"\n\n1. [x] Install GitHub CLI (gh) - Awaiting [Y] Yes in running winget terminal\n2. [ ] gh auth login\n3. [x] git add . & commit - Done (13 files added/updated)\n4. [ ] git push origin main\n5. [ ] gh repo create \"Game-Tech\" --public --push (if new repo) OR update existing https://github.com/Classic-Owhid/game-tech.git\n6. [ ] Verify & open PR/web
