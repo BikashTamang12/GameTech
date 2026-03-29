@@ -1,0 +1,32 @@
+/* Add your styles for Home component here */
+
+.home {
+    padding: 20px;
+  }
+  
+  .product-grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .product-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: auto;
+  }
+
+  #productmessage{
+    margin-left: 50vh;
+  }
+
+  .div-container{
+    background-color: red;
+  }
+  
