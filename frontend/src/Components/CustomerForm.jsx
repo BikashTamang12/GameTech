@@ -135,8 +135,10 @@ const CustomerForm = () => {
     <div className="customerregestration">
       
        
-      <RegisterSliding></RegisterSliding>
-     <RegisterTextSliding></RegisterTextSliding>*
+      <div className="register-slider-container">
+        <RegisterSliding />
+        <RegisterTextSliding />
+      </div>
       <fieldset id="outline">
     
         <div className="overlay"></div>

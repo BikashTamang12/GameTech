@@ -1,182 +1,214 @@
+#div1 {
+  width: 100%;
+}
+
 #nav1 {
   position: fixed;
-
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
   background: linear-gradient(90deg, #ff0000, #ff6600);
   color: #ffffff;
-  width: 100%;
-  height: 69px;
-  margin-top: 60px;
-  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
 .Logo {
-  width: 125px;
-  height: 76px;
-  margin-left: 20px;
-  margin-bottom: 12px;
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
   cursor: pointer;
-  margin-top: -1.5vh;
-
   filter: brightness(0) invert(1);
-
   border-radius: 8px;
-
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .Logo:hover {
-  transform: scale(1.1);
+  transform: scale(1.08);
+}
+
+.logo-name {
+  margin-left: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.logo-name #game-tech {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  background: linear-gradient(to right, #39ff14, #f7ff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.logo-name:hover #game-tech {
+  transform: scale(1.05);
+}
+
+/* Announcement Banner in center */
+.typingAni {
+  font-size: 14px;
+  color: #111;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* Nav Actions Container */
+.cartmodify,
+.aboutmodify,
+.order2,
+.loginmodify {
+  display: flex;
+  align-items: center;
+  margin: 0 6px;
+  transition: transform 0.2s ease;
+}
+
+.cartmodify:hover,
+.aboutmodify:hover,
+.order2:hover,
+.loginmodify:hover {
+  transform: scale(1.08);
 }
 
 #cart,
 #aboutus,
+#ordercustomer,
 #login {
-  cursor: pointer;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
   text-decoration: none;
-  color: #000000;
-}
-
-#cart {
-}
-
-.loginmodify {
-  margin-left: 195vh;
-
-  width: 20vh;
-  margin-top: -3vh;
-}
-.loginmodify:hover {
-  transform: scale(1.1);
-}
-
-.aboutmodify {
-  margin-top: -3.7vh;
-  margin-left: 175vh;
-  width: 10vh;
-}
-.aboutmodify:hover {
-  transform: scale(1.1);
-}
-
-.cartmodify {
-  margin-left: 155vh;
-  margin-top: -6vh;
-
-  width: 4vh;
-}
-.cartmodify:hover {
-  transform: scale(1.1);
+  transition: color 0.2s ease;
+  padding: 6px 10px;
+  border-radius: 6px;
 }
 
 #cart:hover,
 #aboutus:hover,
+#ordercustomer:hover,
 #login:hover {
-  color: rgb(255, 253, 249);
-  text-decoration: none;
-}
-
-#cart:active,
-#aboutus:active,
-#signin:active {
-  color: darkorange;
-}
-
-#div1 {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 0.1cm;
-  margin-left: 50p;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
 }
 
 #logout {
-  margin-left: -5px;
-  padding-left: 10px;
   background-color: transparent;
-  margin-right: 5vh;
   border: none;
-  border-radius: 5px;
-  color: rgb(28, 8, 129);
-  font-size: 16px;
-  margin-top: -0.8vh;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
 }
+
 #logout:hover {
-  transform: scale(1);
-  color: rgb(234, 234, 232);
-  text-decoration: none;
-  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-.order2 {
-  margin-top: -2.9vh;
+/* ===================================================
+   RESPONSIVE MEDIA QUERIES (Desktop, Laptop, Tablet, Mobile)
+   =================================================== */
 
-  width: 16vh;
-  margin-left: 130vh;
-}
-
-#ordercustomer {
-  justify-content: center;
-  background-color: transparent;
-  margin-right: 5vh;
-  border: none;
-  border-radius: 5px;
-  color: rgb(0, 0, 0);
-  font-size: 16px;
-  text-decoration: none;
-}
-#ordercustomer:hover {
-  color: rgb(255, 251, 243);
-  text-decoration: none;
-  cursor: pointer;
-}
-.order2:hover {
-  transform: scale(1.1);
-}
-
-.typingAni {
-  font-size: 16px;
-  color: rgb(15, 15, 15);
-  font-weight: bold;
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid white;
-  width: 0;
-  position: absolute;
-  margin-left: 45vh;
-  margin-top: -6vh;
-  animation: typing 6s steps(45) 1s infinite, blink 0.7s infinite step-end;
-}
-
-@keyframes typing {
-  0% {
-    width: 0;
+/* Laptop / Medium Desktops (992px to 1200px) */
+@media (max-width: 1200px) {
+  #nav1 {
+    padding: 0 16px;
   }
-  100% {
-    width: 57vh;
+  .typingAni {
+    font-size: 13px;
+    max-width: 320px;
+  }
+  #cart, #aboutus, #ordercustomer, #login {
+    font-size: 14px;
+    padding: 5px 8px;
   }
 }
 
-@keyframes blink {
-  50% {
-    border-color: transparent;
+/* Tablet (768px to 991px) */
+@media (max-width: 991px) {
+  #nav1 {
+    height: 60px;
+    padding: 0 12px;
+  }
+  .logo-name #game-tech {
+    font-size: 18px;
+  }
+  .typingAni {
+    display: none; /* Hide typing ticker on tablets to preserve navigation room */
+  }
+  #cart, #aboutus, #ordercustomer, #login {
+    font-size: 13px;
+    padding: 4px 6px;
   }
 }
 
-.logo-name {
-  background: linear-gradient(to right, #39ff14, #f7ff00);
-  margin-top: -10.5vh;
-  width: 15vh;
-  margin-left: 20vh;
-  color: transparent;
-  font-size: 20px;
-  -webkit-background-clip: text;
-  text-shadow: 0 0 1px #00f2ff, 0 0 10px #00f2ff, 0 0 20px #00f2ff;
-  transition: all 0.3s ease;
+/* Mobile Devices (< 768px) */
+@media (max-width: 767px) {
+  #nav1 {
+    height: 56px;
+    padding: 0 10px;
+  }
+  .Logo {
+    width: 42px;
+    height: 42px;
+  }
+  .logo-name #game-tech {
+    font-size: 16px;
+  }
+  .typingAni {
+    display: none;
+  }
+  .aboutmodify {
+    display: none; /* Accessible in footer/menu to save mobile header space */
+  }
+  #ordercustomer {
+    font-size: 12px;
+    padding: 4px 6px;
+  }
+  #cart, #login, #logout {
+    padding: 4px;
+  }
 }
 
-.logo-name:hover{
-  cursor: pointer;
-  transform: scale(1.1);
+/* Extra Small Phones (< 480px) */
+@media (max-width: 480px) {
+  .logo-name {
+    margin-left: 4px;
+  }
+  .logo-name #game-tech {
+    font-size: 15px;
+  }
+  #ordercustomer {
+    font-size: 11px;
+    padding: 2px 4px;
+  }
 }

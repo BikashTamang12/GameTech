@@ -4,29 +4,73 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 10px 0;
+  padding: 8px 16px;
   position: fixed;
-  top: 60px;
+  top: 64px;
+  left: 0;
   width: 100%;
-  z-index: 5;
+  z-index: 990;
   transition: transform 0.3s ease-in-out;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
 
+/* Hide scrollbar for clean app appearance */
+.horizontal::-webkit-scrollbar {
+  height: 3px;
+}
+.horizontal::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 4px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .horizontal a {
   text-decoration: none;
   color: white;
-  font-size: 16px;
-
-  transition: color 0.3s ease;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
 }
 
 .horizontal a:hover {
-  color: #000000;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.25);
+  transform: translateY(-1px);
 }
 
 .horizontal a:active {
   color: #ff6600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .horizontal {
+    top: 60px;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 6px 12px;
+  }
+  .horizontal a {
+    font-size: 14px;
+    padding: 4px 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .horizontal {
+    top: 56px;
+    justify-content: flex-start;
+    gap: 6px;
+    padding: 6px 10px;
+  }
+  .horizontal a {
+    font-size: 13px;
+    padding: 3px 8px;
+  }
 }

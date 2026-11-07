@@ -93,8 +93,10 @@ const Login = () => {
 
   return (
     <div className="loginform">
-      <RegisterSliding />
-      <RegisterTextSliding />
+      <div className="login-slider-container">
+        <RegisterSliding />
+        <RegisterTextSliding />
+      </div>
       <fieldset id="loutline">
         <div className="loverlay"></div>
         <div className="lmodifyregestration">

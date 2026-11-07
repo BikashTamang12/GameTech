@@ -1,108 +1,117 @@
 /* Container for the entire Order Management section */
 .order-manage {
-    margin: 20px;
-    margin-top: 5px;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 1200px;
+  padding: 24px 20px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+
+/* Title Styling */
+.order-manage h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+#arrowm1 {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 16px;
+  color: #3b82f6;
+  font-weight: 600;
+  gap: 8px;
+}
+
+#arrowm1:hover {
+  color: #1d4ed8;
+}
+
+#arrowm {
+  height: 32px;
+  width: 32px;
+}
+
+/* Styling for the table */
+.order-manage table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  min-width: 650px; /* Ensures table doesn't get unreadably cramped on mobile */
+}
+
+.order-manage table th,
+.order-manage table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 14px;
+}
+
+.order-manage table th {
+  background-color: #f8fafc;
+  font-weight: 700;
+  color: #334155;
+  white-space: nowrap;
+}
+
+.order-manage table tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* Image Styling */
+.order-manage table td img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 6px;
+  background-color: #f8fafc;
+}
+
+.order-manage input[type="date"] {
+  padding: 6px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 13px;
+  outline: none;
+}
+
+.order-manage button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.order-manage button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Responsive (Tablet & Mobile) */
+@media (max-width: 768px) {
+  .order-manage {
+    margin: 10px;
+    padding: 16px 12px;
   }
-  
-  /* Title Styling */
   .order-manage h2 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    text-align: center;
-    margin-bottom: 20px;
+    font-size: 20px;
   }
-  
-  /* Styling for the table */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
+  .order-manage table th,
+  .order-manage table td {
+    padding: 8px 10px;
+    font-size: 13px;
   }
-  
-  table th, table td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  table th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  table tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  table tr:hover {
-    background-color: #f1f1f1;
-  }
-  
-  /* Image Styling */
-  table td img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 5px;
-  }
-  
-  /* Styling for table data */
-  table td {
-    font-size: 14px;
-    color: #555;
-  }
-  
-  table td:nth-child(1), table td:nth-child(3), table td:nth-child(4), table td:nth-child(5), table td:nth-child(6), table td:nth-child(7), table td:nth-child(8) {
-    word-wrap: break-word;
-  }
-  
-  /* Make the table responsive on small screens */
-  @media (max-width: 768px) {
-    table {
-      font-size: 12px;
-    }
-  
-    table th, table td {
-      padding: 8px;
-    }
-  }
-  
-  #arrowm{
-    height:50px;
-    width: 45px;
-   
-}
-
-
-#arrow2{
-    display: flex;
-    justify-content: space-between;
-}
-#headoder{
-    padding-right: 600px;
-    
-}
-
-
-
-#jj2{
-    padding-right: 490px;
-    transition: visibility 0s, opacity 0.3s ease-in-out ;
-    visibility: hidden;
-    position: relative; 
-    display: block;
-    font-size: 12px;
-    margin-top: 18px;
-    transition-delay: 0.2s;
-  
-   
 }

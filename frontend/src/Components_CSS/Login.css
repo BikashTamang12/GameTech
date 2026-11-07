@@ -1,240 +1,265 @@
+/* ===================================================
+   LOGIN PAGE STYLING
+   =================================================== */
+
 .loginform {
-  margin-left: 0px;
-
-  margin-top: 100px;
-
-  background-color: rgb(255, 0, 0);
-  padding-left: 50px;
-  height: 87.5vh;
-
-  position: fixed;
-  width: 203.8vh;
-background-image: url('../Components/Images/Login.jpg');
- /* background-image: url('../Components/Images/Login.jpg');*/
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 20px 40px 20px;
+  background-image: url('../Components/Images/Login.jpg');
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  gap: 40px;
+}
+
+.login-slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 480px;
+  flex-shrink: 0;
 }
 
 #loutline {
-  height: 75vh;
-  width: 70vh;
-  margin-left: 115vh;
-  margin-top: -62vh;
-  border: none;
+  width: 100%;
+  max-width: 440px;
+  margin: 0;
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+  padding: 34px 28px;
+  box-sizing: border-box;
   position: relative;
 }
 
 .loverlay {
-  background-color: rgba(255, 255, 255, 0.679);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
+  display: none;
+}
 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
+.lmodifyregestration {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 #lheading {
-  z-index: 1;
   text-align: center;
-  color: rgb(76, 15, 243);
-  margin-top: 8vh;
-  z-index: 1;
+  color: #1e1b4b;
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.5px;
 }
 
-#login-submit {
-  margin-left: 55px;
-  margin-top: 7vh;
-  cursor: pointer;
-  color: rgb(0, 0, 0);
-  background: linear-gradient(135deg, #ff9ab8, #e460eb);
-  border-radius: 6px;
+#successmeassage {
+  text-align: center;
+  color: #db2777;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+/* Email & Password Input Containers */
+.box,
+.box-password {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 2px 12px;
+  background-color: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.25s ease;
+}
+
+.box:focus-within,
+.box-password:focus-within {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+#email-icon,
+#password-icon {
+  color: #64748b;
+  font-size: 22px;
+  flex-shrink: 0;
+  margin-right: 4px;
+}
+
+#email-input,
+#password-box {
+  flex: 1;
   border: none;
-  padding: 5px 15px;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  width: 25.5vw;
-  height: 30px;
+  background: transparent;
+  padding: 10px 8px;
+  font-size: 15px;
+  color: #0f172a;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#email-input::placeholder,
+#password-box::placeholder {
+  color: #94a3b8;
+}
+
+#eye-password {
+  height: 22px;
+  width: 22px;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-left: 6px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+#eye-password:hover {
+  opacity: 1;
+}
+
+/* Error messages */
+#email-error,
+#error-password {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ef4444;
+  margin: -4px 0 6px 4px;
+}
+
+/* Submit Button */
+#login-submit {
+  width: 100%;
+  margin-top: 14px;
+  cursor: pointer;
+  color: #ffffff;
+  background: linear-gradient(135deg, #f43f5e, #ec4899);
+  border-radius: 8px;
+  border: none;
+  padding: 12px 20px;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(244, 63, 94, 0.35);
+  box-sizing: border-box;
 }
 
 #login-submit:hover {
-  transform: scale(1.05);
-  color: rgb(255, 255, 255);
-  background: linear-gradient(120deg, #f06d91, #f6a5c0); 
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(244, 63, 94, 0.45);
 }
 
-
-.lmodifyregestration {
-  z-index: 1;
-  position: relative;
-}
-
+/* Forget Password Link */
 #forget-password {
-  margin-left: 46vh;
-  margin-top: -10vh;
-  
+  text-align: right;
+  margin-top: 10px;
 }
 
-#forget-password:hover{
-   
-   transform: scale(1.03);
-}
 #forget-login-password {
-   color: rgb(0, 0, 0);
-   cursor: pointer;
-   text-decoration: none;
-   font-size: 13px;
- }
- #forget-login-password:hover{
-   color: rgb(255, 255, 255);
-   
+  color: #3b82f6;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-
-
-
-
-#email-icon {
-  color: rgb(0, 0, 0);
-  margin-left: 8px;
-  margin-top: 2px;
- 
+#forget-login-password:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
 }
 
-#password-icon {
-   color: rgb(0, 0, 0);
-   margin-left: 8px;
-   margin-top: 1px;
-  
- }
- 
-
-#successmeassage {
-  color: rgb(224, 31, 192);
+/* Don't have an account */
+#dont-account {
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+  margin: 22px 0 8px 0;
+  font-weight: 500;
 }
 
-.box {
-  display: flex;
-  border: 3px solid rgb(255, 255, 255);
-  border-radius: 5px;
-  margin: 5px;
-  width: 25vw;
-  margin-left: 55px;
-  margin-top: 65px;
-  transition: all 0.3s ease;
+.create-account {
+  display: block;
+  width: 100%;
+  text-decoration: none;
 }
-.box:hover{
-   border-color: #000000;
-   transform: scale(1.1);
-}
-#email-input {
+
+#button-create-account {
+  width: 100%;
+  cursor: pointer;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+  border-radius: 8px;
   border: none;
-  background-color: transparent;
-  border: 3px solid rgb(0, 0, 0);
-  margin-left: 10.5px;
-  width: 335px;
-  border-left: 2px solid white;
-  border-right: none;
-  border-top: none;
-  border-bottom: none;
-  border-radius: 4px ;
-  outline: none;
-
-}
-#email-input:hover{
-  border-color: #000000;
+  padding: 11px 20px;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(14, 165, 233, 0.3);
+  box-sizing: border-box;
 }
 
-
-
-
-.box-password {
-   display: flex;
-   border: 3px solid white;
-   border-radius: 5px;
-   margin: 5px;
-   width: 25vw;
-   height: 28px;
-   margin-left: 55px;
-   margin-top: 40px;
-   transition: all 0.3s ease;
- }
- .box-password:hover{
-   border-color: #000000;
-   transform: scale(1.1);
+#button-create-account:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(14, 165, 233, 0.4);
 }
 
+/* ===================================================
+   RESPONSIVE BREAKPOINTS (Desktop, Laptop, Tablet, Mobile)
+   =================================================== */
 
- #eye-password{
-   margin-top: 1px;
-   margin-left: 10px;
-   height: 25px;
- }
-
- #password-box{
-   margin-left: 12px;
-   width: 290px;
-   background: transparent;
-   border-left: 2px solid white;
-   border-right: none;
-   border-top: none;
-   border-bottom: none;
-   border-radius: 4px ;
-   outline: none;
-   
- }
- #password-box:hover{
-   border-color: #000000;
- }
- 
-
-
- #dont-account {
-   color: rgb(0, 0, 0);
-   margin-top: 85px;
-   margin-left: 23.5vh;
- }
- #button-create-account {
-    
-       
-       margin-left: 55px;
-       cursor: pointer;
-       color: rgb(0, 0, 0);
-       background: linear-gradient(135deg, #4facfe, #00f2fe);
-       border-radius: 6px;
-       border: none;
-       padding: 5px 15px;
-       font-weight: bold;
-       transition: all 0.3s ease;
-       width: 25.5vw;
-       height: 30px;  
- }
- 
- #button-create-account:hover {
-    transform: scale(1.05);
-    color: rgb(255, 255, 255);
-    background: linear-gradient(135deg, #00f2fe, #4facfe); 
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 12px;
+/* Laptop & Desktop (Side by side) */
+@media (min-width: 992px) {
+  .loginform {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
   }
+}
 
-
-  #email-error,#error-password{
-    font-size: 14px;
-    margin-left: 100px;
+/* Tablet (Stacked) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .loginform {
+    flex-direction: column;
+    padding-top: 110px;
+    gap: 24px;
   }
+  #loutline {
+    max-width: 440px;
+  }
+}
 
-  
- 
- 
- 
- 
- 
- 
-
-  
-  
+/* Mobile Phones (< 768px) */
+@media (max-width: 767px) {
+  .loginform {
+    padding: 85px 16px 36px 16px;
+    background-image: none;
+    background-color: #f1f5f9;
+  }
+  .login-slider-container {
+    display: none; /* Hide heavy sliders on mobile phones */
+  }
+  #loutline {
+    max-width: 100%;
+    padding: 24px 18px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+  #lheading {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+}
