@@ -3,11 +3,12 @@
 .env.*
 !.env.example
 frontend/.env
-backend_larvel/.env
+backend/.env
+backend_larvel/
 
 # Dependencies
 node_modules/
-backend_larvel/vendor/
+backend/vendor/
 
 # Build & Logs
 frontend/build/
