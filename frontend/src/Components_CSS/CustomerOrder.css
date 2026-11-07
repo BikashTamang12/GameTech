@@ -1,0 +1,123 @@
+.orders-page {
+  padding: 0 16px;
+  max-width: 860px;
+  margin: 120px auto 40px auto;
+  font-family: inherit;
+  box-sizing: border-box;
+  min-height: calc(100vh - 160px);
+}
+
+.orders-page h1 {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 24px;
+}
+
+.order-details {
+  display: flex;
+  border: 1px solid #e2e8f0;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  align-items: center;
+  gap: 16px;
+  transition: box-shadow 0.2s ease;
+}
+
+.order-details:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+#image-order {
+  height: 90px;
+  width: 90px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#im {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.order-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.order-info h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.order-info p {
+  font-size: 14px;
+  margin: 2px 0;
+  color: #475569;
+}
+
+.orders-page button {
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.orders-page button:hover {
+  background-color: #dc2626;
+}
+
+.orders-page div p {
+  text-align: center;
+  font-size: 16px;
+  color: #64748b;
+  margin-top: 40px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .orders-page {
+    margin-top: 100px;
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  .order-details {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  #image-order {
+    margin: 0 auto;
+    width: 110px;
+    height: 110px;
+  }
+  .orders-page button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+  }
+}

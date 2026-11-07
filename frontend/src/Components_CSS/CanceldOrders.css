@@ -1,0 +1,90 @@
+.canceled-orders-container,
+.order-manage {
+  margin: 20px auto;
+  max-width: 1100px;
+  padding: 24px 20px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+
+.canceled-orders-container h2,
+.order-manage h2 {
+  text-align: center;
+  color: #1e293b;
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+#arrow1 {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 16px;
+  color: #3b82f6;
+  gap: 8px;
+}
+
+#arrow {
+  height: 32px;
+  width: 32px;
+}
+
+.canceled-orders-table,
+.order-manage table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  min-width: 600px;
+}
+
+.canceled-orders-table th,
+.order-manage table th {
+  background-color: #ef4444;
+  color: white;
+  text-align: left;
+  padding: 12px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.canceled-orders-table td,
+.order-manage table td {
+  border-bottom: 1px solid #e2e8f0;
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 14px;
+  color: #334155;
+}
+
+.canceled-orders-table tr:hover,
+.order-manage table tr:hover {
+  background-color: #fef2f2;
+}
+
+.canceled-orders-table td img,
+.order-manage table td img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #f8fafc;
+}
+
+@media (max-width: 768px) {
+  .canceled-orders-container,
+  .order-manage {
+    margin: 10px;
+    padding: 16px 12px;
+  }
+  .canceled-orders-container h2,
+  .order-manage h2 {
+    font-size: 20px;
+  }
+}

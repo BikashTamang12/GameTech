@@ -1,0 +1,265 @@
+/* ===================================================
+   LOGIN PAGE STYLING
+   =================================================== */
+
+.loginform {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 20px 40px 20px;
+  background-image: url('../Components/Images/Login.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  gap: 40px;
+}
+
+.login-slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 480px;
+  flex-shrink: 0;
+}
+
+#loutline {
+  width: 100%;
+  max-width: 440px;
+  margin: 0;
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+  padding: 34px 28px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.loverlay {
+  display: none;
+}
+
+.lmodifyregestration {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#lheading {
+  text-align: center;
+  color: #1e1b4b;
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.5px;
+}
+
+#successmeassage {
+  text-align: center;
+  color: #db2777;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+/* Email & Password Input Containers */
+.box,
+.box-password {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 2px 12px;
+  background-color: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.25s ease;
+}
+
+.box:focus-within,
+.box-password:focus-within {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+#email-icon,
+#password-icon {
+  color: #64748b;
+  font-size: 22px;
+  flex-shrink: 0;
+  margin-right: 4px;
+}
+
+#email-input,
+#password-box {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 10px 8px;
+  font-size: 15px;
+  color: #0f172a;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#email-input::placeholder,
+#password-box::placeholder {
+  color: #94a3b8;
+}
+
+#eye-password {
+  height: 22px;
+  width: 22px;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-left: 6px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+#eye-password:hover {
+  opacity: 1;
+}
+
+/* Error messages */
+#email-error,
+#error-password {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ef4444;
+  margin: -4px 0 6px 4px;
+}
+
+/* Submit Button */
+#login-submit {
+  width: 100%;
+  margin-top: 14px;
+  cursor: pointer;
+  color: #ffffff;
+  background: linear-gradient(135deg, #f43f5e, #ec4899);
+  border-radius: 8px;
+  border: none;
+  padding: 12px 20px;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(244, 63, 94, 0.35);
+  box-sizing: border-box;
+}
+
+#login-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(244, 63, 94, 0.45);
+}
+
+/* Forget Password Link */
+#forget-password {
+  text-align: right;
+  margin-top: 10px;
+}
+
+#forget-login-password {
+  color: #3b82f6;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+#forget-login-password:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+/* Don't have an account */
+#dont-account {
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+  margin: 22px 0 8px 0;
+  font-weight: 500;
+}
+
+.create-account {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+}
+
+#button-create-account {
+  width: 100%;
+  cursor: pointer;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+  border-radius: 8px;
+  border: none;
+  padding: 11px 20px;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(14, 165, 233, 0.3);
+  box-sizing: border-box;
+}
+
+#button-create-account:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(14, 165, 233, 0.4);
+}
+
+/* ===================================================
+   RESPONSIVE BREAKPOINTS (Desktop, Laptop, Tablet, Mobile)
+   =================================================== */
+
+/* Laptop & Desktop (Side by side) */
+@media (min-width: 992px) {
+  .loginform {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+}
+
+/* Tablet (Stacked) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .loginform {
+    flex-direction: column;
+    padding-top: 110px;
+    gap: 24px;
+  }
+  #loutline {
+    max-width: 440px;
+  }
+}
+
+/* Mobile Phones (< 768px) */
+@media (max-width: 767px) {
+  .loginform {
+    padding: 85px 16px 36px 16px;
+    background-image: none;
+    background-color: #f1f5f9;
+  }
+  .login-slider-container {
+    display: none; /* Hide heavy sliders on mobile phones */
+  }
+  #loutline {
+    max-width: 100%;
+    padding: 24px 18px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+  #lheading {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+}

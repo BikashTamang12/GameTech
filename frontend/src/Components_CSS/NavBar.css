@@ -1,0 +1,214 @@
+#div1 {
+  width: 100%;
+}
+
+#nav1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background: linear-gradient(90deg, #ff0000, #ff6600);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.Logo {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  cursor: pointer;
+  filter: brightness(0) invert(1);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.Logo:hover {
+  transform: scale(1.08);
+}
+
+.logo-name {
+  margin-left: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.logo-name #game-tech {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  background: linear-gradient(to right, #39ff14, #f7ff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.logo-name:hover #game-tech {
+  transform: scale(1.05);
+}
+
+/* Announcement Banner in center */
+.typingAni {
+  font-size: 14px;
+  color: #111;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* Nav Actions Container */
+.cartmodify,
+.aboutmodify,
+.order2,
+.loginmodify {
+  display: flex;
+  align-items: center;
+  margin: 0 6px;
+  transition: transform 0.2s ease;
+}
+
+.cartmodify:hover,
+.aboutmodify:hover,
+.order2:hover,
+.loginmodify:hover {
+  transform: scale(1.08);
+}
+
+#cart,
+#aboutus,
+#ordercustomer,
+#login {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+#cart:hover,
+#aboutus:hover,
+#ordercustomer:hover,
+#login:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+#logout {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+#logout:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ===================================================
+   RESPONSIVE MEDIA QUERIES (Desktop, Laptop, Tablet, Mobile)
+   =================================================== */
+
+/* Laptop / Medium Desktops (992px to 1200px) */
+@media (max-width: 1200px) {
+  #nav1 {
+    padding: 0 16px;
+  }
+  .typingAni {
+    font-size: 13px;
+    max-width: 320px;
+  }
+  #cart, #aboutus, #ordercustomer, #login {
+    font-size: 14px;
+    padding: 5px 8px;
+  }
+}
+
+/* Tablet (768px to 991px) */
+@media (max-width: 991px) {
+  #nav1 {
+    height: 60px;
+    padding: 0 12px;
+  }
+  .logo-name #game-tech {
+    font-size: 18px;
+  }
+  .typingAni {
+    display: none; /* Hide typing ticker on tablets to preserve navigation room */
+  }
+  #cart, #aboutus, #ordercustomer, #login {
+    font-size: 13px;
+    padding: 4px 6px;
+  }
+}
+
+/* Mobile Devices (< 768px) */
+@media (max-width: 767px) {
+  #nav1 {
+    height: 56px;
+    padding: 0 10px;
+  }
+  .Logo {
+    width: 42px;
+    height: 42px;
+  }
+  .logo-name #game-tech {
+    font-size: 16px;
+  }
+  .typingAni {
+    display: none;
+  }
+  .aboutmodify {
+    display: none; /* Accessible in footer/menu to save mobile header space */
+  }
+  #ordercustomer {
+    font-size: 12px;
+    padding: 4px 6px;
+  }
+  #cart, #login, #logout {
+    padding: 4px;
+  }
+}
+
+/* Extra Small Phones (< 480px) */
+@media (max-width: 480px) {
+  .logo-name {
+    margin-left: 4px;
+  }
+  .logo-name #game-tech {
+    font-size: 15px;
+  }
+  #ordercustomer {
+    font-size: 11px;
+    padding: 2px 4px;
+  }
+}
